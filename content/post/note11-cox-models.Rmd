@@ -1,0 +1,71 @@
+---
+# Documentation: https://sourcethemes.com/academic/docs/managing-content/
+
+title: "Note11 Cox Models"
+subtitle: ""
+summary: ""
+authors: []
+tags: ["bds722","bds722note","cox-models"]
+categories: []
+date: 2020-02-20T13:21:32-06:00
+lastmod: 2020-02-20T13:21:32-06:00
+featured: false
+draft: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+image:
+  caption: ""
+  focal_point: ""
+  preview_only: false
+
+# Projects (optional).
+#   Associate this post with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
+#   Otherwise, set `projects = []`.
+projects: []
+---
+
+Cox Models = Propotional Hazards Models  
+
+
+## <span style = "color:red">Modeling the Hazard Function[^1]</span>
+
+- Survival analysis methods, such as proportional hazards regression differ from logistic regression by assessing a rate instead of a proportion.  
+
+- Proportional hazards regression, also called Cox regression, <span style = "color:orange">models the incidence or hazard rate, the number of new cases of disease per population at-risk per unit time.</span> If the outcome is death, this is the mortality rate.  
+
+- The hazard function is the probability that if a person survives to t, they will experience the event in the next instant.  
+
+
+$\lambda (t|X_{1i}, X_{2i}, ..., X_{ki}) = \lambda _0 (t)exp(\beta_1X_{1i} + \beta_2X_{2i} + ... +\beta_kX_{ki})$  
+
+$log(\frac{\lambda (t|X_{1i}, X_{2i}, ..., X_{ki})}{\lambda _0 (t)}) = exp(\beta_1X_{1i} + \beta_2X_{2i} + ... +\beta_kX_{ki})$
+
+
+- <span style="color:orange">$\lambda (t|X_{1i}, X_{2i}, ..., X_{ki}):$</span> this is the the hazard function for the ith person at time t,i=1,2,⋯,n.  
+
+
+- <span style="color:orange">$\lambda _0 (t):$</span> this is the baseline hazard function at time t, which is analogous to the intercept term in a multiple regression or logistic regression model.  
+
+- <span style="color:orange">$log(\frac{\lambda (t|X_{1i}, X_{2i}, ..., X_{ki})}{\lambda _0 (t)}):$</span> this is the log of hazard ratio. The ratio of hazard functions can be considered a ratio of risk functions.  
+
+- There is no particular probability model selected to represent the survival times.  
+
+- But there is a big <span style="color:orange">assumption</span>: the hazard for any individual is a fixed proportion of the hazard for any other individual. (i.e., proportional  hazards). Notice if $λ_0(t)$ is the hazard function for a subject with all the predictor values equal to zero and $λ_1(t)$ is the hazard function for a subject with other values for the predictor variables, then the hazard ratio depends only on the predictor variables and not on time t.  This assumption means if a covariate doubles the risk of the event on day one, it also doubles the risk of the event on any other day. 
+
+
+
+## <span style = "color:red">Output Interpretation
+
+- <span style="color:purple">Hazard Ratio</span>: similar with odds ratio.  
+
+- <span style="color:purple">Continuous</span>: A unit increase in X is associated with a YY% increase/decrease in the hazard of (event) on average.  
+
+- <span style="color:purple">Binary</span>: On average, A has YY% higher/lower hazard of (event) compared to B.
+
+
+
+[^1]: https://online.stat.psu.edu/stat507/node/81/
