@@ -1,0 +1,67 @@
+---
+# Documentation: https://sourcethemes.com/academic/docs/managing-content/
+
+title: "Note10 Kaplan Meier Estimation"
+subtitle: ""
+summary: ""
+authors: []
+tags: ['bds722','bds722note','km-estimation']
+categories: []
+date: 2020-02-18T21:53:55-06:00
+lastmod: 2020-02-18T21:53:55-06:00
+featured: false
+draft: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+image:
+  caption: ""
+  focal_point: ""
+  preview_only: false
+
+# Projects (optional).
+#   Associate this post with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
+#   Otherwise, set `projects = []`.
+projects: []
+---
+
+
+
+<ul>
+<li><p>KM Estimation is a non-parametric estimation of survival function.</p></li>
+<li><p>when no event times are censored, a non-parametric estimator of S(T) is <span class="math inline">\(1-F_{n}(t)\)</span>, where <span class="math inline">\(F_{n}(t)\)</span> is the empirical cumulative distribution function.</p></li>
+<li><p>when some observations are censored, we can estimate S(t) using KM estimation.</p></li>
+</ul>
+<p>Let: <span class="math inline">\(n_i\)</span> be number of objects at risk of dying at time <span class="math inline">\(t_i\)</span><br />
+<span class="math inline">\(d_i\)</span> be number of events that occur at time <span class="math inline">\(t_i\)</span></p>
+<div id="km-estimator" class="section level2">
+<h2><span style="color:red"> KM estimator </span></h2>
+<p><span class="math inline">\(\hat{S}(t) = \prod_{k=1}^i \frac{n_k - d_k}{n_k}\)</span></p>
+</div>
+<div id="basic-tests-for-difference-in-survival-curves" class="section level2">
+<h2><span style="color:red"> Basic tests for difference in survival curves</h2>
+<p>Want to test:<br />
+<span class="math inline">\(H_0: S_1(t) = S_2(t)\)</span><br />
+<span class="math inline">\(H_1: S_1(t) \neq S_2(t)\)</span></p>
+<pre class="r"><code>mydat &lt;- matrix(c(&#39;d1i&#39;,&#39;d2i&#39;,&#39;n1i-d1i&#39;,&#39;n2i-d2i&#39;),ncol = 2, byrow = T)
+colnames(mydat) &lt;- c(&#39;Group 1&#39;, &#39;Group 2&#39;)
+rownames(mydat) &lt;- c(&#39;Died&#39;,&#39;Survived&#39;)
+mydat</code></pre>
+<pre><code>##          Group 1   Group 2  
+## Died     &quot;d1i&quot;     &quot;d2i&quot;    
+## Survived &quot;n1i-d1i&quot; &quot;n2i-d2i&quot;</code></pre>
+<p>Test Statistic:<br />
+<span class="math inline">\(Q = \frac{(\sum w_i (d_{1i} - \hat{e}_{1i}))^2}{\sum w_i ^2 \hat{v}_{1i}}\)</span>
+where:<br />
+<span class="math inline">\(\hat{e}_{1i} = \frac{n_{1i}d_{1i}}{n_{i}}\)</span></p>
+<p><span class="math inline">\(\hat{v}_{1i} = \frac{n_{1i}n_{2i}d_i (n_i - d_i)}{n_i ^2 (n_i - 1)}\)</span></p>
+<p><span class="math inline">\(w_i =\)</span> some weighting functing</p>
+<p>Tests:<br />
+Log-rank: <span class="math inline">\(w_i = 1\)</span><br />
+Wilcoxon: <span class="math inline">\(w_i = n_i\)</span><br />
+Tarone-ware: <span class="math inline">\(w_i = \sqrt{n_i}\)</span><br />
+Peto-Peto: <span class="math inline">\(w_i = \prod_{i=1}^T (\frac{1-\hat{e}_i}{n_i + 1})\)</span></p>
+</div>

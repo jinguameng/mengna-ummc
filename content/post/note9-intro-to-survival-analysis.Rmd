@@ -1,0 +1,109 @@
+---
+# Documentation: https://sourcethemes.com/academic/docs/managing-content/
+
+title: "Note9 Intro to Survival Analysis"
+subtitle: ""
+summary: ""
+authors: []
+tags: ['bds722','bds722note','survival-analysis']
+categories: []
+date: 2020-02-18T17:33:44-06:00
+lastmod: 2020-02-18T17:33:44-06:00
+featured: false
+draft: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+image:
+  caption: ""
+  focal_point: ""
+  preview_only: false
+
+# Projects (optional).
+#   Associate this post with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
+#   Otherwise, set `projects = []`.
+projects: []
+
+---
+
+## <span style="color:Red">Time to Event Data</span>
+
+>**Keywords**: Failure, Lifetime Data, Time-event, Time-to-event-data
+
+- **Outcome**: Time until some events occures -> survival analysis.  
+
+- In order to measure survival time, need a begining(t=0) and end(t = T).  
+
+- **t=0** is when the clock starts.  
+
+- **t=T** is when the event occurs(or censored) + clock stops.
+
+- Between this two times(t - T), the subject is said to be "at risk" for the event.  
+
+- Survival time T is the difference between these two points.  
+
+- Usually measured in days, months or years.  
+
+Question: Time is continuous, why not using linear regression?  
+
+Answer: Censoring! If no censoring, you can use it!  
+
+## <span style="color:Red">Censoring</span>
+
+### Right Censored(by for the most common)
+
+- known survival time is greater than some value: T > a
+
+### Left Censored(rare)
+
+- known survival time is less than some value: T < b
+
+### Interval Censored
+
+- known survival time is within some interval: a < T < b
+
+## <span style="color:Red">Functions of Survival Time</span>
+
+- PDF: f(t)
+
+- CDF: F(t) = P(T<t)
+
+- Survival Function S(t): S(t) = P(T>t) = 1 - F(t), this is the prob that people survived passed t.
+
+- Unconditional probability failure rate f(t): $f(t) = \lim_{\Delta t\to\ 0}\frac{P(t \leq T \leq t + \Delta t)}{\Delta t}$    
+
+But, subjects who have died before time t are no longer at risk during (t, t + \Delta t).  
+So it make sense to think of a conditional failure rate.
+
+- Conditional failure rate: risk of an event occuring at time t, given the subject has survived to time t.
+
+- Hazard Function h(t)
+
+$h(t) = \lim_{\Delta t\to\ 0}\frac{P(t \leq T \leq t + \Delta t | T \geq t)}{\Delta t}$, <span style="color:orange">h(t) > 0, h(t) is not a probability. The hazard function, h(t), is the instantaneous rate at which events occur, given no previous events.</span>  
+
+- Cumulative Hazard Function H(t)
+
+$H(t) = \int\limits_{0}^{t} h(u) du$
+
+- Relationships between S(t), H(t), h(t), f(t)
+
+$h(t) = - \frac{\partial log(S(t))}{\partial t} = \frac{f(t)}{S(t)}$  
+
+$H(t) = -log(S(t))$  
+
+$S(t) = exp(-H(t))$
+
+$f(t) = - \frac{\partial S(t)}{\partial t}$
+
+## <span style="color:red"> Comment for Survival Distributions</span>
+
+Distribution | h(t) | S(t) | f(t)
+------------- | ----- | ----- | -----
+Exponential | $\lambda$ | $exp(-\lambda t)$ | $\lambda exp(-\lambda t)$
+Weibull | $\alpha \lambda t^{\alpha -1} $ | $exp(-\lambda t^\alpha)$ | $\alpha \lambda t^{\alpha -1}exp(-\lambda t^\alpha)$
+Gompertze | $\theta exp(\alpha t)$ | $exp(\frac{\theta}{\alpha}(1-exp(\alpha t)))$ | $\theta exp(\alpha t)exp(\frac{\theta}{\alpha}(1-exp(\alpha t)))$
+ 
+Others: Gamma, lognormal, log-logistic, inverse gaussian, Pareto
