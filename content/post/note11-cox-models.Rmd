@@ -48,7 +48,7 @@ $log(\frac{\lambda (t|X_{1i}, X_{2i}, ..., X_{ki})}{\lambda _0 (t)}) = exp(\beta
 - <span style="color:orange">$\lambda (t|X_{1i}, X_{2i}, ..., X_{ki}):$</span> this is the the hazard function for the ith person at time t,i=1,2,⋯,n.  
 
 
-- <span style="color:orange">$\lambda _0 (t):$</span> this is the baseline hazard function at time t, which is analogous to the intercept term in a multiple regression or logistic regression model.  
+- <span style="color:orange">$\lambda _0 (t):$</span> this is the baseline hazard function at time t, which is analogous to the intercept term in a multiple regression or logistic regression model. And it is unknown.
 
 - <span style="color:orange">$log(\frac{\lambda (t|X_{1i}, X_{2i}, ..., X_{ki})}{\lambda _0 (t)}):$</span> this is the log of hazard ratio. The ratio of hazard functions can be considered a ratio of risk functions.  
 
@@ -60,11 +60,11 @@ $log(\frac{\lambda (t|X_{1i}, X_{2i}, ..., X_{ki})}{\lambda _0 (t)}) = exp(\beta
 
 ## <span style = "color:red">Output Interpretation
 
-- <span style="color:purple">Hazard Ratio</span>: similar with odds ratio.  
+- <span style="color:green">Hazard Ratio</span>: similar with odds ratio.  
 
-- <span style="color:purple">Continuous</span>: A unit increase in X is associated with a YY% increase/decrease in the hazard of (event) on average.  
+- <span style="color:green">Continuous</span>: A unit increase in X is associated with a YY% increase/decrease in the hazard of (event) on average.  
 
-- <span style="color:purple">Binary</span>: On average, A has YY% higher/lower hazard of (event) compared to B.
+- <span style="color:green">Binary</span>: On average, A has YY% higher/lower hazard of (event) compared to B.
 
 
 

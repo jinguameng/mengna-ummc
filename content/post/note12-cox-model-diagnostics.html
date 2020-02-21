@@ -1,0 +1,140 @@
+---
+# Documentation: https://sourcethemes.com/academic/docs/managing-content/
+
+title: "Note12 Cox Model Diagnostics"
+subtitle: ""
+summary: ""
+authors: []
+tags: ["bds722","bds722note","cox-model-diagnostics"]
+categories: []
+date: 2020-02-20T16:32:49-06:00
+lastmod: 2020-02-20T16:32:49-06:00
+featured: false
+draft: false
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+image:
+  caption: ""
+  focal_point: ""
+  preview_only: false
+
+# Projects (optional).
+#   Associate this post with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
+#   Otherwise, set `projects = []`.
+projects: []
+---
+
+
+
+<div id="testing-the-proportional-hazard-assumptions" class="section level2">
+<h2><span style="color:red">Testing the Proportional Hazard Assumptions</span></h2>
+<div id="schoenfeld-residuals1" class="section level3">
+<h3><span style="color:green">Schoenfeld Residuals<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></span></h3>
+<ul>
+<li><p>Instead of a single residual for each individual, there is a separate residual for each individual for each covariate.</p></li>
+<li><p>Schonefeld residuals are not defined for censored individuals.</p></li>
+</ul>
+<p><span style="color:orange"><span class="math inline">\(Schonefeld residual = x_{ik} - \sum_{i=1}^{j\in R(t_i)} x_{kj}P_j\)</span></span>
+- The Schoenfeld residual is the covariate-value, <span class="math inline">\(x_{ik}\)</span>, for the person i who actually died at time <span class="math inline">\(t_i\)</span> minus the expected value of the covariate for the risk set at <span class="math inline">\(t_i\)</span>.</p>
+<ul>
+<li><p>Plot Schoenfeld residuals against time to evaluate PH assumption.</p></li>
+<li><p>If the slope is not zero then the proportional hazard assumption has been violated.</p></li>
+</ul>
+</div>
+<div id="kaplan-meier-curves2" class="section level3">
+<h3><span style="color:green">Kaplan-Meier Curves<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></span></h3>
+<ul>
+<li><p>If the predictor satisfy the proportional hazard assumption then the graph of the survival function versus the survival time should results in a graph with parallel curves.</p></li>
+<li><p>This method does not work well for continuous predictor or categorical predictors that have many levels because the graph becomes to “cluttered”.</p></li>
+</ul>
+</div>
+<div id="log-log-plot2" class="section level3">
+<h3><span style="color:green">Log-log Plot<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></span></h3>
+<ul>
+<li>The log(-log(survival)) versus log of survival time graph should result in parallel lines if the predictor is proportional.</li>
+</ul>
+</div>
+</div>
+<div id="general-model-fit" class="section level2">
+<h2><span style="color:red">General Model Fit</span></h2>
+<ul>
+<li><p><span style="color:orange">Theorem:</span> Suppose T is a continuous nonnegative random variable with cumulative hazard function <span class="math inline">\(\Lambda\)</span>. Then the random variaable $ Y = (T)$ follows an exponential distribution with rate<span class="math inline">\(\lambda = 1\)</span>.</p></li>
+<li><p>One way of checking the validty of a model is by comparing the model’s estimates {<span class="math inline">\(\hat{\Lambda}(t_i)\)</span>} against the standard exponential distribution.</p></li>
+</ul>
+<div id="cox-snell-residuals" class="section level3">
+<h3><span style="color:green">Cox-Snell Residuals</span></h3>
+<p><span style="color:orange"><span class="math inline">\(\hat{e}_i = \hat{\Lambda_0}(t_i) exp(x_i^T \hat{\beta})\)</span></span></p>
+<ul>
+<li><p>Application: to examine the overall fit of a Cox model: by plotting the Cox-Snell residual against the cumulative hazard function.</p></li>
+<li><p>A well fitting model will exhibit a linear line through the origin with a unit gradien.</p></li>
+<li><p>Cox-Snell residuals do not account for censored observations.</p></li>
+<li><p>One drawback to the Cox-Snell residuals is that they don’t
+provide much insight into why the model’s assumptions are
+violated。</p></li>
+</ul>
+</div>
+<div id="martingale-residuals3" class="section level3">
+<h3><span style="color:green">Martingale Residuals<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></span></h3>
+<p><span class="math inline">\(\hat{m}_{i} = d_i - \hat{\Lambda}_i(t_i)\)</span></p>
+<ul>
+<li><p>Martingale residuals can be used to assess the true functional form of a particular covariate (Thernau et al. (1990)).</p></li>
+<li><p>Positive values mean that the patient died sooner than expected (according to the model); negative values mean that the patient lived longer than expected (or were censored).</p></li>
+<li><p>Martingale residuals are very useful and can be used for many of the usual purposes that we use residuals for in other models (identifying outliers, choosing a functional form for the covariate, etc.)</p></li>
+<li><p>However, the primary drawback to the martingale residual is its clear asymmetry (its upper bound is 1, but it has no lowerbound)</p></li>
+</ul>
+</div>
+<div id="outliers-identification" class="section level3">
+<h3><span style="color:green">Outliers Identification</span></h3>
+<ul>
+<li><p><span style="color:orange">Overall:</span> plot deviance residual vs time.</p></li>
+<li><p><span style="color:orange">Variable Specific:</span>plot dfBetas vs time.</p></li>
+<li><p><span style="color:orange">DFBetas</span> Measure of how much an observation has effected the estimate of a regression coefficient (there is one DFBETA for each regression coefficient, including the intercept). Values larger than 2/sqrt(n) in absolute value are considered highly influential.</p></li>
+</ul>
+</div>
+<div id="linearity-visual" class="section level3">
+<h3><span style="color:green">Linearity Visual</span></h3>
+<ul>
+<li>plot deviance residual vs continuous variable</li>
+</ul>
+</div>
+<div id="predictive-power" class="section level3">
+<h3><span style="color:green">Predictive Power</span></h3>
+<p><span style="color:orange">Harrell’s C-index (concordance index)<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></span>:</p>
+<p>The intuition behind Harrell’s C-index is as follows. For patient i, our risk model assigns a risk score <span class="math inline">\(\eta_i\)</span> . If our risk model is any good, patients who had shorter times-to-disease should have higher risk scores. Boiling this intuition down to two patients: the patient with the higher risk score should have a shorter time-to-disease.</p>
+<hr />
+<p>We can compute the C-index in the following way: For every pair of patients i and j (with i <span class="math inline">\(\neq\)</span> j), look at their risk scores and times-to-event.</p>
+<div id="both-i-and-j-are-not-censored" class="section level4">
+<h4><span style="color:pink">Both i and j are not censored</span></h4>
+<p>If <span class="math inline">\(T_j\)</span> &lt; <span class="math inline">\(T_i\)</span> and <span class="math inline">\(\eta_j &lt; \eta_i\)</span> =&gt; <span style="color:orange">discordant pair</span></p>
+<p>If <span class="math inline">\(T_j\)</span> &lt; <span class="math inline">\(T_i\)</span> and <span class="math inline">\(\eta_j &gt; \eta_i\)</span> =&gt; <span style="color:orange">concordant pair</span></p>
+<p><span style="color:orange">discordant pair:</span></p>
+</div>
+<div id="both-i-and-j-are-censored" class="section level4">
+<h4><span style="color:pink">Both i and j are censored</span></h4>
+<p>We don’t consider this pair in this situation.</p>
+</div>
+<div id="i-is-censored-and-j-is-not-censored" class="section level4">
+<h4><span style="color:pink">i is censored and j is not censored</span></h4>
+<p>If <span class="math inline">\(T_j\)</span> &lt; <span class="math inline">\(T_i\)</span> and <span class="math inline">\(\eta_i &gt; \eta_j\)</span> =&gt; <span style="color:orange">discordant pair</span></p>
+<p>If <span class="math inline">\(T_j\)</span> &lt; <span class="math inline">\(T_i\)</span> and <span class="math inline">\(\eta_i &lt; \eta_j\)</span> =&gt; <span style="color:orange">concordant pair</span></p>
+<p>If <span class="math inline">\(T_j\)</span> &gt; <span class="math inline">\(T_i\)</span> then we don’t know who got disease first, we don’t consider this pair in this situation.</p>
+<p><span style="color:orange">c = #concordant_pairs / #concordant_pairs + #discordant_pairs</span></p>
+<p>Values of c near 0.5 indicate that the risk score predictions are no better than a coin flip in determining which patient will live longer.</p>
+<p>Values near 1 indicate that the risk scores are good at determining which of two patients will have the disease first.</p>
+<p>Values near 0 means that the risk scores are worse than a coin flip: you might be better off concluding the opposite of what the risk scores tell you.</p>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p><a href="https://slideplayer.com/slide/14000214/" class="uri">https://slideplayer.com/slide/14000214/</a><a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p><a href="https://stats.idre.ucla.edu/other/examples/asa2/testing-the-proportional-hazard-assumption-in-cox-models/" class="uri">https://stats.idre.ucla.edu/other/examples/asa2/testing-the-proportional-hazard-assumption-in-cox-models/</a><a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p><a href="https://stats.idre.ucla.edu/other/examples/asa2/testing-the-proportional-hazard-assumption-in-cox-models/" class="uri">https://stats.idre.ucla.edu/other/examples/asa2/testing-the-proportional-hazard-assumption-in-cox-models/</a><a href="#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p><a href="https://myweb.uiowa.edu/pbreheny/7210/f15/notes/11-10.pdf" class="uri">https://myweb.uiowa.edu/pbreheny/7210/f15/notes/11-10.pdf</a><a href="#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p><a href="https://statisticaloddsandends.wordpress.com/2019/10/26/what-is-harrells-c-index/" class="uri">https://statisticaloddsandends.wordpress.com/2019/10/26/what-is-harrells-c-index/</a><a href="#fnref5" class="footnote-back">↩</a></p></li>
+</ol>
+</div>

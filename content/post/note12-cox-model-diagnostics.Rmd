@@ -1,0 +1,182 @@
+---
+# Documentation: https://sourcethemes.com/academic/docs/managing-content/
+
+title: "Note12 Cox Model Diagnostics"
+subtitle: ""
+summary: ""
+authors: []
+tags: ["bds722","bds722note","cox-model-diagnostics"]
+categories: []
+date: 2020-02-20T16:32:49-06:00
+lastmod: 2020-02-20T16:32:49-06:00
+featured: false
+draft: false
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+image:
+  caption: ""
+  focal_point: ""
+  preview_only: false
+
+# Projects (optional).
+#   Associate this post with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
+#   Otherwise, set `projects = []`.
+projects: []
+---
+
+## <span style="color:red">Testing the Proportional Hazard Assumptions</span>
+
+### <span style="color:green">Schoenfeld Residuals[^1]</span>
+
+
+- Instead of a single residual for each individual, there is a separate residual for each individual for each covariate.
+
+- Schonefeld residuals are not defined for censored individuals.  
+
+<span style="color:orange">$Schonefeld residual = x_{ik} - \sum_{i=1}^{j\in R(t_i)} x_{kj}P_j$</span>
+- The Schoenfeld residual is the covariate-value, $x_{ik}$, for the person i who actually died at time $t_i$ minus the expected value of the covariate for the risk set at $t_i$.
+
+- Plot Schoenfeld residuals against time to evaluate PH assumption.
+
+- If the slope is not zero then the proportional hazard assumption has been violated.
+
+
+
+### <span style="color:green">Kaplan-Meier Curves[^2]</span>
+
+- If the predictor satisfy the proportional hazard assumption then the graph of the survival function versus the survival time should results in a graph with parallel curves.
+
+- This method does not work well for continuous predictor or categorical predictors that have many levels because the graph becomes to “cluttered”. 
+
+
+
+### <span style="color:green">Log-log Plot[^2]</span>
+
+- The log(-log(survival)) versus log of survival time graph should result in parallel lines if the predictor is proportional.
+
+
+
+
+
+## <span style="color:red">General Model Fit</span>
+
+
+- <span style="color:orange">Theorem:</span> Suppose T is a continuous nonnegative random variable with cumulative hazard function $\Lambda$. Then the random variaable $ Y = \Lambda(T)$ follows an exponential distribution with rate$\lambda = 1$.  
+
+- One way of checking the validty of a model is by comparing the model's estimates {$\hat{\Lambda}(t_i)$} against the standard exponential distribution.  
+
+
+
+
+
+### <span style="color:green">Cox-Snell Residuals</span>
+
+<span style="color:orange">$\hat{e}_i = \hat{\Lambda_0}(t_i) exp(x_i^T \hat{\beta})$</span>
+
+- Application: to examine the overall fit of a Cox model: by plotting the Cox-Snell residual against the cumulative hazard function.  
+
+- A well fitting model will exhibit a linear line through the origin with a unit gradien.  
+
+- Cox-Snell residuals do not account for censored observations.  
+
+
+- One drawback to the Cox-Snell residuals is that they don’t
+provide much insight into why the model’s assumptions are
+violated。 
+
+
+### <span style="color:green">Martingale Residuals[^3]</span>
+
+$\hat{m}_{i} = d_i - \hat{\Lambda}_i(t_i)$
+ 
+
+- Martingale residuals can be used to assess the true functional form of a particular covariate (Thernau et al. (1990)).  
+
+
+- Positive values mean that the patient died sooner than expected (according to the model); negative values mean that the patient lived longer than expected (or were censored).  
+
+
+- Martingale residuals are very useful and can be used for many of the usual purposes that we use residuals for in other models (identifying outliers, choosing a functional form for the covariate, etc.)
+
+
+- However, the primary drawback to the martingale residual is its clear asymmetry (its upper bound is 1, but it has no lowerbound)
+
+
+
+
+
+### <span style="color:green">Outliers Identification</span>
+
+- <span style="color:orange">Overall:</span> plot deviance residual vs time.
+
+
+- <span style="color:orange">Variable Specific:</span>plot dfBetas vs time.
+
+
+- <span style="color:orange">DFBetas</span> Measure of how much an observation has effected the estimate of a regression coefficient (there is one DFBETA for each regression coefficient, including the intercept). Values larger than 2/sqrt(n) in absolute value are considered highly influential.
+
+
+
+### <span style="color:green">Linearity Visual</span>
+
+- plot deviance residual vs continuous variable
+
+
+
+
+### <span style="color:green">Predictive Power</span>
+
+<span style="color:orange">Harrell's C-index (concordance index)[^4]</span>:  
+
+The intuition behind Harrell’s C-index is as follows. For patient i, our risk model assigns a risk score $\eta_i$ . If our risk model is any good, patients who had shorter times-to-disease should have higher risk scores. Boiling this intuition down to two patients: the patient with the higher risk score should have a shorter time-to-disease.  
+
+---
+
+We can compute the C-index in the following way: For every pair of patients i and j (with i $\neq$ j), look at their risk scores and times-to-event.
+
+#### <span style="color:pink">Both i and j are not censored</span>
+
+If $T_j$ < $T_i$ and  $\eta_j < \eta_i$ => <span style="color:orange">discordant pair</span>  
+
+If $T_j$ < $T_i$ and  $\eta_j > \eta_i$ => <span style="color:orange">concordant pair</span>  
+
+
+
+<span style="color:orange">discordant pair:</span>
+
+
+#### <span style="color:pink">Both i and j are censored</span>
+
+We don't consider this pair in this situation.
+
+
+#### <span style="color:pink">i is censored and j is not censored</span>
+
+If $T_j$ < $T_i$ and  $\eta_i > \eta_j$ => <span style="color:orange">discordant pair</span>  
+
+If $T_j$ < $T_i$ and  $\eta_i < \eta_j$ => <span style="color:orange">concordant pair</span>  
+
+If $T_j$ > $T_i$ then we don't know who got disease first, we don't consider this pair in this situation.
+
+
+<span style="color:orange">c = #concordant_pairs / #concordant_pairs + #discordant_pairs</span>  
+
+Values of c near 0.5 indicate that the risk score predictions are no better than a coin flip in determining which patient will live longer.  
+
+Values near 1 indicate that the risk scores are good at determining which of two patients will have the disease first.  
+
+Values near 0 means that the risk scores are worse than a coin flip: you might be better off concluding the opposite of what the risk scores tell you.
+
+
+
+[^1]: https://slideplayer.com/slide/14000214/
+
+[^2]: https://stats.idre.ucla.edu/other/examples/asa2/testing-the-proportional-hazard-assumption-in-cox-models/
+
+[^3]: https://myweb.uiowa.edu/pbreheny/7210/f15/notes/11-10.pdf
+
+[^4]: https://statisticaloddsandends.wordpress.com/2019/10/26/what-is-harrells-c-index/
+

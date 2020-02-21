@@ -564,7 +564,7 @@ Modeling the Hazard Function1Survival analysis methods, such as proportional h
 <p><span class="math inline">\(log(\frac{\lambda (t|X_{1i}, X_{2i}, ..., X_{ki})}{\lambda _0 (t)}) = exp(\beta_1X_{1i} + \beta_2X_{2i} + ... +\beta_kX_{ki})\)</span></p>
 <ul>
 <li><p><span style="color:orange"><span class="math inline">\(\lambda (t|X_{1i}, X_{2i}, ..., X_{ki}):\)</span></span> this is the the hazard function for the ith person at time t,i=1,2,⋯,n. </p></li>
-<li><p><span style="color:orange"><span class="math inline">\(\lambda _0 (t):\)</span></span> this is the baseline hazard function at time t, which is analogous to the intercept term in a multiple regression or logistic regression model.</p></li>
+<li><p><span style="color:orange"><span class="math inline">\(\lambda _0 (t):\)</span></span> this is the baseline hazard function at time t, which is analogous to the intercept term in a multiple regression or logistic regression model. And it is unknown.</p></li>
 <li><p><span style="color:orange"><span class="math inline">\(log(\frac{\lambda (t|X_{1i}, X_{2i}, ..., X_{ki})}{\lambda _0 (t)}):\)</span></span> this is the log of hazard ratio. The ratio of hazard functions can be considered a ratio of risk functions.</p></li>
 <li><p>There is no particular probability model selected to represent the survival times.</p></li>
 <li><p>But there is a big <span style="color:orange">assumption</span>: the hazard for any individual is a fixed proportion of the hazard for any other individual. (i.e., proportional hazards). Notice if <span class="math inline">\(λ_0(t)\)</span> is the hazard function for a subject with all the predictor values equal to zero and <span class="math inline">\(λ_1(t)\)</span> is the hazard function for a subject with other values for the predictor variables, then the hazard ratio depends only on the predictor variables and not on time t. This assumption means if a covariate doubles the risk of the event on day one, it also doubles the risk of the event on any other day.</p></li>
@@ -573,9 +573,9 @@ Modeling the Hazard Function1Survival analysis methods, such as proportional h
 <div id="output-interpretation" class="section level2">
 <h2><span style = "color:red">Output Interpretation</h2>
 <ul>
-<li><p><span style="color:purple">Hazard Ratio</span>: similar with odds ratio.</p></li>
-<li><p><span style="color:purple">Continuous</span>: A unit increase in X is associated with a YY% increase/decrease in the hazard of (event) on average.</p></li>
-<li><p><span style="color:purple">Binary</span>: On average, A has YY% higher/lower hazard of (event) compared to B.</p></li>
+<li><p><span style="color:green">Hazard Ratio</span>: similar with odds ratio.</p></li>
+<li><p><span style="color:green">Continuous</span>: A unit increase in X is associated with a YY% increase/decrease in the hazard of (event) on average.</p></li>
+<li><p><span style="color:green">Binary</span>: On average, A has YY% higher/lower hazard of (event) compared to B.</p></li>
 </ul>
 </div>
 <div class="footnotes">
@@ -717,13 +717,13 @@ Modeling the Hazard Function1Survival analysis methods, such as proportional h
   <div class="media author-card content-widget-hr">
     
       
-      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_huc09fd31ce9bb786d1041f70ffa59556f_1804619_270x270_fill_q90_lanczos_center.jpg" alt="Avatar">
+      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_huc09fd31ce9bb786d1041f70ffa59556f_1970749_270x270_fill_q90_lanczos_center.jpg" alt="Avatar">
     
 
     <div class="media-body">
       <h5 class="card-title"><a href="/">Mengna Zhang</a></h5>
       <h6 class="card-subtitle">First Year Graduate Student</h6>
-      <p class="card-text">I am a first year graduate student in the department of Data Science.</p>
+      <p class="card-text">I am a first year graduate student in Data Science department of UMMC.</p>
       <ul class="network-icon" aria-hidden="true">
   
 </ul>

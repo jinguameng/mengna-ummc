@@ -28,15 +28,10 @@
   
     
   
-  <meta name="description" content="Time to Event DataKeywords: Failure, Lifetime Data, Time-event, Time-to-event-data
-Outcome: Time until some events occures -&gt; survival analysis.
-In order to measure survival time, need a begining(t=0) and end(t = T).
-t=0 is when the clock starts.
-t=T is when the event occurs(or censored) &#43; clock stops.
-Between this two times(t - T), the subject is said to be “at risk” for the event.">
+  <meta name="description" content="First Year Graduate Student">
 
   
-  <link rel="alternate" hreflang="en-us" href="/post/note9-intro-to-survival-analysis/">
+  <link rel="alternate" hreflang="en-us" href="/tags/cox-model-diagnostics/">
 
   
 
@@ -218,12 +213,14 @@
 
 
   
+  <link rel="alternate" href="/tags/cox-model-diagnostics/index.xml" type="application/rss+xml" title="Mengna&#39;s Space">
+  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="/post/note9-intro-to-survival-analysis/">
+  <link rel="canonical" href="/tags/cox-model-diagnostics/">
 
   
   
@@ -237,70 +234,17 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Mengna&#39;s Space">
-  <meta property="og:url" content="/post/note9-intro-to-survival-analysis/">
-  <meta property="og:title" content="Note9 Intro to Survival Analysis | Mengna&#39;s Space">
-  <meta property="og:description" content="Time to Event DataKeywords: Failure, Lifetime Data, Time-event, Time-to-event-data
-Outcome: Time until some events occures -&gt; survival analysis.
-In order to measure survival time, need a begining(t=0) and end(t = T).
-t=0 is when the clock starts.
-t=T is when the event occurs(or censored) &#43; clock stops.
-Between this two times(t - T), the subject is said to be “at risk” for the event."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="/tags/cox-model-diagnostics/">
+  <meta property="og:title" content="cox-model-diagnostics | Mengna&#39;s Space">
+  <meta property="og:description" content="First Year Graduate Student"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    
-      <meta property="article:published_time" content="2020-02-18T17:33:44-06:00">
-    
-    <meta property="article:modified_time" content="2020-02-18T17:33:44-06:00">
+    <meta property="og:updated_time" content="2020-02-20T16:32:49-06:00">
   
 
   
 
 
-    
-
-
-
-
-
-
-  
-
-
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "/post/note9-intro-to-survival-analysis/"
-  },
-  "headline": "Note9 Intro to Survival Analysis",
-  
-  "datePublished": "2020-02-18T17:33:44-06:00",
-  "dateModified": "2020-02-18T17:33:44-06:00",
-  
-  "author": {
-    "@type": "Person",
-    "name": "Mengna Zhang"
-  },
-  
-  "publisher": {
-    "@type": "Organization",
-    "name": "Mengna's Space",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
-    }
-  },
-  "description": "Time to Event Data\r\rKeywords: Failure, Lifetime Data, Time-event, Time-to-event-data\n\r\rOutcome: Time until some events occures -\u0026gt; survival analysis.\n\rIn order to measure survival time, need a begining(t=0) and end(t = T).\n\rt=0 is when the clock starts.\n\rt=T is when the event occurs(or censored) + clock stops.\n\rBetween this two times(t - T), the subject is said to be “at risk” for the event."
-}
-</script>
-
-  
-
-  
 
 
   
@@ -312,7 +256,7 @@
 
 
 
-  <title>Note9 Intro to Survival Analysis | Mengna&#39;s Space</title>
+  <title>cox-model-diagnostics | Mengna&#39;s Space</title>
 
 </head>
 
@@ -473,8 +417,6 @@
 </nav>
 
 
-  <article class="article">
-
   
 
 
@@ -492,337 +434,42 @@
 
   
   
-  
-<div class="article-container pt-3">
-  <h1>Note9 Intro to Survival Analysis</h1>
-
-  
-
   
     
+  
+<div class="universal-wrapper pt-3">
+  <h1>cox-model-diagnostics</h1>
+
+  
+
+  
+</div>
 
 
-<div class="article-metadata">
+
+<div class="universal-wrapper">
+  
 
   
   
-
-  
-  <span class="article-date">
     
     
-      
     
-    Feb 18, 2020
-  </span>
-  
-
-  
-
-  
-
-  
-  
-  
-
-  
-  
-
-</div>
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-</div>
-
-
-
-  <div class="article-container">
-
-    <div class="article-style">
-      
-
-
-<div id="time-to-event-data" class="section level2">
-<h2><span style="color:Red">Time to Event Data</span></h2>
-<blockquote>
-<p><strong>Keywords</strong>: Failure, Lifetime Data, Time-event, Time-to-event-data</p>
-</blockquote>
-<ul>
-<li><p><strong>Outcome</strong>: Time until some events occures -&gt; survival analysis.</p></li>
-<li><p>In order to measure survival time, need a begining(t=0) and end(t = T).</p></li>
-<li><p><strong>t=0</strong> is when the clock starts.</p></li>
-<li><p><strong>t=T</strong> is when the event occurs(or censored) + clock stops.</p></li>
-<li><p>Between this two times(t - T), the subject is said to be “at risk” for the event.</p></li>
-<li><p>Survival time T is the difference between these two points.</p></li>
-<li><p>Usually measured in days, months or years.</p></li>
-</ul>
-<p>Question: Time is continuous, why not using linear regression?</p>
-<p>Answer: Censoring! If no censoring, you can use it!</p>
-</div>
-<div id="censoring" class="section level2">
-<h2><span style="color:Red">Censoring</span></h2>
-<div id="right-censoredby-for-the-most-common" class="section level3">
-<h3>Right Censored(by for the most common)</h3>
-<ul>
-<li>known survival time is greater than some value: T &gt; a</li>
-</ul>
-</div>
-<div id="left-censoredrare" class="section level3">
-<h3>Left Censored(rare)</h3>
-<ul>
-<li>known survival time is less than some value: T &lt; b</li>
-</ul>
-</div>
-<div id="interval-censored" class="section level3">
-<h3>Interval Censored</h3>
-<ul>
-<li>known survival time is within some interval: a &lt; T &lt; b</li>
-</ul>
-</div>
-</div>
-<div id="functions-of-survival-time" class="section level2">
-<h2><span style="color:Red">Functions of Survival Time</span></h2>
-<ul>
-<li><p>PDF: f(t)</p></li>
-<li><p>CDF: F(t) = P(T&lt;t)</p></li>
-<li><p>Survival Function S(t): S(t) = P(T&gt;t) = 1 - F(t), this is the prob that people survived passed t.</p></li>
-<li><p>Unconditional probability failure rate f(t): <span class="math inline">\(f(t) = \lim_{\Delta t\to\ 0}\frac{P(t \leq T \leq t + \Delta t)}{\Delta t}\)</span></p></li>
-</ul>
-<p>But, subjects who have died before time t are no longer at risk during (t, t + t).<br />
-So it make sense to think of a conditional failure rate.</p>
-<ul>
-<li><p>Conditional failure rate: risk of an event occuring at time t, given the subject has survived to time t.</p></li>
-<li><p>Hazard Function h(t)</p></li>
-</ul>
-<p><span class="math inline">\(h(t) = \lim_{\Delta t\to\ 0}\frac{P(t \leq T \leq t + \Delta t | T \geq t)}{\Delta t}\)</span>, <span style="color:orange">h(t) &gt; 0, h(t) is not a probability. The hazard function, h(t), is the instantaneous rate at which events occur, given no previous events.</span></p>
-<ul>
-<li>Cumulative Hazard Function H(t)</li>
-</ul>
-<p><span class="math inline">\(H(t) = \int\limits_{0}^{t} h(u) du\)</span></p>
-<ul>
-<li>Relationships between S(t), H(t), h(t), f(t)</li>
-</ul>
-<p><span class="math inline">\(h(t) = - \frac{\partial log(S(t))}{\partial t} = \frac{f(t)}{S(t)}\)</span></p>
-<p><span class="math inline">\(H(t) = -log(S(t))\)</span></p>
-<p><span class="math inline">\(S(t) = exp(-H(t))\)</span></p>
-<p><span class="math inline">\(f(t) = - \frac{\partial S(t)}{\partial t}\)</span></p>
-</div>
-<div id="comment-for-survival-distributions" class="section level2">
-<h2><span style="color:red"> Comment for Survival Distributions</span></h2>
-<table>
-<colgroup>
-<col width="46%" />
-<col width="17%" />
-<col width="17%" />
-<col width="17%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Distribution</th>
-<th>h(t)</th>
-<th>S(t)</th>
-<th>f(t)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Exponential</td>
-<td><span class="math inline">\(\lambda\)</span></td>
-<td><span class="math inline">\(exp(-\lambda t)\)</span></td>
-<td><span class="math inline">\(\lambda exp(-\lambda t)\)</span></td>
-</tr>
-<tr class="even">
-<td>Weibull</td>
-<td>$t^{-1} $</td>
-<td><span class="math inline">\(exp(-\lambda t^\alpha)\)</span></td>
-<td><span class="math inline">\(\alpha \lambda t^{\alpha -1}exp(-\lambda t^\alpha)\)</span></td>
-</tr>
-<tr class="odd">
-<td>Gompertze</td>
-<td><span class="math inline">\(\theta exp(\alpha t)\)</span></td>
-<td><span class="math inline">\(exp(\frac{\theta}{\alpha}(1-exp(\alpha t)))\)</span></td>
-<td><span class="math inline">\(\theta exp(\alpha t)exp(\frac{\theta}{\alpha}(1-exp(\alpha t)))\)</span></td>
-</tr>
-</tbody>
-</table>
-<p>Others: Gamma, lognormal, log-logistic, inverse gaussian, Pareto</p>
-</div>
-
+    <div>
+      <h2><a href="/post/note12-cox-model-diagnostics/" >Note12 Cox Model Diagnostics</a></h2>
+      <div class="article-style">
+        
+          Testing the Proportional Hazard AssumptionsSchoenfeld Residuals1Instead of a single residual for each individual, there is a separate residual for each individual for each covariate.
+Schonefeld residuals are not defined for censored individuals.
+\(Schonefeld residual = x_{ik} - \sum_{i=1}^{j\in R(t_i)} x_{kj}P_j\)- The Schoenfeld residual is the covariate-value, \(x_{ik}\), for the person i who actually died at time \(t_i\) minus the expected value of the covariate for the risk set at \(t_i\).
+        
+      </div>
     </div>
-
-    
-
-
-
-
-
-<div class="article-tags">
   
-  <a class="badge badge-light" href="/tags/bds722/">bds722</a>
+
   
-  <a class="badge badge-light" href="/tags/bds722note/">bds722note</a>
-  
-  <a class="badge badge-light" href="/tags/survival-analysis/">survival-analysis</a>
-  
+
 </div>
-
-
-
-<div class="share-box" aria-hidden="true">
-  <ul class="share">
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://twitter.com/intent/tweet?url=/post/note9-intro-to-survival-analysis/&amp;text=Note9%20Intro%20to%20Survival%20Analysis" target="_blank" rel="noopener" class="share-btn-twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://www.facebook.com/sharer.php?u=/post/note9-intro-to-survival-analysis/&amp;t=Note9%20Intro%20to%20Survival%20Analysis" target="_blank" rel="noopener" class="share-btn-facebook">
-          <i class="fab fa-facebook"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="mailto:?subject=Note9%20Intro%20to%20Survival%20Analysis&amp;body=/post/note9-intro-to-survival-analysis/" target="_blank" rel="noopener" class="share-btn-email">
-          <i class="fas fa-envelope"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/post/note9-intro-to-survival-analysis/&amp;title=Note9%20Intro%20to%20Survival%20Analysis" target="_blank" rel="noopener" class="share-btn-linkedin">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://web.whatsapp.com/send?text=Note9%20Intro%20to%20Survival%20Analysis%20/post/note9-intro-to-survival-analysis/" target="_blank" rel="noopener" class="share-btn-whatsapp">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://service.weibo.com/share/share.php?url=/post/note9-intro-to-survival-analysis/&amp;title=Note9%20Intro%20to%20Survival%20Analysis" target="_blank" rel="noopener" class="share-btn-weibo">
-          <i class="fab fa-weibo"></i>
-        </a>
-      </li>
-    
-  </ul>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-  
-  
-    
-  
-  
-  
-  <div class="media author-card content-widget-hr">
-    
-      
-      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_huc09fd31ce9bb786d1041f70ffa59556f_1970749_270x270_fill_q90_lanczos_center.jpg" alt="Avatar">
-    
-
-    <div class="media-body">
-      <h5 class="card-title"><a href="/">Mengna Zhang</a></h5>
-      <h6 class="card-subtitle">First Year Graduate Student</h6>
-      <p class="card-text">I am a first year graduate student in Data Science department of UMMC.</p>
-      <ul class="network-icon" aria-hidden="true">
-  
-</ul>
-
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-  </div>
-</article>
 
       
 

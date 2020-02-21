@@ -1,7 +1,7 @@
 ---
 authors:
 - admin
-bio: I am a first year graduate student in the department of Data Science.
+bio: I am a first year graduate student in Data Science department of UMMC.
 education:
   courses:
   

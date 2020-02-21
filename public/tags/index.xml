@@ -5,7 +5,7 @@
     <link>/tags/</link>
       <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 20 Feb 2020 13:21:32 -0600</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 20 Feb 2020 16:32:49 -0600</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Tags</title>
@@ -15,7 +15,7 @@
     <item>
       <title>bds722</title>
       <link>/tags/bds722/</link>
-      <pubDate>Thu, 20 Feb 2020 13:21:32 -0600</pubDate>
+      <pubDate>Thu, 20 Feb 2020 16:32:49 -0600</pubDate>
       <guid>/tags/bds722/</guid>
       <description></description>
     </item>
@@ -23,8 +23,16 @@
     <item>
       <title>bds722note</title>
       <link>/tags/bds722note/</link>
-      <pubDate>Thu, 20 Feb 2020 13:21:32 -0600</pubDate>
+      <pubDate>Thu, 20 Feb 2020 16:32:49 -0600</pubDate>
       <guid>/tags/bds722note/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cox-model-diagnostics</title>
+      <link>/tags/cox-model-diagnostics/</link>
+      <pubDate>Thu, 20 Feb 2020 16:32:49 -0600</pubDate>
+      <guid>/tags/cox-model-diagnostics/</guid>
       <description></description>
     </item>
     

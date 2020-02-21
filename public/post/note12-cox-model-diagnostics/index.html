@@ -28,15 +28,12 @@
   
     
   
-  <meta name="description" content="Time to Event DataKeywords: Failure, Lifetime Data, Time-event, Time-to-event-data
-Outcome: Time until some events occures -&gt; survival analysis.
-In order to measure survival time, need a begining(t=0) and end(t = T).
-t=0 is when the clock starts.
-t=T is when the event occurs(or censored) &#43; clock stops.
-Between this two times(t - T), the subject is said to be “at risk” for the event.">
+  <meta name="description" content="Testing the Proportional Hazard AssumptionsSchoenfeld Residuals1Instead of a single residual for each individual, there is a separate residual for each individual for each covariate.
+Schonefeld residuals are not defined for censored individuals.
+\(Schonefeld residual = x_{ik} - \sum_{i=1}^{j\in R(t_i)} x_{kj}P_j\)- The Schoenfeld residual is the covariate-value, \(x_{ik}\), for the person i who actually died at time \(t_i\) minus the expected value of the covariate for the risk set at \(t_i\).">
 
   
-  <link rel="alternate" hreflang="en-us" href="/post/note9-intro-to-survival-analysis/">
+  <link rel="alternate" hreflang="en-us" href="/post/note12-cox-model-diagnostics/">
 
   
 
@@ -223,7 +220,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="/post/note9-intro-to-survival-analysis/">
+  <link rel="canonical" href="/post/note12-cox-model-diagnostics/">
 
   
   
@@ -237,20 +234,17 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Mengna&#39;s Space">
-  <meta property="og:url" content="/post/note9-intro-to-survival-analysis/">
-  <meta property="og:title" content="Note9 Intro to Survival Analysis | Mengna&#39;s Space">
-  <meta property="og:description" content="Time to Event DataKeywords: Failure, Lifetime Data, Time-event, Time-to-event-data
-Outcome: Time until some events occures -&gt; survival analysis.
-In order to measure survival time, need a begining(t=0) and end(t = T).
-t=0 is when the clock starts.
-t=T is when the event occurs(or censored) &#43; clock stops.
-Between this two times(t - T), the subject is said to be “at risk” for the event."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="/post/note12-cox-model-diagnostics/">
+  <meta property="og:title" content="Note12 Cox Model Diagnostics | Mengna&#39;s Space">
+  <meta property="og:description" content="Testing the Proportional Hazard AssumptionsSchoenfeld Residuals1Instead of a single residual for each individual, there is a separate residual for each individual for each covariate.
+Schonefeld residuals are not defined for censored individuals.
+\(Schonefeld residual = x_{ik} - \sum_{i=1}^{j\in R(t_i)} x_{kj}P_j\)- The Schoenfeld residual is the covariate-value, \(x_{ik}\), for the person i who actually died at time \(t_i\) minus the expected value of the covariate for the risk set at \(t_i\)."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-02-18T17:33:44-06:00">
+      <meta property="article:published_time" content="2020-02-20T16:32:49-06:00">
     
-    <meta property="article:modified_time" content="2020-02-18T17:33:44-06:00">
+    <meta property="article:modified_time" content="2020-02-20T16:32:49-06:00">
   
 
   
@@ -274,12 +268,12 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "/post/note9-intro-to-survival-analysis/"
+    "@id": "/post/note12-cox-model-diagnostics/"
   },
-  "headline": "Note9 Intro to Survival Analysis",
+  "headline": "Note12 Cox Model Diagnostics",
   
-  "datePublished": "2020-02-18T17:33:44-06:00",
-  "dateModified": "2020-02-18T17:33:44-06:00",
+  "datePublished": "2020-02-20T16:32:49-06:00",
+  "dateModified": "2020-02-20T16:32:49-06:00",
   
   "author": {
     "@type": "Person",
@@ -294,7 +288,7 @@
       "url": "/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "Time to Event Data\r\rKeywords: Failure, Lifetime Data, Time-event, Time-to-event-data\n\r\rOutcome: Time until some events occures -\u0026gt; survival analysis.\n\rIn order to measure survival time, need a begining(t=0) and end(t = T).\n\rt=0 is when the clock starts.\n\rt=T is when the event occurs(or censored) + clock stops.\n\rBetween this two times(t - T), the subject is said to be “at risk” for the event."
+  "description": "Testing the Proportional Hazard Assumptions\rSchoenfeld Residuals1\r\rInstead of a single residual for each individual, there is a separate residual for each individual for each covariate.\n\rSchonefeld residuals are not defined for censored individuals.\n\r\r\\(Schonefeld residual = x_{ik} - \\sum_{i=1}^{j\\in R(t_i)} x_{kj}P_j\\)\r- The Schoenfeld residual is the covariate-value, \\(x_{ik}\\), for the person i who actually died at time \\(t_i\\) minus the expected value of the covariate for the risk set at \\(t_i\\)."
 }
 </script>
 
@@ -312,7 +306,7 @@
 
 
 
-  <title>Note9 Intro to Survival Analysis | Mengna&#39;s Space</title>
+  <title>Note12 Cox Model Diagnostics | Mengna&#39;s Space</title>
 
 </head>
 
@@ -494,7 +488,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>Note9 Intro to Survival Analysis</h1>
+  <h1>Note12 Cox Model Diagnostics</h1>
 
   
 
@@ -513,7 +507,7 @@
     
       
     
-    Feb 18, 2020
+    Feb 20, 2020
   </span>
   
 
@@ -556,110 +550,114 @@
       
 
 
-<div id="time-to-event-data" class="section level2">
-<h2><span style="color:Red">Time to Event Data</span></h2>
-<blockquote>
-<p><strong>Keywords</strong>: Failure, Lifetime Data, Time-event, Time-to-event-data</p>
-</blockquote>
+<div id="testing-the-proportional-hazard-assumptions" class="section level2">
+<h2><span style="color:red">Testing the Proportional Hazard Assumptions</span></h2>
+<div id="schoenfeld-residuals1" class="section level3">
+<h3><span style="color:green">Schoenfeld Residuals<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></span></h3>
 <ul>
-<li><p><strong>Outcome</strong>: Time until some events occures -&gt; survival analysis.</p></li>
-<li><p>In order to measure survival time, need a begining(t=0) and end(t = T).</p></li>
-<li><p><strong>t=0</strong> is when the clock starts.</p></li>
-<li><p><strong>t=T</strong> is when the event occurs(or censored) + clock stops.</p></li>
-<li><p>Between this two times(t - T), the subject is said to be “at risk” for the event.</p></li>
-<li><p>Survival time T is the difference between these two points.</p></li>
-<li><p>Usually measured in days, months or years.</p></li>
+<li><p>Instead of a single residual for each individual, there is a separate residual for each individual for each covariate.</p></li>
+<li><p>Schonefeld residuals are not defined for censored individuals.</p></li>
 </ul>
-<p>Question: Time is continuous, why not using linear regression?</p>
-<p>Answer: Censoring! If no censoring, you can use it!</p>
-</div>
-<div id="censoring" class="section level2">
-<h2><span style="color:Red">Censoring</span></h2>
-<div id="right-censoredby-for-the-most-common" class="section level3">
-<h3>Right Censored(by for the most common)</h3>
+<p><span style="color:orange"><span class="math inline">\(Schonefeld residual = x_{ik} - \sum_{i=1}^{j\in R(t_i)} x_{kj}P_j\)</span></span>
+- The Schoenfeld residual is the covariate-value, <span class="math inline">\(x_{ik}\)</span>, for the person i who actually died at time <span class="math inline">\(t_i\)</span> minus the expected value of the covariate for the risk set at <span class="math inline">\(t_i\)</span>.</p>
 <ul>
-<li>known survival time is greater than some value: T &gt; a</li>
+<li><p>Plot Schoenfeld residuals against time to evaluate PH assumption.</p></li>
+<li><p>If the slope is not zero then the proportional hazard assumption has been violated.</p></li>
 </ul>
 </div>
-<div id="left-censoredrare" class="section level3">
-<h3>Left Censored(rare)</h3>
+<div id="kaplan-meier-curves2" class="section level3">
+<h3><span style="color:green">Kaplan-Meier Curves<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></span></h3>
 <ul>
-<li>known survival time is less than some value: T &lt; b</li>
+<li><p>If the predictor satisfy the proportional hazard assumption then the graph of the survival function versus the survival time should results in a graph with parallel curves.</p></li>
+<li><p>This method does not work well for continuous predictor or categorical predictors that have many levels because the graph becomes to “cluttered”.</p></li>
 </ul>
 </div>
-<div id="interval-censored" class="section level3">
-<h3>Interval Censored</h3>
+<div id="log-log-plot2" class="section level3">
+<h3><span style="color:green">Log-log Plot<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></span></h3>
 <ul>
-<li>known survival time is within some interval: a &lt; T &lt; b</li>
+<li>The log(-log(survival)) versus log of survival time graph should result in parallel lines if the predictor is proportional.</li>
 </ul>
 </div>
 </div>
-<div id="functions-of-survival-time" class="section level2">
-<h2><span style="color:Red">Functions of Survival Time</span></h2>
+<div id="general-model-fit" class="section level2">
+<h2><span style="color:red">General Model Fit</span></h2>
 <ul>
-<li><p>PDF: f(t)</p></li>
-<li><p>CDF: F(t) = P(T&lt;t)</p></li>
-<li><p>Survival Function S(t): S(t) = P(T&gt;t) = 1 - F(t), this is the prob that people survived passed t.</p></li>
-<li><p>Unconditional probability failure rate f(t): <span class="math inline">\(f(t) = \lim_{\Delta t\to\ 0}\frac{P(t \leq T \leq t + \Delta t)}{\Delta t}\)</span></p></li>
+<li><p><span style="color:orange">Theorem:</span> Suppose T is a continuous nonnegative random variable with cumulative hazard function <span class="math inline">\(\Lambda\)</span>. Then the random variaable $ Y = (T)$ follows an exponential distribution with rate<span class="math inline">\(\lambda = 1\)</span>.</p></li>
+<li><p>One way of checking the validty of a model is by comparing the model’s estimates {<span class="math inline">\(\hat{\Lambda}(t_i)\)</span>} against the standard exponential distribution.</p></li>
 </ul>
-<p>But, subjects who have died before time t are no longer at risk during (t, t + t).<br />
-So it make sense to think of a conditional failure rate.</p>
+<div id="cox-snell-residuals" class="section level3">
+<h3><span style="color:green">Cox-Snell Residuals</span></h3>
+<p><span style="color:orange"><span class="math inline">\(\hat{e}_i = \hat{\Lambda_0}(t_i) exp(x_i^T \hat{\beta})\)</span></span></p>
 <ul>
-<li><p>Conditional failure rate: risk of an event occuring at time t, given the subject has survived to time t.</p></li>
-<li><p>Hazard Function h(t)</p></li>
+<li><p>Application: to examine the overall fit of a Cox model: by plotting the Cox-Snell residual against the cumulative hazard function.</p></li>
+<li><p>A well fitting model will exhibit a linear line through the origin with a unit gradien.</p></li>
+<li><p>Cox-Snell residuals do not account for censored observations.</p></li>
+<li><p>One drawback to the Cox-Snell residuals is that they don’t
+provide much insight into why the model’s assumptions are
+violated。</p></li>
 </ul>
-<p><span class="math inline">\(h(t) = \lim_{\Delta t\to\ 0}\frac{P(t \leq T \leq t + \Delta t | T \geq t)}{\Delta t}\)</span>, <span style="color:orange">h(t) &gt; 0, h(t) is not a probability. The hazard function, h(t), is the instantaneous rate at which events occur, given no previous events.</span></p>
-<ul>
-<li>Cumulative Hazard Function H(t)</li>
-</ul>
-<p><span class="math inline">\(H(t) = \int\limits_{0}^{t} h(u) du\)</span></p>
-<ul>
-<li>Relationships between S(t), H(t), h(t), f(t)</li>
-</ul>
-<p><span class="math inline">\(h(t) = - \frac{\partial log(S(t))}{\partial t} = \frac{f(t)}{S(t)}\)</span></p>
-<p><span class="math inline">\(H(t) = -log(S(t))\)</span></p>
-<p><span class="math inline">\(S(t) = exp(-H(t))\)</span></p>
-<p><span class="math inline">\(f(t) = - \frac{\partial S(t)}{\partial t}\)</span></p>
 </div>
-<div id="comment-for-survival-distributions" class="section level2">
-<h2><span style="color:red"> Comment for Survival Distributions</span></h2>
-<table>
-<colgroup>
-<col width="46%" />
-<col width="17%" />
-<col width="17%" />
-<col width="17%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Distribution</th>
-<th>h(t)</th>
-<th>S(t)</th>
-<th>f(t)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Exponential</td>
-<td><span class="math inline">\(\lambda\)</span></td>
-<td><span class="math inline">\(exp(-\lambda t)\)</span></td>
-<td><span class="math inline">\(\lambda exp(-\lambda t)\)</span></td>
-</tr>
-<tr class="even">
-<td>Weibull</td>
-<td>$t^{-1} $</td>
-<td><span class="math inline">\(exp(-\lambda t^\alpha)\)</span></td>
-<td><span class="math inline">\(\alpha \lambda t^{\alpha -1}exp(-\lambda t^\alpha)\)</span></td>
-</tr>
-<tr class="odd">
-<td>Gompertze</td>
-<td><span class="math inline">\(\theta exp(\alpha t)\)</span></td>
-<td><span class="math inline">\(exp(\frac{\theta}{\alpha}(1-exp(\alpha t)))\)</span></td>
-<td><span class="math inline">\(\theta exp(\alpha t)exp(\frac{\theta}{\alpha}(1-exp(\alpha t)))\)</span></td>
-</tr>
-</tbody>
-</table>
-<p>Others: Gamma, lognormal, log-logistic, inverse gaussian, Pareto</p>
+<div id="martingale-residuals3" class="section level3">
+<h3><span style="color:green">Martingale Residuals<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></span></h3>
+<p><span class="math inline">\(\hat{m}_{i} = d_i - \hat{\Lambda}_i(t_i)\)</span></p>
+<ul>
+<li><p>Martingale residuals can be used to assess the true functional form of a particular covariate (Thernau et al. (1990)).</p></li>
+<li><p>Positive values mean that the patient died sooner than expected (according to the model); negative values mean that the patient lived longer than expected (or were censored).</p></li>
+<li><p>Martingale residuals are very useful and can be used for many of the usual purposes that we use residuals for in other models (identifying outliers, choosing a functional form for the covariate, etc.)</p></li>
+<li><p>However, the primary drawback to the martingale residual is its clear asymmetry (its upper bound is 1, but it has no lowerbound)</p></li>
+</ul>
+</div>
+<div id="outliers-identification" class="section level3">
+<h3><span style="color:green">Outliers Identification</span></h3>
+<ul>
+<li><p><span style="color:orange">Overall:</span> plot deviance residual vs time.</p></li>
+<li><p><span style="color:orange">Variable Specific:</span>plot dfBetas vs time.</p></li>
+<li><p><span style="color:orange">DFBetas</span> Measure of how much an observation has effected the estimate of a regression coefficient (there is one DFBETA for each regression coefficient, including the intercept). Values larger than 2/sqrt(n) in absolute value are considered highly influential.</p></li>
+</ul>
+</div>
+<div id="linearity-visual" class="section level3">
+<h3><span style="color:green">Linearity Visual</span></h3>
+<ul>
+<li>plot deviance residual vs continuous variable</li>
+</ul>
+</div>
+<div id="predictive-power" class="section level3">
+<h3><span style="color:green">Predictive Power</span></h3>
+<p><span style="color:orange">Harrell’s C-index (concordance index)<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></span>:</p>
+<p>The intuition behind Harrell’s C-index is as follows. For patient i, our risk model assigns a risk score <span class="math inline">\(\eta_i\)</span> . If our risk model is any good, patients who had shorter times-to-disease should have higher risk scores. Boiling this intuition down to two patients: the patient with the higher risk score should have a shorter time-to-disease.</p>
+<hr />
+<p>We can compute the C-index in the following way: For every pair of patients i and j (with i <span class="math inline">\(\neq\)</span> j), look at their risk scores and times-to-event.</p>
+<div id="both-i-and-j-are-not-censored" class="section level4">
+<h4><span style="color:pink">Both i and j are not censored</span></h4>
+<p>If <span class="math inline">\(T_j\)</span> &lt; <span class="math inline">\(T_i\)</span> and <span class="math inline">\(\eta_j &lt; \eta_i\)</span> =&gt; <span style="color:orange">discordant pair</span></p>
+<p>If <span class="math inline">\(T_j\)</span> &lt; <span class="math inline">\(T_i\)</span> and <span class="math inline">\(\eta_j &gt; \eta_i\)</span> =&gt; <span style="color:orange">concordant pair</span></p>
+<p><span style="color:orange">discordant pair:</span></p>
+</div>
+<div id="both-i-and-j-are-censored" class="section level4">
+<h4><span style="color:pink">Both i and j are censored</span></h4>
+<p>We don’t consider this pair in this situation.</p>
+</div>
+<div id="i-is-censored-and-j-is-not-censored" class="section level4">
+<h4><span style="color:pink">i is censored and j is not censored</span></h4>
+<p>If <span class="math inline">\(T_j\)</span> &lt; <span class="math inline">\(T_i\)</span> and <span class="math inline">\(\eta_i &gt; \eta_j\)</span> =&gt; <span style="color:orange">discordant pair</span></p>
+<p>If <span class="math inline">\(T_j\)</span> &lt; <span class="math inline">\(T_i\)</span> and <span class="math inline">\(\eta_i &lt; \eta_j\)</span> =&gt; <span style="color:orange">concordant pair</span></p>
+<p>If <span class="math inline">\(T_j\)</span> &gt; <span class="math inline">\(T_i\)</span> then we don’t know who got disease first, we don’t consider this pair in this situation.</p>
+<p><span style="color:orange">c = #concordant_pairs / #concordant_pairs + #discordant_pairs</span></p>
+<p>Values of c near 0.5 indicate that the risk score predictions are no better than a coin flip in determining which patient will live longer.</p>
+<p>Values near 1 indicate that the risk scores are good at determining which of two patients will have the disease first.</p>
+<p>Values near 0 means that the risk scores are worse than a coin flip: you might be better off concluding the opposite of what the risk scores tell you.</p>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p><a href="https://slideplayer.com/slide/14000214/" class="uri">https://slideplayer.com/slide/14000214/</a><a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p><a href="https://stats.idre.ucla.edu/other/examples/asa2/testing-the-proportional-hazard-assumption-in-cox-models/" class="uri">https://stats.idre.ucla.edu/other/examples/asa2/testing-the-proportional-hazard-assumption-in-cox-models/</a><a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p><a href="https://stats.idre.ucla.edu/other/examples/asa2/testing-the-proportional-hazard-assumption-in-cox-models/" class="uri">https://stats.idre.ucla.edu/other/examples/asa2/testing-the-proportional-hazard-assumption-in-cox-models/</a><a href="#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p><a href="https://myweb.uiowa.edu/pbreheny/7210/f15/notes/11-10.pdf" class="uri">https://myweb.uiowa.edu/pbreheny/7210/f15/notes/11-10.pdf</a><a href="#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p><a href="https://statisticaloddsandends.wordpress.com/2019/10/26/what-is-harrells-c-index/" class="uri">https://statisticaloddsandends.wordpress.com/2019/10/26/what-is-harrells-c-index/</a><a href="#fnref5" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
 
     </div>
@@ -676,7 +674,7 @@ So it make sense to think of a conditional failure rate.</p>
   
   <a class="badge badge-light" href="/tags/bds722note/">bds722note</a>
   
-  <a class="badge badge-light" href="/tags/survival-analysis/">survival-analysis</a>
+  <a class="badge badge-light" href="/tags/cox-model-diagnostics/">cox-model-diagnostics</a>
   
 </div>
 
@@ -693,7 +691,7 @@ So it make sense to think of a conditional failure rate.</p>
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=/post/note9-intro-to-survival-analysis/&amp;text=Note9%20Intro%20to%20Survival%20Analysis" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=/post/note12-cox-model-diagnostics/&amp;text=Note12%20Cox%20Model%20Diagnostics" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -706,7 +704,7 @@ So it make sense to think of a conditional failure rate.</p>
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=/post/note9-intro-to-survival-analysis/&amp;t=Note9%20Intro%20to%20Survival%20Analysis" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=/post/note12-cox-model-diagnostics/&amp;t=Note12%20Cox%20Model%20Diagnostics" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -719,7 +717,7 @@ So it make sense to think of a conditional failure rate.</p>
       
       
       <li>
-        <a href="mailto:?subject=Note9%20Intro%20to%20Survival%20Analysis&amp;body=/post/note9-intro-to-survival-analysis/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Note12%20Cox%20Model%20Diagnostics&amp;body=/post/note12-cox-model-diagnostics/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -732,7 +730,7 @@ So it make sense to think of a conditional failure rate.</p>
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/post/note9-intro-to-survival-analysis/&amp;title=Note9%20Intro%20to%20Survival%20Analysis" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=/post/note12-cox-model-diagnostics/&amp;title=Note12%20Cox%20Model%20Diagnostics" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -745,7 +743,7 @@ So it make sense to think of a conditional failure rate.</p>
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Note9%20Intro%20to%20Survival%20Analysis%20/post/note9-intro-to-survival-analysis/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Note12%20Cox%20Model%20Diagnostics%20/post/note12-cox-model-diagnostics/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -758,7 +756,7 @@ So it make sense to think of a conditional failure rate.</p>
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=/post/note9-intro-to-survival-analysis/&amp;title=Note9%20Intro%20to%20Survival%20Analysis" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=/post/note12-cox-model-diagnostics/&amp;title=Note12%20Cox%20Model%20Diagnostics" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -817,6 +815,19 @@ So it make sense to think of a conditional failure rate.</p>
 
 
   
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/post/note11-cox-models/">Note11 Cox Models</a></li>
+      
+      <li><a href="/post/note10-kaplan-meier-estimation/">Note10 Kaplan Meier Estimation</a></li>
+      
+      <li><a href="/post/note9-intro-to-survival-analysis/">Note9 Intro to Survival Analysis</a></li>
+      
+    </ul>
+  </div>
   
 
 
