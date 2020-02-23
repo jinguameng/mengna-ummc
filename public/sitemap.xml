@@ -23,13 +23,58 @@
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>/talk/</loc>
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/talk/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+    <loc>/tags/bds751/</loc>
+    <lastmod>2020-02-23T11:55:44-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/bds751hw/</loc>
+    <lastmod>2020-02-23T11:55:44-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/bds751hw5/</loc>
+    <lastmod>2020-02-23T11:55:44-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-02-23T11:55:44-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-02-23T11:55:44-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/bds751/</loc>
+    <lastmod>2020-02-23T11:37:55-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/bds751hw/</loc>
+    <lastmod>2020-02-23T11:37:55-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2020-02-23T11:37:55-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/hw5/</loc>
+    <lastmod>2020-02-23T11:37:55-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/hw5/</loc>
+    <lastmod>2020-02-23T11:37:55-06:00</lastmod>
   </url>
   
   <url>
@@ -49,16 +94,6 @@
   
   <url>
     <loc>/post/note12-cox-model-diagnostics/</loc>
-    <lastmod>2020-02-20T16:32:49-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2020-02-20T16:32:49-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2020-02-20T16:32:49-06:00</lastmod>
   </url>
   
@@ -90,6 +125,11 @@
   <url>
     <loc>/tags/survival-analysis/</loc>
     <lastmod>2020-02-18T17:33:44-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/courses/</loc>
+    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url>
   
   <url>
@@ -135,6 +175,11 @@
   <url>
     <loc>/slides/example/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2018-06-28T00:00:00+01:00</lastmod>
   </url>
   
   <url>
@@ -195,14 +240,6 @@
   <url>
     <loc>/publication/conference-paper/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>/courses/</loc>
   </url>
   
 </urlset>

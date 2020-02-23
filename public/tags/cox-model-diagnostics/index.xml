@@ -61,6 +61,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Application: to examine the overall fit of a Cox model: by plotting the Cox-Snell residual against the cumulative hazard function.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;A well fitting model will exhibit a linear line through the origin with a unit gradien.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;These residuals should behave like a sample from an exponential distribution with a mean equal to 1.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Cox-Snell residuals do not account for censored observations.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;One drawback to the Cox-Snell residuals is that they don’t
 provide much insight into why the model’s assumptions are

@@ -5,7 +5,7 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Mengna&#39;s Space</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 28 Jun 2018 00:00:00 +0100</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Mengna&#39;s Space</title>
@@ -17,7 +17,7 @@
       <link>/courses/example/example1/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
       <guid>/courses/example/example1/</guid>
-      <description>&lt;p&gt;In this tutorial, I&#39;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
+      <description>&lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
 &lt;h2 id=&#34;tip-1&#34;&gt;Tip 1&lt;/h2&gt;
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
 &lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
@@ -66,13 +66,192 @@
 &lt;/div&gt;
 &lt;p&gt;Slides can be added in a few ways:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Create&lt;/strong&gt; slides using Academic&#39;s 
+&lt;li&gt;&lt;strong&gt;Create&lt;/strong&gt; slides using Academic&amp;rsquo;s 
 &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;Slides&lt;/em&gt;&lt;/a&gt; feature and link using &lt;code&gt;slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Upload&lt;/strong&gt; an existing slide deck to &lt;code&gt;static/&lt;/code&gt; and link using &lt;code&gt;url_slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Embed&lt;/strong&gt; your slides (e.g. Google Slides) or presentation video on this page using 
 &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;shortcodes&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Further talk details can easily be added to this page using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Homework 5</title>
+      <link>/post/bds751hw5/</link>
+      <pubDate>Sun, 23 Feb 2020 11:55:44 -0600</pubDate>
+      <guid>/post/bds751hw5/</guid>
+      <description>
+
+
+&lt;div id=&#34;question-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 1&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;Suppose the genetic distance is d Morgan between two loci (i.e. average d crossovers will occur per meiosis). Infer recombination probability θ between the two loci per meiosis (i.e. the map function, θ(d)) (Score 20)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;x: number of observed crossovers&lt;br /&gt;
+d: genetic distance between two loci
+θ(d): prob of recombination between two loci per meiosis&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(f(X = x) = \frac{e^{-d}d^x}{x!},x = 0,1,2,..\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\theta(d) = \sum_{odd x}f(X=x)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= \sum_{oddx}\frac{e^{-d}d^x}{x!}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= \frac{1}{2}(\sum_{oddx}\frac{e^{-d}d^x}{x!} + \sum_{oddx}\frac{e^{-d}d^x}{x!} + \sum_{evenx}\frac{e^{-d}d^x}{x!} - \sum_{evenx}\frac{e^{-d}d^x}{x!})\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= \frac{e^{-d}}{2}(\sum_{oddx}\frac{d^x}{x!}+(\sum_{oddx}\frac{d^x}{x!}+\sum_{evenx}\frac{d^x}{x!})-\sum_{evenx}\frac{d^x}{x!})\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= \frac{e^{-d}}{2}(-\sum_{oddx}\frac{(-d)^x}{x!} + \sum_{x=0}^\infty\frac{d^x}{x!} - \sum_{evenx}\frac{(-d)^x}{x!})\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= \frac{e^{-d}}{2}(\sum_{x=0}^\infty\frac{d^x}{x!}-(\sum_{oddx}\frac{(-d)^x}{x!} + \sum_{evenx}\frac{(-d)^x}{x!}))\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= \frac{e^{-d}}{2}(\sum_{x=0}^\infty\frac{d^x}{x!} - \sum_{x=0}^\infty\frac{(-d)^x}{x!})\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Based on Taylor Series&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(e^d = \sum_{x=0}^\infty\frac{d^x}{x!}, x = 0,1,2,...\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(e^{-d} = \sum_{x=0}^\infty\frac{(-d)^x}{x!}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Hence,&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\theta(d) = \frac{e^{-d}}{2}(e^d - e^{-d}) = \frac{1-e^{-2d}}{2}\)&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;question-2&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 2&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;Suppose the recombinatin probability between two loci is θ. (Score 20)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;a. If parent genotype for the two loci is dm|Dm, what are transmitted haplotypes and their probabilities?&lt;/span&gt;&lt;br /&gt;
+transmitted haplotypes: dm, Dm&lt;br /&gt;
+Pr(dm) = Pr(Dm) = 0.5&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;b. If parent genotype for the two loci is Dm|DM, what are transmitted haplotypes and their probabilities?&lt;/span&gt;&lt;br /&gt;
+transmitted haplotypes: Dm, DM&lt;br /&gt;
+Pr(Dm) = Pr(DM) = 0.5&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;c. If parent genotype for the two loci is dm|DM, what are transmitted haplotypes and their probabilities?&lt;/span&gt;&lt;br /&gt;
+transmitted haplotypes: dm, DM, dM, Dm&lt;br /&gt;
+Pr(dm) = Pr(DM) = &lt;span class=&#34;math inline&#34;&gt;\(\frac{1-\theta}{2}\)&lt;/span&gt;&lt;br /&gt;
+Pr(dM) = Pr(Dm) = &lt;span class=&#34;math inline&#34;&gt;\(\frac{\theta}{2}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;d. If parent genotype for the two loci is dM|Dm, what are transmitted haplotypes and their probabilities?&lt;/span&gt;&lt;br /&gt;
+transmitted haplotypes: dM, Dm, dm, DM&lt;br /&gt;
+Pr(dM) = Pr(Dm) = &lt;span class=&#34;math inline&#34;&gt;\(\frac{1-\theta}{2}\)&lt;/span&gt;&lt;br /&gt;
+Pr(dm) = Pr(DM) = &lt;span class=&#34;math inline&#34;&gt;\(\frac{\theta}{2}\)&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;question-3&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 3&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;Suppose a family pedigree is as follows. (Score 35)&lt;/span&gt;&lt;br /&gt;
+&lt;img src=&#34;q3.PNG&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;a. What are recombinant haplotypes?&lt;/span&gt;&lt;br /&gt;
+Dm&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;b. What are non-recombinant haplotypes?&lt;/span&gt;&lt;br /&gt;
+DM, dm&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;c. Estimate recombination probability θ and what is the standard error?&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(n = 5, r = 1, s = 4\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\theta = \frac{1}{5} = 0.2\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(se = \sqrt{\frac{rs}{n^3}} = \sqrt{\frac{4}{125}}=0.179\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;d. We want to test if there is independent assortment between the two loci. What is the &lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(H_1\)&lt;/span&gt;?&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt; : &lt;span class=&#34;math inline&#34;&gt;\(\theta = 0.5\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(H_1\)&lt;/span&gt; : &lt;span class=&#34;math inline&#34;&gt;\(\theta \leq 0.5\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;e. Conduct a statistical test of question d, and show your conclusion. (Hint: binomial test)&lt;/span&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;binom.test(x=1,n=5,p=0.5,alternative=c(&amp;quot;less&amp;quot;),conf.level=0.95)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+##  Exact binomial test
+## 
+## data:  1 and 5
+## number of successes = 1, number of trials = 5, p-value = 0.1875
+## alternative hypothesis: true probability of success is less than 0.5
+## 95 percent confidence interval:
+##  0.0000000 0.6574083
+## sample estimates:
+## probability of success 
+##                    0.2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The p-value for our test is 0.1875 which is greater than 0.05, so we failed to reject the null hypotheis and conclude that &lt;span class=&#34;math inline&#34;&gt;\(\theta = 0.5\)&lt;/span&gt; whcih means there is independent assortment between the two loci.&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;f. Extra Credit (Score 5): Suppose we do not know father’s genotype in the pedigree. Can we infer the father’s genotype with haplotype information and what are they?&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Yes, we can. Offspring’s genotypes contain allele D/d and allele M/m, so, father’s genotype must contain D,d,M,m.&lt;br /&gt;
+And among offspring, there are three types of haplotypes came from father, they are DM, dm and Dm.&lt;br /&gt;
+Hence, father’s genotype should be informative, and there are two possiable genotypes for father.&lt;br /&gt;
+1. DM|dm 2. Dm|dM&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;question-4&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 4&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;Weather report shows that snowing probability on Friday is 60%. Big data analysis indicates that the probability of UMMC cancelling class is 70% if there is snow, and the probability is 5% if there is no snow. (Score: 15)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;a. Construct the contingency table of probability (Score: 5)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(snow) = 0.6\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(no-snow) = 0.4\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(cancel | snow) = 0.7\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(cancel | no-snow) = 0.05\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(snow, cancel) = Pr(cancel | snow)Pr(snow) = 0.7*0.6 = 0.42\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(snow, no-cancel) = Pr(snow) - Pr(snow, cancel) = 0.6 - 0.42 = 0.18\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(no-snow, cancel) = Pr(cancel | no-snow)Pr(no-snow) = 0.05*0.4 = 0.02\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(no-snow, no-cancel) = Pr(no-snow) - Pr(no-snow, cancel) = 0.4 - 0.02 = 0.38\)&lt;/span&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;~~~~~&lt;/th&gt;
+&lt;th&gt;cancel&lt;/th&gt;
+&lt;th&gt;no-cancel&lt;/th&gt;
+&lt;th&gt;~~~~~&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;snow&lt;/td&gt;
+&lt;td&gt;0.42&lt;/td&gt;
+&lt;td&gt;0.18&lt;/td&gt;
+&lt;td&gt;0.6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;no-snow&lt;/td&gt;
+&lt;td&gt;0.02&lt;/td&gt;
+&lt;td&gt;0.38&lt;/td&gt;
+&lt;td&gt;0.4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;~~~~~&lt;/td&gt;
+&lt;td&gt;0.44&lt;/td&gt;
+&lt;td&gt;0.56&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;b. What is the probability that class will be cancelled on Friday? (Score: 5)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Pr(cancel) = Pr(cancel, snow) + Pr(cancel, no-snow) = 0.42 + 0.02 = 0.44&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;c. What is the probability that there is snow on Friday if class is canceled? (Score: 5)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(snow | cancel) = \frac{Pr(snow,cancel)}{Pr(cancel)} = \frac{0.42}{0.44} = 0.955\)&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;question-5&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 5&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;A prospective study collected 100 smokers and 100 non-smokers. After 10 years, the study observed 30 smokers and 10 non-smokers got lung cancer. If our objective is that smoking is associated with cancer risk, then&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;a. Write down the hypothesis and estimate the parameters for hypothesis test (Score: 10) &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt; : Pr(cancer, smoker) = Pr(cancer, non-smoker)&lt;br /&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(H_a\)&lt;/span&gt; : Pr(cancer, smoker) &lt;span class=&#34;math inline&#34;&gt;\(\neq\)&lt;/span&gt; Pr(cancer, non-smoker)&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(cancer,smoker) = \frac{30}{100} = 0.3\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(cancer,non-smoker) = \frac{10}{100} = 0.1\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;b. perform a statistical test, get the statistic with p-value and show your conclusion (Score: 10) &lt;/span&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;~~~~~&lt;/th&gt;
+&lt;th&gt;cancer&lt;/th&gt;
+&lt;th&gt;no-cancer&lt;/th&gt;
+&lt;th&gt;~~~~~&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;smoker&lt;/td&gt;
+&lt;td&gt;30&lt;/td&gt;
+&lt;td&gt;70&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;non-smoker&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;90&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;~~~~~&lt;/td&gt;
+&lt;td&gt;40&lt;/td&gt;
+&lt;td&gt;160&lt;/td&gt;
+&lt;td&gt;200&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\hat{p_1} = 0.3, x_1 = 30, n_1 = 100\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\hat{p_2} = 0.1, x_2 = 10, n_2 = 100\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\bar{p} = \frac{x_1 + x_2}{n_1 + n_2} = \frac{40}{200} = 0.2\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\hat{\sigma}_{\hat{p_1} - \hat{p_2}} = \sqrt{\frac{\bar{p}(1-\bar{p})}{n_1} + \frac{\bar{p}(1-\bar{p})}{n_2}}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;$ = = 0.0566$&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(z = \frac{\hat{p_1} - \hat{p_2}}{\hat{\sigma}_{\hat{p_1} - \hat{p_2}}} = \frac{0.3-0.1}{0.0566} = 3.54\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The P-Value is .0004.&lt;/p&gt;
+&lt;p&gt;Because our p-value is 0.0004 which is less than 0 at 0.05 alpha level, we reject the null hypothesis and conclude that smoking is associated with cancer risk.&lt;/p&gt;
+&lt;/div&gt;
 </description>
     </item>
     
@@ -125,6 +304,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Application: to examine the overall fit of a Cox model: by plotting the Cox-Snell residual against the cumulative hazard function.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;A well fitting model will exhibit a linear line through the origin with a unit gradien.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;These residuals should behave like a sample from an exponential distribution with a mean equal to 1.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Cox-Snell residuals do not account for censored observations.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;One drawback to the Cox-Snell residuals is that they don’t
 provide much insight into why the model’s assumptions are
@@ -408,7 +588,7 @@ So it make sense to think of a conditional failure rate.&lt;/p&gt;
       <guid>/publication/preprint/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&#39;s Markdown slides feature.
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Supplementary notes can be added here, including 
@@ -471,13 +651,13 @@ $$&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;
-One
+One 
 &lt;/span&gt;
 &lt;span class=&#34;fragment &#34; &gt;
-&lt;strong&gt;Two&lt;/strong&gt;
+&lt;strong&gt;Two&lt;/strong&gt; 
 &lt;/span&gt;
 &lt;span class=&#34;fragment &#34; &gt;
-Three
+Three 
 &lt;/span&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;A fragment can accept two optional parameters:&lt;/p&gt;
@@ -532,7 +712,7 @@ Three
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;custom-css-example&#34;&gt;Custom CSS Example&lt;/h2&gt;
-&lt;p&gt;Let&#39;s make headers navy colored.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s make headers navy colored.&lt;/p&gt;
 &lt;p&gt;Create &lt;code&gt;assets/css/reveal_custom.css&lt;/code&gt; with:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.reveal section h1,
 .reveal section h2,
@@ -600,7 +780,7 @@ Three
 &lt;/div&gt;
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&#39;s Markdown slides feature.
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Supplementary notes can be added here, including 
@@ -620,7 +800,7 @@ Three
 &lt;/div&gt;
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&#39;s Markdown slides feature.
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Supplementary notes can be added here, including 

@@ -12,21 +12,5 @@
       <link>/authors/</link>
     </image>
     
-    <item>
-      <title></title>
-      <link>/authors/admin/</link>
-      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>/authors/admin/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Robert Ford</title>
-      <link>/authors/robert-ford/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>/authors/robert-ford/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>

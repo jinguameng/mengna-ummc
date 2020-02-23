@@ -80,6 +80,8 @@ projects: []
 
 - A well fitting model will exhibit a linear line through the origin with a unit gradien.  
 
+- These residuals should behave like a sample from an exponential distribution with a mean equal to 1.  
+
 - Cox-Snell residuals do not account for censored observations.  
 
 
