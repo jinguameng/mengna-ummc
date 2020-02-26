@@ -53,31 +53,6 @@
   </url>
   
   <url>
-    <loc>/categories/bds751/</loc>
-    <lastmod>2020-02-23T11:37:55-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/bds751hw/</loc>
-    <lastmod>2020-02-23T11:37:55-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <lastmod>2020-02-23T11:37:55-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/hw5/</loc>
-    <lastmod>2020-02-23T11:37:55-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/hw5/</loc>
-    <lastmod>2020-02-23T11:37:55-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/bds722/</loc>
     <lastmod>2020-02-20T16:32:49-06:00</lastmod>
   </url>
@@ -240,6 +215,10 @@
   <url>
     <loc>/publication/conference-paper/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
   </url>
   
 </urlset>
