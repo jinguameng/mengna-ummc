@@ -30,13 +30,35 @@ projects: []
 
 
 
+<div id="understanding-k-m-curve" class="section level2">
+<h2><span style="color:red"> Understanding K-M Curve </span></h2>
 <ul>
-<li><p>KM Estimation is a non-parametric estimation of survival function.</p></li>
+<li><p>the K-M survival curve is defined as the probability of surviving in a given length of time while considering time in many small intervals.</p></li>
+<li><p>interval: the horizontal line in K-M graph.<br />
+serial time duration contains two types of duration:<br />
+</p></li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>known survival(event occured)<br />
+</li>
+<li>unknown survival(censored)<br />
+and only 1 are called interval in K-M graph, 2 are indicated on K-M curve as tick marks.</li>
+</ol>
+<ul>
+<li><p>vertical distance between horizontals: illustrate the change in cumulative survival probablity as the curve advances.</p></li>
+<li><p>K-M curve are not smooth function, but rather step-wise estimates.</p></li>
+<li><p>In K-M curve, the Y axis stands for cumulative surviving probability.</p></li>
+<li><p>cumulative surviving prob = <span class="math inline">\(\Pi (interval survival rate)\)</span>, each horizontal line as an interval survival rate,<br />
+interval survival rate = <span class="math inline">\(\frac{total-number-of-current-alive-people}{total-number-of-alive-people- in-previous-horizontal-line-excluding-censored-people}\)</span></p></li>
+<li><p>censoring has an effect on the survival rate.</p></li>
+<li><p>censoring removes the subjects from the denominator.</p></li>
+<li><p>K-M Estimation is a non-parametric estimation of survival function.</p></li>
 <li><p>when no event times are censored, a non-parametric estimator of S(T) is <span class="math inline">\(1-F_{n}(t)\)</span>, where <span class="math inline">\(F_{n}(t)\)</span> is the empirical cumulative distribution function.</p></li>
 <li><p>when some observations are censored, we can estimate S(t) using KM estimation.</p></li>
 </ul>
 <p>Let: <span class="math inline">\(n_i\)</span> be number of objects at risk of dying at time <span class="math inline">\(t_i\)</span><br />
 <span class="math inline">\(d_i\)</span> be number of events that occur at time <span class="math inline">\(t_i\)</span></p>
+</div>
 <div id="km-estimator" class="section level2">
 <h2><span style="color:red"> KM estimator </span></h2>
 <p><span class="math inline">\(\hat{S}(t) = \prod_{k=1}^i \frac{n_k - d_k}{n_k}\)</span></p>
@@ -64,4 +86,6 @@ Log-rank: <span class="math inline">\(w_i = 1\)</span><br />
 Wilcoxon: <span class="math inline">\(w_i = n_i\)</span><br />
 Tarone-ware: <span class="math inline">\(w_i = \sqrt{n_i}\)</span><br />
 Peto-Peto: <span class="math inline">\(w_i = \prod_{i=1}^T (\frac{1-\hat{e}_i}{n_i + 1})\)</span></p>
+<p>Reference:<br />
+Rich, J. T., Neely, J. G., Paniello, R. C., Voelker, C. C., Nussenbaum, B., &amp; Wang, E. W. (2010). A practical guide to understanding Kaplan-Meier curves. Otolaryngology–head and neck surgery : official journal of American Academy of Otolaryngology-Head and Neck Surgery, 143(3), 331–336. <a href="https://doi.org/10.1016/j.otohns.2010.05.007" class="uri">https://doi.org/10.1016/j.otohns.2010.05.007</a></p>
 </div>

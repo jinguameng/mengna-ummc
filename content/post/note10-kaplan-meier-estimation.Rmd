@@ -32,8 +32,31 @@ projects: []
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+## <span style="color:red"> Understanding K-M Curve </span> 
 
-- KM Estimation is a non-parametric estimation of survival function.
+- the K-M survival curve is defined as the probability of surviving in a given length of time while considering time in many small intervals.  
+
+- interval: the horizontal line in K-M graph.  
+serial time duration contains two types of duration:  
+1. known survival(event occured)  
+2. unknown survival(censored)  
+and only 1 are called interval in K-M graph, 2 are indicated on K-M curve as tick marks.  
+
+- vertical distance between horizontals: illustrate the change in cumulative survival probablity as the curve advances.  
+
+- K-M curve are not smooth function, but rather step-wise estimates.  
+
+- In K-M curve, the Y axis stands for cumulative surviving probability.  
+
+- cumulative surviving prob = $\Pi (interval survival rate)$, each horizontal line as an interval survival rate,  
+interval survival rate = $\frac{total-number-of-current-alive-people}{total-number-of-alive-people- in-previous-horizontal-line-excluding-censored-people}$  
+
+- censoring has an effect on the survival rate.  
+
+- censoring removes the subjects from the denominator.  
+
+
+- K-M Estimation is a non-parametric estimation of survival function.
 
 - when no event times are censored, a non-parametric estimator of S(T) is $1-F_{n}(t)$, where $F_{n}(t)$ is the empirical cumulative distribution function.  
 
@@ -74,3 +97,6 @@ Log-rank: $w_i = 1$
 Wilcoxon: $w_i = n_i$  
 Tarone-ware: $w_i = \sqrt{n_i}$  
 Peto-Peto: $w_i = \prod_{i=1}^T (\frac{1-\hat{e}_i}{n_i + 1})$
+
+Reference:  
+Rich, J. T., Neely, J. G., Paniello, R. C., Voelker, C. C., Nussenbaum, B., & Wang, E. W. (2010). A practical guide to understanding Kaplan-Meier curves. Otolaryngology--head and neck surgery : official journal of American Academy of Otolaryngology-Head and Neck Surgery, 143(3), 331–336. https://doi.org/10.1016/j.otohns.2010.05.007  

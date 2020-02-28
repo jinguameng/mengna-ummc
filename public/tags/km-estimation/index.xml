@@ -20,13 +20,35 @@
       <description>
 
 
+&lt;div id=&#34;understanding-k-m-curve&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt; Understanding K-M Curve &lt;/span&gt;&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;KM Estimation is a non-parametric estimation of survival function.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;the K-M survival curve is defined as the probability of surviving in a given length of time while considering time in many small intervals.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;interval: the horizontal line in K-M graph.&lt;br /&gt;
+serial time duration contains two types of duration:&lt;br /&gt;
+&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;known survival(event occured)&lt;br /&gt;
+&lt;/li&gt;
+&lt;li&gt;unknown survival(censored)&lt;br /&gt;
+and only 1 are called interval in K-M graph, 2 are indicated on K-M curve as tick marks.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;vertical distance between horizontals: illustrate the change in cumulative survival probablity as the curve advances.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;K-M curve are not smooth function, but rather step-wise estimates.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;In K-M curve, the Y axis stands for cumulative surviving probability.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;cumulative surviving prob = &lt;span class=&#34;math inline&#34;&gt;\(\Pi (interval survival rate)\)&lt;/span&gt;, each horizontal line as an interval survival rate,&lt;br /&gt;
+interval survival rate = &lt;span class=&#34;math inline&#34;&gt;\(\frac{total-number-of-current-alive-people}{total-number-of-alive-people- in-previous-horizontal-line-excluding-censored-people}\)&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;censoring has an effect on the survival rate.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;censoring removes the subjects from the denominator.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;K-M Estimation is a non-parametric estimation of survival function.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;when no event times are censored, a non-parametric estimator of S(T) is &lt;span class=&#34;math inline&#34;&gt;\(1-F_{n}(t)\)&lt;/span&gt;, where &lt;span class=&#34;math inline&#34;&gt;\(F_{n}(t)\)&lt;/span&gt; is the empirical cumulative distribution function.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;when some observations are censored, we can estimate S(t) using KM estimation.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Let: &lt;span class=&#34;math inline&#34;&gt;\(n_i\)&lt;/span&gt; be number of objects at risk of dying at time &lt;span class=&#34;math inline&#34;&gt;\(t_i\)&lt;/span&gt;&lt;br /&gt;
 &lt;span class=&#34;math inline&#34;&gt;\(d_i\)&lt;/span&gt; be number of events that occur at time &lt;span class=&#34;math inline&#34;&gt;\(t_i\)&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
 &lt;div id=&#34;km-estimator&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt; KM estimator &lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\hat{S}(t) = \prod_{k=1}^i \frac{n_k - d_k}{n_k}\)&lt;/span&gt;&lt;/p&gt;
@@ -54,6 +76,8 @@ Log-rank: &lt;span class=&#34;math inline&#34;&gt;\(w_i = 1\)&lt;/span&gt;&lt;br
 Wilcoxon: &lt;span class=&#34;math inline&#34;&gt;\(w_i = n_i\)&lt;/span&gt;&lt;br /&gt;
 Tarone-ware: &lt;span class=&#34;math inline&#34;&gt;\(w_i = \sqrt{n_i}\)&lt;/span&gt;&lt;br /&gt;
 Peto-Peto: &lt;span class=&#34;math inline&#34;&gt;\(w_i = \prod_{i=1}^T (\frac{1-\hat{e}_i}{n_i + 1})\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Reference:&lt;br /&gt;
+Rich, J. T., Neely, J. G., Paniello, R. C., Voelker, C. C., Nussenbaum, B., &amp;amp; Wang, E. W. (2010). A practical guide to understanding Kaplan-Meier curves. Otolaryngology–head and neck surgery : official journal of American Academy of Otolaryngology-Head and Neck Surgery, 143(3), 331–336. &lt;a href=&#34;https://doi.org/10.1016/j.otohns.2010.05.007&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1016/j.otohns.2010.05.007&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>

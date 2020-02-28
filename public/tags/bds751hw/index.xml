@@ -5,12 +5,146 @@
     <link>/tags/bds751hw/</link>
       <atom:link href="/tags/bds751hw/index.xml" rel="self" type="application/rss+xml" />
     <description>bds751hw</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 23 Feb 2020 11:55:44 -0600</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 27 Feb 2020 21:59:31 -0600</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>bds751hw</title>
       <link>/tags/bds751hw/</link>
     </image>
+    
+    <item>
+      <title>Homework 6</title>
+      <link>/post/bds751hw6/</link>
+      <pubDate>Thu, 27 Feb 2020 21:59:31 -0600</pubDate>
+      <guid>/post/bds751hw6/</guid>
+      <description>
+
+
+&lt;div id=&#34;question-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 1&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;Following is a sample of 1,000 gametes produced by a trihybrid individual. Please answer the following questions. Label each gamete (or haplotype) as non-recombinant, single recombinant or double recombinant. (Score 15)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;q1.PNG&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Recombinant probability &lt;span class=&#34;math inline&#34;&gt;\(\theta\)&lt;/span&gt; has to be &lt;span class=&#34;math inline&#34;&gt;\(\leq 0.5\)&lt;/span&gt; and non-recombinat probability has to be &lt;span class=&#34;math inline&#34;&gt;\(\geq 0.5\)&lt;/span&gt;. There are 1000 gametes and the total number of the two non-recombinant haplotypes shoule be greater or equal than 500 and only if we assume Btr|bTR as the individual’s diplotype, the assum . Below is my infer,&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;Haplotype&lt;/th&gt;
+&lt;th&gt;Label&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;BTR&lt;/td&gt;
+&lt;td&gt;double recombinant&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;btr&lt;/td&gt;
+&lt;td&gt;double recombinant&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;Btr&lt;/td&gt;
+&lt;td&gt;non-recombinant&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;bTR&lt;/td&gt;
+&lt;td&gt;non-recombinant&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;BtR&lt;/td&gt;
+&lt;td&gt;single recombinant&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;bTr&lt;/td&gt;
+&lt;td&gt;single recombinant&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;BTr&lt;/td&gt;
+&lt;td&gt;single recombinant&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;btR&lt;/td&gt;
+&lt;td&gt;single recombinant&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div id=&#34;question-2&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 2&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;What is the probability of following pedigree genotype? If f(D)=0.1 and genotypes for subject 1, 2, 3, 4, and 5 are G1 = DD, G2 = DD, G3 = G4 = G5 = Dd? (Score 15)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;q2.PNG&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(D) = 0.1 =&amp;gt; Pr(d) = 0.9\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(DD) = 0.01, Pr(Dd) = 0.18, Pr(dd) = 0.81\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(G1, G2, G3, G4, G5)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(G1)Pr(G2)Pr(G3 | G1, G2)Pr(G4)Pr(G5|G3, G4)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Because there is no way &lt;span class=&#34;math inline&#34;&gt;\(G3\)&lt;/span&gt; can be Dd given her parents don’t contain d in there genotype, &lt;span class=&#34;math inline&#34;&gt;\(Pr(G3 | G1, G2) = 0\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Hence,&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(G1, G2, G3, G4, G5) = 0\)&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;question-3&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 3&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;Suppose an autosome locus has alleles of D and d with f(D)=0.1 and penetrance, Pr(Y = 1|G1 = DD) = 0.8, Pr(Y = 1|G1 = Dd) = 0.4, and Pr(Y = 1|G1 = dd) = 0.2. We collected a sample as following and all individuals have genotypes of Dd. What is the sample’s joint probability Pr(Y1, Y2, Y3, Y4, Y5, G1, G2, G3, G4, G5)? (Score 15)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;q3.PNG&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(D) = 0.1 =&amp;gt; Pr(d) = 0.9\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(DD) = 0.01, Pr(Dd) = 0.18, Pr(dd) = 0.81\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y=1 | G1 = DD = 0.8) =&amp;gt; Pr(Y=0 | G1 = DD = 0.2)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y=1 | G1 = Dd = 0.4) =&amp;gt; Pr(Y=0 | G1 = Dd = 0.6)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y=1 | G1 = dd = 0.2) =&amp;gt; Pr(Y=0 | G1 = DD = 0.8)\)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y1, Y2, Y3, Y4, Y5, G1, G2, G3, G4, G5)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(Y1|G1)*Pr(Y2|G2)*Pr(Y3|G3)*Pr(Y4|G4)*Pr(Y5|G5)*Pr(G1,G2,G3,G4,G5)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;all individuals are independent&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(Y1|G1)*Pr(Y2|G2)*Pr(Y3|G3)*Pr(Y4|G4)*Pr(Y5|G5)*Pr(G1)*Pr(G2)*Pr(G3)*Pr(G4)*Pr(G5)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(Y=0|G1=Dd)^2 * Pr(Y=1|G1 = Dd)^3 * Pr(Dd)^5\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= 0.6^2 * 0.4^2 * 0.18^5 = 0.00001088391\)&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;question-4&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 4&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;Suppose an autosome locus has alleles of D and d with f(D)=0.1 and penetrance, Pr(Y = 1|G1 = DD) = 0.8, Pr(Y = 1|G1 = Dd) = 0.4, and Pr(Y = 1|G1 = dd) = 0.2. We collected a sample as following and we do not have their genotypes. What is the sample’s joint probability Pr(Y1, Y2, Y3, Y4, Y5, G1, G2, G3, G4, G5)? (Score 15)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;q4.PNG&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(D) = 0.1 =&amp;gt; Pr(d) = 0.9\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(DD) = 0.01, Pr(Dd) = 0.18, Pr(dd) = 0.81\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y=1 | G1 = DD = 0.8) =&amp;gt; Pr(Y=0 | G1 = DD = 0.2)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y=1 | G1 = Dd = 0.4) =&amp;gt; Pr(Y=0 | G1 = Dd = 0.6)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y=1 | G1 = dd = 0.2) =&amp;gt; Pr(Y=0 | G1 = DD = 0.8)\)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y=0)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(Y=0, DD) + Pr(Y=0, Dd) + Pr(Y=0, dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(Y=0|DD)Pr(DD) + Pr(Y=0|Dd)Pr(Dd) + Pr(Y=0|dd)Pr(dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= 0.2*0.01 + 0.6*0.18 + 0.8*0.81 = 0.758\)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y=1)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(Y=1, DD) + Pr(Y=1, Dd) + Pr(Y=1, dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(Y=1|DD)Pr(DD) + Pr(Y=1|Dd)Pr(Dd) + Pr(Y=1|dd)Pr(dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= 0.8*0.01 + 0.4*0.18 + 0.2*0.81 = 0.242\)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;We don’t know the sample’s genotypes and all of them are independent, so, when calculating the joint probability we can just ignore their genotypes.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y1, Y2, Y3, Y4, Y5, G1, G2, G3, G4, G5)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(Y1)*Pr(Y2)*Pr(Y3)*Pr(Y4)*Pr(Y5)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(Y=0)^2*Pr(Y=1)^3\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= 0.758^2 * 0.242^3 = 0.00814300139\)&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;question-5&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 5&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;Suppose an autosome locus has alleles of D and d with f(D)=0.1 and penetrance, Pr(Y = 1|G1 = DD) = 0.8, Pr(Y = 1|G1 = Dd) = 0.4, and Pr(Y = 1|G1 = dd) = 0.2. We collected a sample as following and all individuals have genotypes of Dd. What is the sample’s joint probability Pr(Y1, Y2, Y3, Y4, Y5, G1, G2, G3, G4, G5)? (Score 20)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;q5.PNG&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(D) = 0.1 =&amp;gt; Pr(d) = 0.9\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(DD) = 0.01, Pr(Dd) = 0.18, Pr(dd) = 0.81\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y=1 | G1 = DD = 0.8) =&amp;gt; Pr(Y=0 | G1 = DD = 0.2)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y=1 | G1 = Dd = 0.4) =&amp;gt; Pr(Y=0 | G1 = Dd = 0.6)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y=1 | G1 = dd = 0.2) =&amp;gt;Pr(Y=0 | G1 = DD = 0.8)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y1|G1) = Pr(Y=0|Dd) = 1\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y2|G2) = Pr(Y=1|dd) = 1\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y3|G3) = Pr(Y=1|dd) = 1\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y4|G4) = Pr(Y=0|DDorDd) = 1\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y5|G5) = Pr(Y=1|dd) = 1\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(G1) = Pr(Dd) = 0.18\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(G2) = Pr(G3) = Pr(G5) = Pr(dd) = 0.81\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(G3|G1,G2) = Pr(dd|Dd,dd) = 0.5\)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Ans = &lt;span class=&#34;math inline&#34;&gt;\(1*1*1*1*1*0.18*0.81^3*0.5 = 0.04782969\)&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Homework 5</title>
