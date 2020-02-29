@@ -459,8 +459,13 @@
       <h2><a href="/post/note8-glm-diagnostics/" >Note8 Glm Diagnostics</a></h2>
       <div class="article-style">
         
-          Assessing the Link FunctionOutlier DetectionCook’s distance measures the aggregate change in the estimated coefficients when each observation is left out of the estimation.
-Rules of thumb:
+          Assessing the Link FunctionPregibon link test
+Run GLM.
+Obtain fitted values for linear predictor.
+Create new variables \((X\hat{\beta})^2\).
+Run model with \(X\hat{\beta} + (X\hat{\beta})^2\) as predictors.
+evaluate: if p-value is not significant for \((X\hat{\beta})^2\) term, link function is correctly specified.
+The p-value for _hatsq is greater 0.05 which is not statistically significant indicatiing that the model seems to be well specified.
         
       </div>
     </div>

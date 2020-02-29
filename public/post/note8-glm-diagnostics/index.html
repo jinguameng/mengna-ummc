@@ -28,8 +28,13 @@
   
     
   
-  <meta name="description" content="Assessing the Link FunctionOutlier DetectionCook’s distance measures the aggregate change in the estimated coefficients when each observation is left out of the estimation.
-Rules of thumb:">
+  <meta name="description" content="Assessing the Link FunctionPregibon link test
+Run GLM.
+Obtain fitted values for linear predictor.
+Create new variables \((X\hat{\beta})^2\).
+Run model with \(X\hat{\beta} &#43; (X\hat{\beta})^2\) as predictors.
+evaluate: if p-value is not significant for \((X\hat{\beta})^2\) term, link function is correctly specified.
+The p-value for _hatsq is greater 0.05 which is not statistically significant indicatiing that the model seems to be well specified.">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/note8-glm-diagnostics/">
@@ -235,8 +240,13 @@
   <meta property="og:site_name" content="Mengna&#39;s Space">
   <meta property="og:url" content="/post/note8-glm-diagnostics/">
   <meta property="og:title" content="Note8 Glm Diagnostics | Mengna&#39;s Space">
-  <meta property="og:description" content="Assessing the Link FunctionOutlier DetectionCook’s distance measures the aggregate change in the estimated coefficients when each observation is left out of the estimation.
-Rules of thumb:"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:description" content="Assessing the Link FunctionPregibon link test
+Run GLM.
+Obtain fitted values for linear predictor.
+Create new variables \((X\hat{\beta})^2\).
+Run model with \(X\hat{\beta} &#43; (X\hat{\beta})^2\) as predictors.
+evaluate: if p-value is not significant for \((X\hat{\beta})^2\) term, link function is correctly specified.
+The p-value for _hatsq is greater 0.05 which is not statistically significant indicatiing that the model seems to be well specified."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -286,7 +296,7 @@
       "url": "/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "\rAssessing the Link Function\r\rOutlier Detection\r\rCook’s distance measures the aggregate change in the estimated coefficients when each observation is left out of the estimation.\n\rRules of thumb:\r\r\r\r\r\r"
+  "description": "Assessing the Link Function\r\rPregibon link test\n\rRun GLM.\n\rObtain fitted values for linear predictor.\n\rCreate new variables \\((X\\hat{\\beta})^2\\).\n\rRun model with \\(X\\hat{\\beta} + (X\\hat{\\beta})^2\\) as predictors.\n\revaluate: if p-value is not significant for \\((X\\hat{\\beta})^2\\) term, link function is correctly specified.\n\r\rThe p-value for _hatsq is greater 0.05 which is not statistically significant indicatiing that the model seems to be well specified."
 }
 </script>
 
@@ -550,6 +560,18 @@
 
 <div id="assessing-the-link-function" class="section level2">
 <h2><span style="color:red">Assessing the Link Function</span></h2>
+<blockquote>
+<p>Pregibon link test</p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li><p>Run GLM.</p></li>
+<li><p>Obtain fitted values for linear predictor.</p></li>
+<li><p>Create new variables <span class="math inline">\((X\hat{\beta})^2\)</span>.</p></li>
+<li><p>Run model with <span class="math inline">\(X\hat{\beta} + (X\hat{\beta})^2\)</span> as predictors.</p></li>
+<li><p>evaluate: if p-value is not significant for <span class="math inline">\((X\hat{\beta})^2\)</span> term, link function is correctly specified.</p></li>
+</ol>
+<p><img src="a3p2c1.PNG" /></p>
+<p>The p-value for _hatsq is greater 0.05 which is not statistically significant indicatiing that the model seems to be well specified.</p>
 </div>
 <div id="outlier-detection" class="section level2">
 <h2><span style="color:red">Outlier Detection</span></h2>
@@ -559,9 +581,50 @@
 <div id="rules-of-thumb" class="section level3">
 <h3>Rules of thumb:</h3>
 <ul>
-<li></li>
+<li><p><span class="math inline">\(C_i &gt; \frac{4}{n-p-1}\)</span> n = number of total observations. p = number of coefficients</p></li>
+<li><p><span class="math inline">\(C_i &gt; \frac{3\sum{C_i}}{n}\)</span></p></li>
+<li><p><span class="math inline">\(C_i &gt; 1\)</span></p></li>
 </ul>
 </div>
+</div>
+<div id="r-square" class="section level2">
+<h2><span style="color:red">R-square</span></h2>
+<p>In ordinary least squares(OLS) regression, <span class="math inline">\(R^2 = 1 - \frac{\sum_{i=1}^N(y_i - \hat{y_i})^2}{\sum_{i=1}^N(y_i - \bar{y})^2}\)</span></p>
+<ul>
+<li><p>N is the number of pbservations in the model.</p></li>
+<li><p>y is the dependent variable.</p></li>
+<li><p>y-hat is the value predicted by the model.</p></li>
+</ul>
+<p><span class="math inline">\(R^2\)</span> is typically interpreted as % variance explained, but <span class="math inline">\(Pseudo-R^2 = (correlation(y,\hat{y}))^2\)</span></p>
+</div>
+<div id="information-criteria" class="section level2">
+<h2><span style="color:red">Information Criteria</span></h2>
+<p>The AIC and BIC are two popular measures for comparing maximum likelihood models.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<blockquote>
+<p><span style="color:orange">AIC = Akaike Information Criterion</span></p>
+</blockquote>
+<p><span class="math inline">\(AIC = -2*ln(likelihood) + 2*k\)</span></p>
+<blockquote>
+<p>BIC = Bayesian Information Criterion</p>
+</blockquote>
+<p><span class="math inline">\(BIC = -2*ln(likelihood) + ln(N)*k\)</span></p>
+<ul>
+<li><p>k = number of parameters estimated</p></li>
+<li><p>N = number of observations</p></li>
+</ul>
+<p>AIC and BIC can be viewed as measures that combine fit and complexity.</p>
+<p>Fit is measured negatively by −2 × ln(likelihood); the larger the value, the worse the fit.</p>
+<p>Complexity is measured positively, either by 2 × k (AIC) or ln(N) × k (BIC).</p>
+<p><span style="color:pink">Given two models fit on the same data, the model with the smaller value of the information criterion is considered to be better.</span></p>
+</div>
+<div id="section" class="section level2">
+<h2>&lt;&gt;</h2>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p><a href="https://www.stata.com/manuals/rbicnote.pdf" class="uri">https://www.stata.com/manuals/rbicnote.pdf</a><a href="#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
 
     </div>

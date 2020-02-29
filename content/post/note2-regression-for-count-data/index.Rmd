@@ -1,0 +1,121 @@
+---
+# Documentation: https://sourcethemes.com/academic/docs/managing-content/
+
+title: "Note2 Regression for Count Data"
+subtitle: ""
+summary: ""
+authors: []
+tags: ["bds722","bds722","poisson"]
+categories: []
+date: 2020-02-28T23:09:15-06:00
+lastmod: 2020-02-28T23:09:15-06:00
+featured: false
+draft: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+image:
+  caption: ""
+  focal_point: ""
+  preview_only: false
+
+# Projects (optional).
+#   Associate this post with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
+#   Otherwise, set `projects = []`.
+projects: []
+---
+
+
+# Possion Regression
+
+
+## <span style="color:red">Model Objective</span>
+
+Possion regression is the most common technique applied to model count data.  
+
+---  
+
+<span style = "color:orange">Possion Distribution</span>
+
+Poisson distribution describes the number of events that occur in a given time period where its mean $\lambda$ is the average number of events per period.  
+
+$Pr(Y=y) = (\frac{e^{-\lambda}\lambda^y}{y!})$  
+
+- E(y) = Var(y) = $\lambda$
+
+## <span style="color:red">Model Structure</span>
+
+$ln(E(Y)) = ln(\lambda) = X\beta = \beta_0 + \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + ...$  
+
+- link function: log
+
+
+## <span style="color:red">Model Assumption</span>
+
+- $y_i$ are independent of one another, and each $y_i$ is a non-negative integer.  
+
+- Each $y_i$ follows the Poisson distribution with mean $\lambda_i$
+
+- The ln(E(Y)) is a linear function of x.
+
+- The dependent variable is not over-dispersed and does not have an excessive number of zeros.
+
+
+## <span style="color:red">Parameter estimates and interpretation</span>
+
+
+
+
+
+## <span style="color:red">Model Fit</span>
+
+
+
+
+
+
+
+
+
+
+# Negative Binomial Regression
+
+## <span style="color:red">Model Objective</span>
+
+- Negative Binomial Regression can be used to model count data with over-dispersion.  
+
+- Over-dispersion means that there is more variation in the response than the model expected.  
+
+
+## <span style="color:red">Model Structure</span>
+
+$ln(E(Y)) = ln(\lambda) = X\beta = \beta_0 + \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + ...$  
+
+- link function: log
+
+
+<span style = "color:orange">Possion Distribution</span>
+
+$Pr(Y=y | \lambda, \alpha) = \frac{\Gamma(y+\alpha^{-1})}{y!\Gamma(\alpha^{-1})}(\frac{\alpha^{-1}}{\alpha^{-1}+\lambda})^{\alpha-1}(\frac{\lambda}{\alpha^{-1}+\lambda})$  
+
+- The negative binomial distribution has two parameters: λ and α  
+
+- λ is the mean or expected value of the distribution  
+
+- α is the over dispersion parameter  
+
+- When α = 0 the negative binomial distribution is the same as a Poisson distributio
+
+
+
+## <span style="color:red">Model Assumption</span>
+
+- The response variable is a count variable and each subject has the same length of observation time.  
+
+- The dependent variable is over-dispersed and does not have an excessive number of zeros.  
+
+
+
