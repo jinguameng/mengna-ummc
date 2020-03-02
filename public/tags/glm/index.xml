@@ -63,7 +63,7 @@
 &lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Information Criteria&lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;The AIC and BIC are two popular measures for comparing maximum likelihood models.&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;AIC = Akaike Information Criterion&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;AIC = Akaike Information Criterion&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(AIC = -2*ln(likelihood) + 2*k\)&lt;/span&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -79,8 +79,8 @@
 &lt;p&gt;Complexity is measured positively, either by 2 × k (AIC) or ln(N) × k (BIC).&lt;/p&gt;
 &lt;p&gt;&lt;span style=&#34;color:pink&#34;&gt;Given two models fit on the same data, the model with the smaller value of the information criterion is considered to be better.&lt;/span&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div id=&#34;section&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;&amp;lt;&amp;gt;&lt;/h2&gt;
+&lt;div id=&#34;residuals&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Residuals&lt;/span&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;div class=&#34;footnotes&#34;&gt;
 &lt;hr /&gt;

@@ -112,7 +112,7 @@ $Pr(Y=y | \lambda, \alpha) = \frac{\Gamma(y+\alpha^{-1})}{y!\Gamma(\alpha^{-1})}
 
 
 ## <span style="color:red">Model Assumption</span>
-
+ 
 - The response variable is a count variable and each subject has the same length of observation time.  
 
 - The dependent variable is over-dispersed and does not have an excessive number of zeros.  

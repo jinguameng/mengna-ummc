@@ -33,21 +33,21 @@ projects: []
 
 <span style="color:orange">Following is a sample of 1,000 gametes produced by a trihybrid individual. Please answer the following questions. Label each gamete (or haplotype) as non-recombinant, single recombinant or double recombinant.  (Score 15)</span>
 
-![](q1.PNG)
+![](hw6q1.PNG)
 
 
-Recombinant probability $\theta$ has to be $\leq 0.5$ and non-recombinat probability has to be $\geq 0.5$. There are 1000 gametes and the total number of the two non-recombinant haplotypes shoule be greater or equal than 500 and only if we assume Btr|bTR as the individual's diplotype, the assum . Below is my infer,
+Recombinant probability $\theta$ has to be $\leq 0.5$ and non-recombinat probability has to be $\geq 0.5$. There are 1000 gametes and the total number of the two non-recombinant haplotypes shoule be greater or equal than 500, hence Btr|bTR should be the individual's diplotype. Below is my infer,
 
 Haplotype | Label
 ------------- | -------------
-BTR | double recombinant
-btr | double recombinant
+BTR | single recombinant
+btr | single recombinant
 Btr | non-recombinant
 bTR | non-recombinant
 BtR | single recombinant
 bTr | single recombinant
-BTr | single recombinant
-btR | single recombinant
+BTr | double recombinant
+btR | double recombinant
 
 
 
@@ -61,7 +61,7 @@ btR | single recombinant
 
 <span style="color:orange">What is the probability of following pedigree genotype? If f(D)=0.1 and genotypes for subject 1, 2, 3, 4, and 5 are G1 = DD, G2 = DD, G3 = G4 = G5 = Dd? (Score 15)</span>
 
-![](q2.PNG)
+![](hw6q2.PNG)
 
 $Pr(D) = 0.1 => Pr(d) = 0.9$  
 
@@ -87,7 +87,7 @@ $Pr(G1, G2, G3, G4, G5) = 0$
 ## <span style="color:red">Question 3</span>
 <span style="color:orange">Suppose an autosome locus has alleles of D and d with f(D)=0.1 and penetrance, Pr(Y = 1|G1 = DD) = 0.8, Pr(Y = 1|G1 = Dd) = 0.4, and Pr(Y = 1|G1 = dd) = 0.2. We collected a sample as following and all individuals have genotypes of Dd. What is the sample’s joint probability Pr(Y1, Y2, Y3, Y4, Y5, G1, G2, G3, G4, G5)? (Score 15)</span>
 
-![](q3.PNG)
+![](hw6q3.PNG)
 
 $Pr(D) = 0.1 => Pr(d) = 0.9$  
 
@@ -123,7 +123,7 @@ $= 0.6^2 * 0.4^2 * 0.18^5 = 0.00001088391$
 ## <span style="color:red">Question 4</span>
 <span style="color:orange">Suppose an autosome locus has alleles of D and d with f(D)=0.1 and penetrance, Pr(Y = 1|G1 = DD) = 0.8, Pr(Y = 1|G1 = Dd) = 0.4, and Pr(Y = 1|G1 = dd) = 0.2. We collected a sample as following and we do not have their genotypes. What is the sample’s joint probability Pr(Y1, Y2, Y3, Y4, Y5, G1, G2, G3, G4, G5)? (Score 15)</span>
 
-![](q4.PNG) 
+![](hw6q4.PNG) 
 
 $Pr(D) = 0.1 => Pr(d) = 0.9$  
 
@@ -178,7 +178,7 @@ $= 0.758^2 * 0.242^3 = 0.00814300139$
 
 <span style="color:orange">Suppose an autosome locus has alleles of D and d with f(D)=0.1 and penetrance, Pr(Y = 1|G1 = DD) = 0.8, Pr(Y = 1|G1 = Dd) = 0.4, and Pr(Y = 1|G1 = dd) = 0.2. We collected a sample as following and all individuals have genotypes of Dd. What is the sample’s joint probability Pr(Y1, Y2, Y3, Y4, Y5, G1, G2, G3, G4, G5)? (Score 20)</span>
 
-![](q5.PNG)
+![](hw6q5.PNG)
 
 $Pr(D) = 0.1 => Pr(d) = 0.9$  
 
@@ -211,7 +211,7 @@ $= 0.6^2 * 0.4^3 * 0.18^4 * 0.5 = 0.00001209323$
 ## <span style="color:red">Question 6</span>
 <span style="color:orange">Suppose an autosome locus has alleles of D and d with f(D)=0.1 and penetrances, Pr(Y = 1|G1 = DD) = 0, Pr(Y = 1|G1 = Dd) = 0, and Pr(Y = 1|G1 = dd) = 1. We collected a sample as following and we do not have their genotypes. What is the sample’s joint probability Pr(Y1, Y2, Y3, Y4, Y5, G1, G2, G3, G4, G5)? (score 20)</span>
 
-![](q5.PNG)
+![](hw6q6.PNG)
 
 $Pr(D) = 0.1 => Pr(d) = 0.9$  
 

@@ -28,10 +28,14 @@
   
     
   
-  <meta name="description" content="First Year Graduate Student">
+  <meta name="description" content="Possion RegressionModel ObjectivePossion regression is the most common technique applied to model count data.
+Possion Distribution
+Poisson distribution describes the number of events that occur in a given time period where its mean \(\lambda\) is the average number of events per period.
+\(Pr(Y=y) = (\frac{e^{-\lambda}\lambda^y}{y!})\)
+E(y) = Var(y) = \(\lambda\)Model Structure\(ln(E(Y)) = ln(\lambda) = X\beta = \beta_0 &#43; \beta_1x_1 &#43; \beta_2x_2 &#43; \beta_3x_3 &#43; .">
 
   
-  <link rel="alternate" hreflang="en-us" href="/">
+  <link rel="alternate" hreflang="en-us" href="/post/note2-regression-for-count-data/">
 
   
 
@@ -213,14 +217,12 @@
 
 
   
-  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Mengna&#39;s Space">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="/">
+  <link rel="canonical" href="/post/note2-regression-for-count-data/">
 
   
   
@@ -234,29 +236,67 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Mengna&#39;s Space">
-  <meta property="og:url" content="/">
-  <meta property="og:title" content="Mengna&#39;s Space">
-  <meta property="og:description" content="First Year Graduate Student"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="/post/note2-regression-for-count-data/">
+  <meta property="og:title" content="Note2 Regression for Count Data | Mengna&#39;s Space">
+  <meta property="og:description" content="Possion RegressionModel ObjectivePossion regression is the most common technique applied to model count data.
+Possion Distribution
+Poisson distribution describes the number of events that occur in a given time period where its mean \(\lambda\) is the average number of events per period.
+\(Pr(Y=y) = (\frac{e^{-\lambda}\lambda^y}{y!})\)
+E(y) = Var(y) = \(\lambda\)Model Structure\(ln(E(Y)) = ln(\lambda) = X\beta = \beta_0 &#43; \beta_1x_1 &#43; \beta_2x_2 &#43; \beta_3x_3 &#43; ."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2018-06-28T00:00:00&#43;01:00">
+    
+      <meta property="article:published_time" content="2020-02-28T23:09:15-06:00">
+    
+    <meta property="article:modified_time" content="2020-02-28T23:09:15-06:00">
   
 
   
+
+
+    
+
+
+
+
+
+
+  
+
+
+
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/note2-regression-for-count-data/"
   },
-  "url": "/"
+  "headline": "Note2 Regression for Count Data",
+  
+  "datePublished": "2020-02-28T23:09:15-06:00",
+  "dateModified": "2020-02-28T23:09:15-06:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Mengna Zhang"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mengna's Space",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Possion Regression\rModel Objective\rPossion regression is the most common technique applied to model count data.\nPossion Distribution\nPoisson distribution describes the number of events that occur in a given time period where its mean \\(\\lambda\\) is the average number of events per period.\n\\(Pr(Y=y) = (\\frac{e^{-\\lambda}\\lambda^y}{y!})\\)\n\rE(y) = Var(y) = \\(\\lambda\\)\r\r\rModel Structure\r\\(ln(E(Y)) = ln(\\lambda) = X\\beta = \\beta_0 + \\beta_1x_1 + \\beta_2x_2 + \\beta_3x_3 + ."
 }
 </script>
 
+  
 
   
 
@@ -270,11 +310,11 @@
 
 
 
-  <title>Mengna&#39;s Space</title>
+  <title>Note2 Regression for Count Data | Mengna&#39;s Space</title>
 
 </head>
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" class="dark">
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="dark">
 
   <aside class="search-results" id="search">
   <div class="container">
@@ -369,7 +409,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#bds722" data-target="#bds722"><span>BDS722</span></a>
+          <a class="nav-link " href="/#bds722"><span>BDS722</span></a>
         </li>
 
         
@@ -398,7 +438,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#bds751" data-target="#bds751"><span>BDS751</span></a>
+          <a class="nav-link " href="/#bds751"><span>BDS751</span></a>
         </li>
 
         
@@ -431,87 +471,9 @@
 </nav>
 
 
-  
-
-
-
-
-
-
-
-
-
-
-
-<span class="js-widget-page d-none"></span>
-
-
-
+  <article class="article">
 
   
-
-
-
-
-
-
-
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  <section id="bds722" class="home-section wg-pages   "  >
-    <div class="container">
-      
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
 
 
 
@@ -526,60 +488,16 @@
 
   
 
-
-
-
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Note2 Regression for Count Data</h1>
 
   
 
-
-<div class="row">
-  <div class="col-12 col-lg-4 section-heading">
-    <h1>BDS722</h1>
+  
     
-  </div>
-  <div class="col-12 col-lg-8">
-
-    
-
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/note2-regression-for-count-data/" >Note2 Regression for Count Data</a>
-    </h3>
-
-    
-    <div class="article-style">
-      Possion RegressionModel ObjectivePossion regression is the most common technique applied to model count data.
-Possion Distribution …
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
 
 
 <div class="article-metadata">
@@ -610,22 +528,9 @@ Possion Distribution …
 
 </div>
 
-      
-    </div>
-
     
 
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
 
-      
-    
-      
-        
 
 
 
@@ -639,588 +544,263 @@ Possion Distribution …
 
 
   
+</div>
 
 
-<div class="media stream-item">
-  <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/note8-glm-diagnostics/" >Note8 Glm Diagnostics</a>
-    </h3>
+  <div class="article-container">
 
-    
     <div class="article-style">
-      Assessing the Link FunctionPregibon link test
-Run GLM.
-Obtain fitted values for linear predictor.
-Create new variables …
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
       
 
+
+<div id="possion-regression" class="section level1">
+<h1>Possion Regression</h1>
+<div id="model-objective" class="section level2">
+<h2><span style="color:red">Model Objective</span></h2>
+<p>Possion regression is the most common technique applied to model count data.</p>
+<hr />
+<p><span style="color:orange">Possion Distribution</span></p>
+<p>Poisson distribution describes the number of events that occur in a given time period where its mean <span class="math inline">\(\lambda\)</span> is the average number of events per period.</p>
+<p><span class="math inline">\(Pr(Y=y) = (\frac{e^{-\lambda}\lambda^y}{y!})\)</span></p>
+<ul>
+<li>E(y) = Var(y) = <span class="math inline">\(\lambda\)</span></li>
+</ul>
+</div>
+<div id="model-structure" class="section level2">
+<h2><span style="color:red">Model Structure</span></h2>
+<p><span class="math inline">\(ln(E(Y)) = ln(\lambda) = X\beta = \beta_0 + \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + ...\)</span></p>
+<ul>
+<li>link function: log</li>
+</ul>
+</div>
+<div id="model-assumption" class="section level2">
+<h2><span style="color:red">Model Assumption</span></h2>
+<ul>
+<li><p><span class="math inline">\(y_i\)</span> are independent of one another, and each <span class="math inline">\(y_i\)</span> is a non-negative integer.</p></li>
+<li><p>Each <span class="math inline">\(y_i\)</span> follows the Poisson distribution with mean <span class="math inline">\(\lambda_i\)</span></p></li>
+<li><p>The ln(E(Y)) is a linear function of x.</p></li>
+<li><p>The dependent variable is not over-dispersed and does not have an excessive number of zeros.</p></li>
+</ul>
+</div>
+<div id="parameter-estimates-and-interpretation" class="section level2">
+<h2><span style="color:red">Parameter estimates and interpretation</span></h2>
+</div>
+<div id="model-fit" class="section level2">
+<h2><span style="color:red">Model Fit</span></h2>
+</div>
+</div>
+<div id="negative-binomial-regression" class="section level1">
+<h1>Negative Binomial Regression</h1>
+<div id="model-objective-1" class="section level2">
+<h2><span style="color:red">Model Objective</span></h2>
+<ul>
+<li><p>Negative Binomial Regression can be used to model count data with over-dispersion.</p></li>
+<li><p>Over-dispersion means that there is more variation in the response than the model expected.</p></li>
+</ul>
+</div>
+<div id="model-structure-1" class="section level2">
+<h2><span style="color:red">Model Structure</span></h2>
+<p><span class="math inline">\(ln(E(Y)) = ln(\lambda) = X\beta = \beta_0 + \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + ...\)</span></p>
+<ul>
+<li>link function: log</li>
+</ul>
+<p><span style="color:orange">Possion Distribution</span></p>
+<p><span class="math inline">\(Pr(Y=y | \lambda, \alpha) = \frac{\Gamma(y+\alpha^{-1})}{y!\Gamma(\alpha^{-1})}(\frac{\alpha^{-1}}{\alpha^{-1}+\lambda})^{\alpha-1}(\frac{\lambda}{\alpha^{-1}+\lambda})\)</span></p>
+<ul>
+<li><p>The negative binomial distribution has two parameters: λ and α</p></li>
+<li><p>λ is the mean or expected value of the distribution</p></li>
+<li><p>α is the over dispersion parameter</p></li>
+<li><p>When α = 0 the negative binomial distribution is the same as a Poisson distributio</p></li>
+</ul>
+</div>
+<div id="model-assumption-1" class="section level2">
+<h2><span style="color:red">Model Assumption</span></h2>
+<ul>
+<li><p>The response variable is a count variable and each subject has the same length of observation time.</p></li>
+<li><p>The dependent variable is over-dispersed and does not have an excessive number of zeros.</p></li>
+</ul>
+</div>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/bds722/">bds722</a>
+  
+  <a class="badge badge-light" href="/tags/bds722/">bds722</a>
+  
+  <a class="badge badge-light" href="/tags/poisson/">poisson</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
       
         
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/note2-regression-for-count-data/&amp;text=Note2%20Regression%20for%20Count%20Data" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
     
       
-    
-    Feb 27, 2020
-  </span>
-  
-
-  
-
-  
-
-  
-  
-  
-
-  
-  
-
-</div>
-
       
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-      
-    
       
         
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/note12-cox-model-diagnostics/" >Note12 Cox Model Diagnostics</a>
-    </h3>
-
-    
-    <div class="article-style">
-      Testing the Proportional Hazard AssumptionsSchoenfeld Residuals1Instead of a single residual for each individual, there is a …
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
       
-
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/note2-regression-for-count-data/&amp;t=Note2%20Regression%20for%20Count%20Data" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
       
         
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Note2%20Regression%20for%20Count%20Data&amp;body=/post/note2-regression-for-count-data/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
     
       
-    
-    Feb 20, 2020
-  </span>
-  
-
-  
-
-  
-
-  
-  
-  
-
-  
-  
-
-</div>
-
       
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-      
-    
       
         
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/note11-cox-models/" >Note11 Cox Models</a>
-    </h3>
-
-    
-    <div class="article-style">
-      Cox Models = Propotional Hazards Models
-Modeling the Hazard Function1Survival analysis methods, such as proportional hazards …
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
       
-
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/note2-regression-for-count-data/&amp;title=Note2%20Regression%20for%20Count%20Data" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
       
         
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Note2%20Regression%20for%20Count%20Data%20/post/note2-regression-for-count-data/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
     
       
-    
-    Feb 20, 2020
-  </span>
-  
-
-  
-
-  
-
-  
-  
-  
-
-  
-  
-
-</div>
-
       
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-      
-    
       
         
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/note10-kaplan-meier-estimation/" >Note10 Kaplan Meier Estimation</a>
-    </h3>
-
-    
-    <div class="article-style">
-      Understanding K-M Curve the K-M survival curve is defined as the probability of surviving in a given length of time while considering …
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
       
-
       
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
       
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/note2-regression-for-count-data/&amp;title=Note2%20Regression%20for%20Count%20Data" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
     
-    Feb 18, 2020
-  </span>
-  
-
-  
-
-  
-
-  
-  
-  
-
-  
-  
-
+  </ul>
 </div>
 
-      
-    </div>
 
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+  
     
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-      
-    
-
-    
-    <div class="see-all">
-      <a href="/tags/bds722/">
-        See all posts
-        <i class="fas fa-angle-right"></i>
-      </a>
-    </div>
-    
-
-  </div>
-</div>
-
-    </div>
-  </section>
-
   
   
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  <section id="bds751" class="home-section wg-pages   "  >
-    <div class="container">
-      
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-<div class="row">
-  <div class="col-12 col-lg-4 section-heading">
-    <h1>BDS751</h1>
-    
-  </div>
-  <div class="col-12 col-lg-8">
-
-    
-
+  <div class="media author-card content-widget-hr">
     
       
-        
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/bds751hw6/" >Homework 6</a>
-    </h3>
-
-    
-    <div class="article-style">
-      Question 1Following is a sample of 1,000 gametes produced by a trihybrid individual. Please answer the following questions. Label each …
-    </div>
+      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_huc09fd31ce9bb786d1041f70ffa59556f_1970749_270x270_fill_q90_lanczos_center.jpg" alt="Avatar">
     
 
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
+    <div class="media-body">
+      <h5 class="card-title"><a href="/">Mengna Zhang</a></h5>
+      <h6 class="card-subtitle">First Year Graduate Student</h6>
+      <p class="card-text">I am a first year graduate student in Data Science department of UMMC.</p>
+      <ul class="network-icon" aria-hidden="true">
   
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    Feb 27, 2020
-  </span>
-  
-
-  
-
-  
-
-  
-  
-  
-
-  
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-      
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/bds751hw5/" >Homework 5</a>
-    </h3>
-
-    
-    <div class="article-style">
-      Question 1Suppose the genetic distance is d Morgan between two loci (i.e. average d crossovers will occur per meiosis). Infer …
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    Feb 23, 2020
-  </span>
-  
-
-  
-
-  
-
-  
-  
-  
-
-  
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-      
-    
-
-    
-
-  </div>
-</div>
+</ul>
 
     </div>
-  </section>
+  </div>
 
 
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/post/note8-glm-diagnostics/">Note8 Glm Diagnostics</a></li>
+      
+      <li><a href="/post/note12-cox-model-diagnostics/">Note12 Cox Model Diagnostics</a></li>
+      
+      <li><a href="/post/note11-cox-models/">Note11 Cox Models</a></li>
+      
+      <li><a href="/post/note10-kaplan-meier-estimation/">Note10 Kaplan Meier Estimation</a></li>
+      
+      <li><a href="/post/note9-intro-to-survival-analysis/">Note9 Intro to Survival Analysis</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+  </div>
+</article>
 
       
 

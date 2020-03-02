@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>poisson | Mengna&#39;s Space</title>
+    <link>/tags/poisson/</link>
+      <atom:link href="/tags/poisson/index.xml" rel="self" type="application/rss+xml" />
+    <description>poisson</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 28 Feb 2020 23:09:15 -0600</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>poisson</title>
+      <link>/tags/poisson/</link>
+    </image>
+    
+    <item>
+      <title>Note2 Regression for Count Data</title>
+      <link>/post/note2-regression-for-count-data/</link>
+      <pubDate>Fri, 28 Feb 2020 23:09:15 -0600</pubDate>
+      <guid>/post/note2-regression-for-count-data/</guid>
+      <description>
+
+
+&lt;div id=&#34;possion-regression&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Possion Regression&lt;/h1&gt;
+&lt;div id=&#34;model-objective&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Model Objective&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;Possion regression is the most common technique applied to model count data.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;Possion Distribution&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Poisson distribution describes the number of events that occur in a given time period where its mean &lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt; is the average number of events per period.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y=y) = (\frac{e^{-\lambda}\lambda^y}{y!})\)&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;E(y) = Var(y) = &lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;model-structure&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Model Structure&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(ln(E(Y)) = ln(\lambda) = X\beta = \beta_0 + \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + ...\)&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;link function: log&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;model-assumption&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Model Assumption&lt;/span&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(y_i\)&lt;/span&gt; are independent of one another, and each &lt;span class=&#34;math inline&#34;&gt;\(y_i\)&lt;/span&gt; is a non-negative integer.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Each &lt;span class=&#34;math inline&#34;&gt;\(y_i\)&lt;/span&gt; follows the Poisson distribution with mean &lt;span class=&#34;math inline&#34;&gt;\(\lambda_i\)&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The ln(E(Y)) is a linear function of x.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The dependent variable is not over-dispersed and does not have an excessive number of zeros.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;parameter-estimates-and-interpretation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Parameter estimates and interpretation&lt;/span&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div id=&#34;model-fit&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Model Fit&lt;/span&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;negative-binomial-regression&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Negative Binomial Regression&lt;/h1&gt;
+&lt;div id=&#34;model-objective-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Model Objective&lt;/span&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Negative Binomial Regression can be used to model count data with over-dispersion.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Over-dispersion means that there is more variation in the response than the model expected.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;model-structure-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Model Structure&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(ln(E(Y)) = ln(\lambda) = X\beta = \beta_0 + \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + ...\)&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;link function: log&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;Possion Distribution&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y=y | \lambda, \alpha) = \frac{\Gamma(y+\alpha^{-1})}{y!\Gamma(\alpha^{-1})}(\frac{\alpha^{-1}}{\alpha^{-1}+\lambda})^{\alpha-1}(\frac{\lambda}{\alpha^{-1}+\lambda})\)&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;The negative binomial distribution has two parameters: λ and α&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;λ is the mean or expected value of the distribution&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;α is the over dispersion parameter&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;When α = 0 the negative binomial distribution is the same as a Poisson distributio&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;model-assumption-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Model Assumption&lt;/span&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;The response variable is a count variable and each subject has the same length of observation time.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The dependent variable is over-dispersed and does not have an excessive number of zeros.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
