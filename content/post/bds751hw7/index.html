@@ -1,0 +1,207 @@
+---
+title: Homework 7
+author: ''
+date: '2020-03-05'
+slug: bds751hw7
+categories: []
+tags: ['bds751','bds751hw']
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-03-05T15:48:43-06:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+
+<div id="question-1" class="section level2">
+<h2><span style="color:red">Question 1</span></h2>
+<p><span style="color:orange">
+Suppose disease locus (alleles D and d) and LD locus (alleles A and a) with Pr(A|D) = 0.9, Pr(A|d) = 0.2 and f (D) = 0.4. Calculate allele distribution of LD locus (i.e. f (A) =? And f (a) =?)
+</span></p>
+<p>f(A) = f(A,D) + f(A,d) = Pr(A|D)f(D) + Pr(A|d)f(d)</p>
+<p>f(D) = 0.4 <span class="math inline">\(=&gt;\)</span> f(d) = 0.6</p>
+<p>Pr(A|D) = 0.9, Pr(A|d) = 0.2</p>
+<p>f(A) = <span class="math inline">\(0.9*0.4 + 0.2*0.6 = 0.48\)</span></p>
+<p>f(a) = 1 - f(A) = 1 - 0.48 = 0.52</p>
+<p><span style="color:orange">
+a. set Pr(A|D)=p1, Pr(A|d)=p2 and f(D)=q, write down the inference formula for LD allele frequencies (i.e. f(A) and f(a)), based on parameters of p1, p2 and q (score 15)
+</span></p>
+<p>f(A) = f(A,D) + f(A,d) = Pr(A|D)f(D) + Pr(A|d)f(d)</p>
+<p>f(D) = q <span class="math inline">\(=&gt;\)</span> f(d) = 1-q</p>
+<p>f(A) = <span class="math inline">\(p_1*q + p_2*(1-q)\)</span></p>
+<p>f(a) = 1 - f(A) = <span class="math inline">\(1 - p_1*q - p_2*(1-q)\)</span></p>
+<p><span style="color:orange">
+b. Extra credit: implements getAlleleFreq function using the template of lecture slide (score 5)
+</span></p>
+<pre class="r"><code>getAlleleFreq &lt;- function(p1,p2,q){
+  fA = p1*q + p2*(1-q)
+  fa = 1 - fA
+  return(c(fA=fA,fa=fa))
+}</code></pre>
+<pre class="r"><code>getAlleleFreq(0.9,0.2,0.4)</code></pre>
+<pre><code>##   fA   fa 
+## 0.48 0.52</code></pre>
+</div>
+<div id="question-2" class="section level2">
+<h2><span style="color:red">Question 2</span></h2>
+<p><span style="color:orange">
+Suppose disease locus (alleles D and d) and LD locus (alleles A and a) with Pr(A|D) = 0.9, Pr(A|d) = 0.2 and f (D) = 0.4.
+</span></p>
+<p><span style="color:orange">
+a. Construct contingency table for the joint genotype distribution of disease and LD locus (score 25)
+</span></p>
+<p><span class="math inline">\(Pr(DD) = 0.4*0.4 = 0.16\)</span></p>
+<p><span class="math inline">\(Pr(Dd) = 2*0.4*0.6 = 0.48\)</span></p>
+<p><span class="math inline">\(Pr(dd) = 0.6*0.6 = 0.36\)</span></p>
+<p><span class="math inline">\(Pr(a|D) = 1 - Pr(A|D) = 1 - 0.9 = 0.1\)</span></p>
+<p><span class="math inline">\(Pr(a|d) = 1 - Pr(A|d) = 1 - 0.2 = 0.8\)</span></p>
+<hr />
+<p><span class="math inline">\(Pr(AA,DD) = Pr(AA|DD)Pr(DD) = Pr(A|D)^2Pr(DD) = 0.9^2*0.16 = 0.1296\)</span></p>
+<hr />
+<p><span class="math inline">\(Pr(AA,Dd) = Pr(AA,D_md_f) + Pr(AA,D_fd_m)\)</span></p>
+<p><span class="math inline">\(= Pr(AA|D_md_f)Pr(D_md_f) + Pr(AA|D_fd_m)Pr(D_fd_m)\)</span></p>
+<p><span class="math inline">\(= Pr(A|D_m)Pr(A|d_f)Pr(D_md_f) + Pr(A|D_f)Pr(A|d_m)Pr(D_fd_m)\)</span></p>
+<p><span class="math inline">\(= Pr(A|D)Pr(A|d)Pr(D_md_f) + Pr(A|D)Pr(A|d)Pr(D_fd_m)\)</span></p>
+<p><span class="math inline">\(= Pr(A|D)Pr(A|d)[Pr(D_md_f) + Pr(D_fd_m)]\)</span></p>
+<p><span class="math inline">\(= Pr(A|D)Pr(A|d)Pr(Dd)\)</span></p>
+<p><span class="math inline">\(= 0.9*0.2*0.48 = 0.0864\)</span></p>
+<hr />
+<p><span class="math inline">\(Pr(AA,dd) = Pr(AA|dd)Pr(dd) = Pr(A|d)^2Pr(dd) = 0.2^2*0.36 = 0.0144\)</span></p>
+<hr />
+<p><span class="math inline">\(Pr(Aa,DD) = Pr(A_ma_f,DD) + Pr(A_fa_m,DD)\)</span></p>
+<p><span class="math inline">\(= Pr(A_ma_f|DD)Pr(DD) + Pr(A_fa_m|DD)Pr(DD)\)</span></p>
+<p><span class="math inline">\(= Pr(A_m|D)Pr(a_f|D)Pr(DD) + Pr(A_f|D)Pr(a_m|D)Pr(DD)\)</span></p>
+<p><span class="math inline">\(= Pr(A|D)Pr(a|D)Pr(DD) + Pr(A|D)Pr(a|D)Pr(DD)\)</span></p>
+<p><span class="math inline">\(= 2Pr(A|D)Pr(a|D)Pr(DD)\)</span></p>
+<p><span class="math inline">\(= 2*0.9*0.1*0.16 = 0.0288\)</span></p>
+<hr />
+<p><span class="math inline">\(Pr(Aa,Dd) = Pr(A_ma_f,D_md_f) + Pr(A_ma_f,D_fd_m) + Pr(A_fa_m,D_md_f) + Pr(A_fa_m,D_fd_m)\)</span></p>
+<p><span class="math inline">\(= Pr(A_ma_f|D_md_f)Pr(D_md_f) + Pr(A_ma_f|D_fd_m)Pr(D_fd_m) + Pr(A_fa_m|D_md_f)Pr(D_md_f) + Pr(A_fa_m|D_fd_m)Pr(D_fd_m)\)</span></p>
+<p><span class="math inline">\(= Pr(A_m|D_m)Pr(a_f|d_f)Pr(D_md_f) + Pr(A_m|d_m)Pr(a_f|D_f)Pr(D_fd_m) + Pr(A_f|d_f)Pr(a_m|D_m)Pr(D_md_f) + Pr(A_f|D_f)Pr(a_m|d_m)Pr(D_fd_m)\)</span></p>
+<p><span class="math inline">\(= Pr(A|D)Pr(a|d)Pr(D_md_f) + Pr(A|d)Pr(a|D)Pr(D_fd_m) + Pr(A|d)Pr(a|D)Pr(D_md_f) + Pr(A|D)Pr(a|d)Pr(D_fd_m)\)</span></p>
+<p><span class="math inline">\(= Pr(A|D)Pr(a|d)[Pr(D_md_f)+Pr(D_fd_m)] + Pr(A|d)Pr(a|D)[Pr(D_fd_m)+Pr(D_md_f)]\)</span></p>
+<p><span class="math inline">\(= Pr(A|D)Pr(a|d)Pr(Dd) + Pr(A|d)Pr(a|D)Pr(Dd)\)</span></p>
+<p><span class="math inline">\(= 0.9*0.8*0.48+0.2*0.1*0.48 = 0.3552\)</span></p>
+<hr />
+<p><span class="math inline">\(Pr(Aa,dd) = Pr(A_ma_f,dd) + Pr(A_fa_m,dd)\)</span></p>
+<p><span class="math inline">\(= Pr(A_ma_f|dd)Pr(dd) + Pr(A_fa_m|dd)Pr(dd)\)</span></p>
+<p><span class="math inline">\(= Pr(A_m|d)Pr(a_f|d)Pr(dd) + Pr(A_f|d)Pr(a_m|d)Pr(dd)\)</span></p>
+<p><span class="math inline">\(= Pr(A|d)Pr(a|d)Pr(dd) + Pr(A|d)Pr(a|d)Pr(dd)\)</span></p>
+<p><span class="math inline">\(= 2Pr(A|d)Pr(a|d)Pr(dd)\)</span></p>
+<p><span class="math inline">\(= 2*0.2*0.8*0.36 = 0.1152\)</span></p>
+<hr />
+<p><span class="math inline">\(Pr(aa,DD) = Pr(aa|DD)Pr(DD) = Pr(a|D)^2Pr(DD)\)</span></p>
+<p><span class="math inline">\(= 0.1^2*0.16 = 0.0016\)</span></p>
+<hr />
+<p><span class="math inline">\(Pr(aa,Dd) = Pr(aa,D_md_f) + Pr(aa,D_fd_m)\)</span></p>
+<p><span class="math inline">\(= Pr(aa|D_md_f)Pr(D_md_f) + Pr(aa|D_fd_m)Pr(D_fd_m)\)</span></p>
+<p><span class="math inline">\(= Pr(a|D_m)Pr(a|d_f)Pr(D_md_f) + Pr(a|D_f)Pr(a|d_m)Pr(D_fd_m)\)</span></p>
+<p><span class="math inline">\(= Pr(a|D)Pr(a|d)Pr(D_md_f) + Pr(a|D)Pr(a|d)Pr(D_fd_m)\)</span></p>
+<p><span class="math inline">\(= Pr(a|D)Pr(a|d)[Pr(D_md_f)+Pr(D_fd_m)]\)</span></p>
+<p><span class="math inline">\(= Pr(a|D)Pr(a|d)Pr(Dd)\)</span></p>
+<p><span class="math inline">\(= 0.1*0.8*0.48 = 0.0384\)</span></p>
+<hr />
+<p><span class="math inline">\(Pr(aa,dd) = Pr(aa|dd)Pr(dd) = Pr(a|d)^2Pr(dd)\)</span></p>
+<p><span class="math inline">\(= 0.8^2*0.36 = 0.2304\)</span></p>
+<hr />
+<table>
+<thead>
+<tr class="header">
+<th>```</th>
+<th>AA</th>
+<th>Aa</th>
+<th>aa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DD</td>
+<td>0.1296</td>
+<td>0.0288</td>
+<td>0.0016</td>
+</tr>
+<tr class="even">
+<td>Dd</td>
+<td>0.0864</td>
+<td>0.3552</td>
+<td>0.0384</td>
+</tr>
+<tr class="odd">
+<td>dd</td>
+<td>0.0144</td>
+<td>0.1152</td>
+<td>0.2304</td>
+</tr>
+</tbody>
+</table>
+<p><span style="color:orange">
+b. Calculate genotype distribution of the LD locus (i.e. f(AA), f(Aa) and f(aa)), based on the contingency table (score 10)
+</span></p>
+<p><span class="math inline">\(Pr(AA) = Pr(AA,DD) + Pr(AA,Dd) + Pr(AA,dd)\)</span></p>
+<p><span class="math inline">\(= 0.1296 + 0.0864 + 0.0144 = 0.2304\)</span></p>
+<hr />
+<p><span class="math inline">\(Pr(Aa) = Pr(Aa,DD) + Pr(Aa,Dd) + Pr(Aa,dd)\)</span></p>
+<p><span class="math inline">\(= 0.0288 + 0.3552 + 0.1152 = 0.4992\)</span></p>
+<hr />
+<p><span class="math inline">\(Pr(aa) = Pr(aa,DD) + Pr(aa,Dd) + Pr(aa,dd)\)</span></p>
+<p><span class="math inline">\(= 0.0016 + 0.0384 + 0.2304 = 0.2704\)</span></p>
+<p><span style="color:orange">
+c. Is LD locus in HWE? (score 10)</span></p>
+<p>Yes. Because <span class="math inline">\(Pr(AA) = Pr(A)^2, Pr(Aa) = 2Pr(A)Pr(a), Pr(aa) = Pr(a)^2\)</span></p>
+<p><span style="color:orange">
+d. set Pr(A|D)=p1, Pr(A|d)=p2 and f(D)=q, write down the inference formula for LD genotype frequencies (i.e. f(AA), f(Aa) and f(aa)), based on parameters of p1, p2 and q. (score 10)
+</span></p>
+<p><span class="math inline">\(Pr(AA) = Pr(AA,DD) + Pr(AA,Dd) + Pr(AA,dd)\)</span></p>
+<p><span class="math inline">\(= Pr(AA|DD)Pr(DD) + Pr(AA|Dd)Pr(Dd) + Pr(AA|dd)Pr(dd)\)</span></p>
+<p><span class="math inline">\(= Pr(A|D)^2Pr(DD) + Pr(A|D)Pr(A|d)Pr(Dd) + Pr(A|d)^2Pr(dd)\)</span></p>
+<p><span class="math inline">\(= p_1^2q^2 + p_1p_22q(1-q) + p_2^2(1-q)^2\)</span></p>
+<hr />
+<p><span class="math inline">\(Pr(Aa) = Pr(Aa,DD) + Pr(Aa,Dd) + Pr(Aa,dd)\)</span></p>
+<p><span class="math inline">\(= Pr(Aa|DD)Pr(DD) + Pr(Aa|Dd)Pr(Dd) + Pr(Aa|dd)Pr(dd)\)</span></p>
+<p><span class="math inline">\(= 2Pr(A|D)Pr(a|D)Pr(DD) + Pr(Dd)[Pr(A|D)Pr(a|d) + Pr(A|d)Pr(a|D] + 2Pr(A|d)Pr(a|d)Pr(dd)\)</span></p>
+<p><span class="math inline">\(= 2p_1(1-p_1)q^2 + 2q(1-q)[p_1(1-p_2)+p_2(1-p_1)] + 2p_2(1-p_2)(1-q)^2\)</span></p>
+<hr />
+<p><span class="math inline">\(Pr(aa) = Pr(aa,DD) + Pr(aa,Dd) + Pr(aa,dd)\)</span></p>
+<p><span class="math inline">\(= Pr(aa|DD)Pr(DD) + Pr(aa|Dd)Pr(Dd) + Pr(aa|dd)Pr(dd)\)</span></p>
+<p><span class="math inline">\(= Pr(a|D)^2Pr(DD) + Pr(a|D)Pr(a|d)Pr(Dd) + Pr(a|d)^2Pr(dd)\)</span></p>
+<p><span class="math inline">\(= (1-p_1)^2q^2 + (1-p_1)(1-p_2)2q(1-q) + (1-p_2)^2(1-q)^2\)</span></p>
+<p><span style="color:orange">
+e. Extra credit: implements getGenotypeFreq function using the template of lecture slide (score 10)
+</span></p>
+<pre class="r"><code>getGenotypeFreq &lt;- function(p1,p2,q){
+  fAA = (p1^2)*(q^2) + p1*p2*2*q*(1-q) + (p2^2)*((1-q)^2)
+  fAa = 2*p1*(1-p1)*(q^2) + 2*q*(1-q)*(p1*(1-p2)+p2*(1-p1)) + 2*p2*(1-p2)*((1-q)^2)
+  faa = ((1-p1)^2)*(q^2) + (1-p1)*(1-p2)*2*q*(1-q) + ((1-p2)^2)*((1-q)^2)
+  return(c(fAA=fAA,fAa=fAa, faa = faa))
+}
+
+getGenotypeFreq(0.9,0.2,0.4)</code></pre>
+<pre><code>##    fAA    fAa    faa 
+## 0.2304 0.4992 0.2704</code></pre>
+</div>
+<div id="question-3" class="section level2">
+<h2><span style="color:red">Question 3</span></h2>
+<p><span style="color:orange">
+Suppose disease locus (alleles D and d) and LD locus (alleles A and a) with Pr(A|D) = 0.9, Pr(A|d) = 0.2 and f (D) = 0.4. If penetrance of disease locus G1 is: Pr(Y = 1|G1 = DD) = 0.8, Pr(Y = 1|G1 = Dd) = 0.4, and Pr(Y = 1|G1 = dd) = 0.2, what the penetrance of LD locus G2 will be? (score 30)
+</span></p>
+<p><img src="q3.png" /></p>
+<p><span class="math inline">\(Pr(Y|G_2=AA) = Pr(Y|G_2=Aa) = Pr(Y|G_2=aa) = Pr(Y)\)</span> Due to <span class="math inline">\(G_2\)</span> is independent with Y.</p>
+<p><span class="math inline">\(Pr(DD) = Pr(D)^2 = 0.4^2 = 0.16\)</span></p>
+<p><span class="math inline">\(Pr(Dd) = 2Pr(D)Pr(d) = 2*0.4*0.6 = 0.48\)</span></p>
+<p><span class="math inline">\(Pr(dd) = Pr(d)^2 = 0.6^2 = 0.36\)</span></p>
+<hr />
+<p><span class="math inline">\(Pr(Y=1) = Pr(Y=1, G_1=DD)+Pr(Y=1, G_1=Dd)+Pr(Y=1, G_1=dd)\)</span></p>
+<p><span class="math inline">\(= Pr(Y=1|DD)Pr(DD)+Pr(Y=1|Dd)Pr(Dd)+Pr(Y=1|dd)Pr(dd)\)</span></p>
+<p><span class="math inline">\(= 0.8*0.16 + 0.4*0.48 + 0.2*0.36 = 0.392\)</span></p>
+<hr />
+<p><span class="math inline">\(Pr(Y=0) = Pr(Y=0, G_1=DD)+Pr(Y=0, G_1=Dd)+Pr(Y=0, G_1=dd)\)</span></p>
+<p><span class="math inline">\(= Pr(Y=0|DD)Pr(DD)+Pr(Y=0|Dd)Pr(Dd)+Pr(Y=0|dd)Pr(dd)\)</span></p>
+<p><span class="math inline">\(= [1-Pr(Y=1|DD)]Pr(DD)+[1-Pr(Y=1|Dd)]Pr(Dd)+[1-Pr(Y=1|dd)]Pr(dd)\)</span></p>
+<p><span class="math inline">\(= (1-0.8)*0.16 + (1-0.4)*0.48 + (1-0.2)*0.36 = 0.608\)</span></p>
+</div>

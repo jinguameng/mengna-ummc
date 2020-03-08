@@ -459,11 +459,11 @@
       <h2><a href="/post/note2-regression-for-count-data/" >Note2 Regression for Count Data</a></h2>
       <div class="article-style">
         
-          Possion RegressionModel ObjectivePossion regression is the most common technique applied to model count data.
+          Possion Regression Model Objective Possion regression is the most common technique applied to model count data.
 Possion Distribution
 Poisson distribution describes the number of events that occur in a given time period where its mean \(\lambda\) is the average number of events per period.
 \(Pr(Y=y) = (\frac{e^{-\lambda}\lambda^y}{y!})\)
-E(y) = Var(y) = \(\lambda\)Model Structure\(ln(E(Y)) = ln(\lambda) = X\beta = \beta_0 + \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + .
+ E(y) = Var(y) = \(\lambda\)   Model Structure \(ln(E(Y)) = ln(\lambda) = X\beta = \beta_0 + \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + .
         
       </div>
     </div>
@@ -475,13 +475,13 @@ Poisson distribution describes the number of events that occur in a given time p
       <h2><a href="/post/note8-glm-diagnostics/" >Note8 Glm Diagnostics</a></h2>
       <div class="article-style">
         
-          Assessing the Link FunctionPregibon link test
-Run GLM.
-Obtain fitted values for linear predictor.
-Create new variables \((X\hat{\beta})^2\).
-Run model with \(X\hat{\beta} + (X\hat{\beta})^2\) as predictors.
-evaluate: if p-value is not significant for \((X\hat{\beta})^2\) term, link function is correctly specified.
-The p-value for _hatsq is greater 0.05 which is not statistically significant indicatiing that the model seems to be well specified.
+          Assessing the Link Function  Pregibon link test
+ Run GLM.
+ Obtain fitted values for linear predictor.
+ Create new variables \((X\hat{\beta})^2\).
+ Run model with \(X\hat{\beta} + (X\hat{\beta})^2\) as predictors.
+ evaluate: if p-value is not significant for \((X\hat{\beta})^2\) term, link function is correctly specified.
+  The p-value for _hatsq is greater 0.05 which is not statistically significant indicatiing that the model seems to be well specified.
         
       </div>
     </div>
@@ -493,9 +493,9 @@ Poisson distribution describes the number of events that occur in a given time p
       <h2><a href="/post/note12-cox-model-diagnostics/" >Note12 Cox Model Diagnostics</a></h2>
       <div class="article-style">
         
-          Testing the Proportional Hazard AssumptionsSchoenfeld Residuals1Instead of a single residual for each individual, there is a separate residual for each individual for each covariate.
-Schonefeld residuals are not defined for censored individuals.
-\(Schonefeld residual = x_{ik} - \sum_{i=1}^{j\in R(t_i)} x_{kj}P_j\)- The Schoenfeld residual is the covariate-value, \(x_{ik}\), for the person i who actually died at time \(t_i\) minus the expected value of the covariate for the risk set at \(t_i\).
+          Testing the Proportional Hazard Assumptions Schoenfeld Residuals1  Instead of a single residual for each individual, there is a separate residual for each individual for each covariate.
+ Schonefeld residuals are not defined for censored individuals.
+  \(Schonefeld residual = x_{ik} - \sum_{i=1}^{j\in R(t_i)} x_{kj}P_j\) - The Schoenfeld residual is the covariate-value, \(x_{ik}\), for the person i who actually died at time \(t_i\) minus the expected value of the covariate for the risk set at \(t_i\).
         
       </div>
     </div>
@@ -508,9 +508,9 @@ Poisson distribution describes the number of events that occur in a given time p
       <div class="article-style">
         
           Cox Models = Propotional Hazards Models
-Modeling the Hazard Function1Survival analysis methods, such as proportional hazards regression differ from logistic regression by assessing a rate instead of a proportion.
-Proportional hazards regression, also called Cox regression, models the incidence or hazard rate, the number of new cases of disease per population at-risk per unit time. If the outcome is death, this is the mortality rate.
-The hazard function is the probability that if a person survives to t, they will experience the event in the next instant.
+Modeling the Hazard Function1  Survival analysis methods, such as proportional hazards regression differ from logistic regression by assessing a rate instead of a proportion.
+ Proportional hazards regression, also called Cox regression, models the incidence or hazard rate, the number of new cases of disease per population at-risk per unit time. If the outcome is death, this is the mortality rate.
+ The hazard function is the probability that if a person survives to t, they will experience the event in the next instant.
         
       </div>
     </div>
@@ -522,11 +522,11 @@ Modeling the Hazard Function1Survival analysis methods, such as proportional h
       <h2><a href="/post/note10-kaplan-meier-estimation/" >Note10 Kaplan Meier Estimation</a></h2>
       <div class="article-style">
         
-          Understanding K-M Curve the K-M survival curve is defined as the probability of surviving in a given length of time while considering time in many small intervals.
-interval: the horizontal line in K-M graph.
+          Understanding K-M Curve   the K-M survival curve is defined as the probability of surviving in a given length of time while considering time in many small intervals.
+ interval: the horizontal line in K-M graph.
 serial time duration contains two types of duration:
-known survival(event occured)
-unknown survival(censored)
+  known survival(event occured)
+ unknown survival(censored)
 and only 1 are called interval in K-M graph, 2 are indicated on K-M curve as tick marks.
         
       </div>
@@ -539,12 +539,12 @@ and only 1 are called interval in K-M graph, 2 are indicated on K-M curve as tic
       <h2><a href="/post/note9-intro-to-survival-analysis/" >Note9 Intro to Survival Analysis</a></h2>
       <div class="article-style">
         
-          Time to Event DataKeywords: Failure, Lifetime Data, Time-event, Time-to-event-data
-Outcome: Time until some events occures -&gt; survival analysis.
-In order to measure survival time, need a begining(t=0) and end(t = T).
-t=0 is when the clock starts.
-t=T is when the event occurs(or censored) + clock stops.
-Between this two times(t - T), the subject is said to be “at risk” for the event.
+          Time to Event Data  Keywords: Failure, Lifetime Data, Time-event, Time-to-event-data
+  Outcome: Time until some events occures -&gt; survival analysis.
+ In order to measure survival time, need a begining(t=0) and end(t = T).
+ t=0 is when the clock starts.
+ t=T is when the event occurs(or censored) + clock stops.
+ Between this two times(t - T), the subject is said to be “at risk” for the event.
         
       </div>
     </div>

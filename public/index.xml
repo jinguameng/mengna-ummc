@@ -77,6 +77,203 @@
     </item>
     
     <item>
+      <title>Homework 7</title>
+      <link>/post/bds751hw7/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/post/bds751hw7/</guid>
+      <description>
+
+
+&lt;div id=&#34;question-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 1&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;
+Suppose disease locus (alleles D and d) and LD locus (alleles A and a) with Pr(A|D) = 0.9, Pr(A|d) = 0.2 and f (D) = 0.4. Calculate allele distribution of LD locus (i.e. f (A) =? And f (a) =?)
+&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;f(A) = f(A,D) + f(A,d) = Pr(A|D)f(D) + Pr(A|d)f(d)&lt;/p&gt;
+&lt;p&gt;f(D) = 0.4 &lt;span class=&#34;math inline&#34;&gt;\(=&amp;gt;\)&lt;/span&gt; f(d) = 0.6&lt;/p&gt;
+&lt;p&gt;Pr(A|D) = 0.9, Pr(A|d) = 0.2&lt;/p&gt;
+&lt;p&gt;f(A) = &lt;span class=&#34;math inline&#34;&gt;\(0.9*0.4 + 0.2*0.6 = 0.48\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;f(a) = 1 - f(A) = 1 - 0.48 = 0.52&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;
+a. set Pr(A|D)=p1, Pr(A|d)=p2 and f(D)=q, write down the inference formula for LD allele frequencies (i.e. f(A) and f(a)), based on parameters of p1, p2 and q (score 15)
+&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;f(A) = f(A,D) + f(A,d) = Pr(A|D)f(D) + Pr(A|d)f(d)&lt;/p&gt;
+&lt;p&gt;f(D) = q &lt;span class=&#34;math inline&#34;&gt;\(=&amp;gt;\)&lt;/span&gt; f(d) = 1-q&lt;/p&gt;
+&lt;p&gt;f(A) = &lt;span class=&#34;math inline&#34;&gt;\(p_1*q + p_2*(1-q)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;f(a) = 1 - f(A) = &lt;span class=&#34;math inline&#34;&gt;\(1 - p_1*q - p_2*(1-q)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;
+b. Extra credit: implements getAlleleFreq function using the template of lecture slide (score 5)
+&lt;/span&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;getAlleleFreq &amp;lt;- function(p1,p2,q){
+  fA = p1*q + p2*(1-q)
+  fa = 1 - fA
+  return(c(fA=fA,fa=fa))
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;getAlleleFreq(0.9,0.2,0.4)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   fA   fa 
+## 0.48 0.52&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;question-2&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 2&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;
+Suppose disease locus (alleles D and d) and LD locus (alleles A and a) with Pr(A|D) = 0.9, Pr(A|d) = 0.2 and f (D) = 0.4.
+&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;
+a. Construct contingency table for the joint genotype distribution of disease and LD locus (score 25)
+&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(DD) = 0.4*0.4 = 0.16\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Dd) = 2*0.4*0.6 = 0.48\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(dd) = 0.6*0.6 = 0.36\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(a|D) = 1 - Pr(A|D) = 1 - 0.9 = 0.1\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(a|d) = 1 - Pr(A|d) = 1 - 0.2 = 0.8\)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(AA,DD) = Pr(AA|DD)Pr(DD) = Pr(A|D)^2Pr(DD) = 0.9^2*0.16 = 0.1296\)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(AA,Dd) = Pr(AA,D_md_f) + Pr(AA,D_fd_m)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(AA|D_md_f)Pr(D_md_f) + Pr(AA|D_fd_m)Pr(D_fd_m)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(A|D_m)Pr(A|d_f)Pr(D_md_f) + Pr(A|D_f)Pr(A|d_m)Pr(D_fd_m)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(A|D)Pr(A|d)Pr(D_md_f) + Pr(A|D)Pr(A|d)Pr(D_fd_m)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(A|D)Pr(A|d)[Pr(D_md_f) + Pr(D_fd_m)]\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(A|D)Pr(A|d)Pr(Dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= 0.9*0.2*0.48 = 0.0864\)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(AA,dd) = Pr(AA|dd)Pr(dd) = Pr(A|d)^2Pr(dd) = 0.2^2*0.36 = 0.0144\)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Aa,DD) = Pr(A_ma_f,DD) + Pr(A_fa_m,DD)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(A_ma_f|DD)Pr(DD) + Pr(A_fa_m|DD)Pr(DD)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(A_m|D)Pr(a_f|D)Pr(DD) + Pr(A_f|D)Pr(a_m|D)Pr(DD)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(A|D)Pr(a|D)Pr(DD) + Pr(A|D)Pr(a|D)Pr(DD)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= 2Pr(A|D)Pr(a|D)Pr(DD)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= 2*0.9*0.1*0.16 = 0.0288\)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Aa,Dd) = Pr(A_ma_f,D_md_f) + Pr(A_ma_f,D_fd_m) + Pr(A_fa_m,D_md_f) + Pr(A_fa_m,D_fd_m)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(A_ma_f|D_md_f)Pr(D_md_f) + Pr(A_ma_f|D_fd_m)Pr(D_fd_m) + Pr(A_fa_m|D_md_f)Pr(D_md_f) + Pr(A_fa_m|D_fd_m)Pr(D_fd_m)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(A_m|D_m)Pr(a_f|d_f)Pr(D_md_f) + Pr(A_m|d_m)Pr(a_f|D_f)Pr(D_fd_m) + Pr(A_f|d_f)Pr(a_m|D_m)Pr(D_md_f) + Pr(A_f|D_f)Pr(a_m|d_m)Pr(D_fd_m)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(A|D)Pr(a|d)Pr(D_md_f) + Pr(A|d)Pr(a|D)Pr(D_fd_m) + Pr(A|d)Pr(a|D)Pr(D_md_f) + Pr(A|D)Pr(a|d)Pr(D_fd_m)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(A|D)Pr(a|d)[Pr(D_md_f)+Pr(D_fd_m)] + Pr(A|d)Pr(a|D)[Pr(D_fd_m)+Pr(D_md_f)]\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(A|D)Pr(a|d)Pr(Dd) + Pr(A|d)Pr(a|D)Pr(Dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= 0.9*0.8*0.48+0.2*0.1*0.48 = 0.3552\)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Aa,dd) = Pr(A_ma_f,dd) + Pr(A_fa_m,dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(A_ma_f|dd)Pr(dd) + Pr(A_fa_m|dd)Pr(dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(A_m|d)Pr(a_f|d)Pr(dd) + Pr(A_f|d)Pr(a_m|d)Pr(dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(A|d)Pr(a|d)Pr(dd) + Pr(A|d)Pr(a|d)Pr(dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= 2Pr(A|d)Pr(a|d)Pr(dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= 2*0.2*0.8*0.36 = 0.1152\)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(aa,DD) = Pr(aa|DD)Pr(DD) = Pr(a|D)^2Pr(DD)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= 0.1^2*0.16 = 0.0016\)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(aa,Dd) = Pr(aa,D_md_f) + Pr(aa,D_fd_m)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(aa|D_md_f)Pr(D_md_f) + Pr(aa|D_fd_m)Pr(D_fd_m)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(a|D_m)Pr(a|d_f)Pr(D_md_f) + Pr(a|D_f)Pr(a|d_m)Pr(D_fd_m)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(a|D)Pr(a|d)Pr(D_md_f) + Pr(a|D)Pr(a|d)Pr(D_fd_m)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(a|D)Pr(a|d)[Pr(D_md_f)+Pr(D_fd_m)]\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(a|D)Pr(a|d)Pr(Dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= 0.1*0.8*0.48 = 0.0384\)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(aa,dd) = Pr(aa|dd)Pr(dd) = Pr(a|d)^2Pr(dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= 0.8^2*0.36 = 0.2304\)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;```&lt;/th&gt;
+&lt;th&gt;AA&lt;/th&gt;
+&lt;th&gt;Aa&lt;/th&gt;
+&lt;th&gt;aa&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;DD&lt;/td&gt;
+&lt;td&gt;0.1296&lt;/td&gt;
+&lt;td&gt;0.0288&lt;/td&gt;
+&lt;td&gt;0.0016&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;Dd&lt;/td&gt;
+&lt;td&gt;0.0864&lt;/td&gt;
+&lt;td&gt;0.3552&lt;/td&gt;
+&lt;td&gt;0.0384&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;dd&lt;/td&gt;
+&lt;td&gt;0.0144&lt;/td&gt;
+&lt;td&gt;0.1152&lt;/td&gt;
+&lt;td&gt;0.2304&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;
+b. Calculate genotype distribution of the LD locus (i.e. f(AA), f(Aa) and f(aa)), based on the contingency table (score 10)
+&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(AA) = Pr(AA,DD) + Pr(AA,Dd) + Pr(AA,dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= 0.1296 + 0.0864 + 0.0144 = 0.2304\)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Aa) = Pr(Aa,DD) + Pr(Aa,Dd) + Pr(Aa,dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= 0.0288 + 0.3552 + 0.1152 = 0.4992\)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(aa) = Pr(aa,DD) + Pr(aa,Dd) + Pr(aa,dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= 0.0016 + 0.0384 + 0.2304 = 0.2704\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;
+c. Is LD locus in HWE? (score 10)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Yes. Because &lt;span class=&#34;math inline&#34;&gt;\(Pr(AA) = Pr(A)^2, Pr(Aa) = 2Pr(A)Pr(a), Pr(aa) = Pr(a)^2\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;
+d. set Pr(A|D)=p1, Pr(A|d)=p2 and f(D)=q, write down the inference formula for LD genotype frequencies (i.e. f(AA), f(Aa) and f(aa)), based on parameters of p1, p2 and q. (score 10)
+&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(AA) = Pr(AA,DD) + Pr(AA,Dd) + Pr(AA,dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(AA|DD)Pr(DD) + Pr(AA|Dd)Pr(Dd) + Pr(AA|dd)Pr(dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(A|D)^2Pr(DD) + Pr(A|D)Pr(A|d)Pr(Dd) + Pr(A|d)^2Pr(dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= p_1^2q^2 + p_1p_22q(1-q) + p_2^2(1-q)^2\)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Aa) = Pr(Aa,DD) + Pr(Aa,Dd) + Pr(Aa,dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(Aa|DD)Pr(DD) + Pr(Aa|Dd)Pr(Dd) + Pr(Aa|dd)Pr(dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= 2Pr(A|D)Pr(a|D)Pr(DD) + Pr(Dd)[Pr(A|D)Pr(a|d) + Pr(A|d)Pr(a|D] + 2Pr(A|d)Pr(a|d)Pr(dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= 2p_1(1-p_1)q^2 + 2q(1-q)[p_1(1-p_2)+p_2(1-p_1)] + 2p_2(1-p_2)(1-q)^2\)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(aa) = Pr(aa,DD) + Pr(aa,Dd) + Pr(aa,dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(aa|DD)Pr(DD) + Pr(aa|Dd)Pr(Dd) + Pr(aa|dd)Pr(dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(a|D)^2Pr(DD) + Pr(a|D)Pr(a|d)Pr(Dd) + Pr(a|d)^2Pr(dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= (1-p_1)^2q^2 + (1-p_1)(1-p_2)2q(1-q) + (1-p_2)^2(1-q)^2\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;
+e. Extra credit: implements getGenotypeFreq function using the template of lecture slide (score 10)
+&lt;/span&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;getGenotypeFreq &amp;lt;- function(p1,p2,q){
+  fAA = (p1^2)*(q^2) + p1*p2*2*q*(1-q) + (p2^2)*((1-q)^2)
+  fAa = 2*p1*(1-p1)*(q^2) + 2*q*(1-q)*(p1*(1-p2)+p2*(1-p1)) + 2*p2*(1-p2)*((1-q)^2)
+  faa = ((1-p1)^2)*(q^2) + (1-p1)*(1-p2)*2*q*(1-q) + ((1-p2)^2)*((1-q)^2)
+  return(c(fAA=fAA,fAa=fAa, faa = faa))
+}
+
+getGenotypeFreq(0.9,0.2,0.4)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    fAA    fAa    faa 
+## 0.2304 0.4992 0.2704&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;question-3&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 3&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;
+Suppose disease locus (alleles D and d) and LD locus (alleles A and a) with Pr(A|D) = 0.9, Pr(A|d) = 0.2 and f (D) = 0.4. If penetrance of disease locus G1 is: Pr(Y = 1|G1 = DD) = 0.8, Pr(Y = 1|G1 = Dd) = 0.4, and Pr(Y = 1|G1 = dd) = 0.2, what the penetrance of LD locus G2 will be? (score 30)
+&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;q3.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y|G_2=AA) = Pr(Y|G_2=Aa) = Pr(Y|G_2=aa) = Pr(Y)\)&lt;/span&gt; Due to &lt;span class=&#34;math inline&#34;&gt;\(G_2\)&lt;/span&gt; is independent with Y.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(DD) = Pr(D)^2 = 0.4^2 = 0.16\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Dd) = 2Pr(D)Pr(d) = 2*0.4*0.6 = 0.48\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(dd) = Pr(d)^2 = 0.6^2 = 0.36\)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y=1) = Pr(Y=1, G_1=DD)+Pr(Y=1, G_1=Dd)+Pr(Y=1, G_1=dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(Y=1|DD)Pr(DD)+Pr(Y=1|Dd)Pr(Dd)+Pr(Y=1|dd)Pr(dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= 0.8*0.16 + 0.4*0.48 + 0.2*0.36 = 0.392\)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y=0) = Pr(Y=0, G_1=DD)+Pr(Y=0, G_1=Dd)+Pr(Y=0, G_1=dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(Y=0|DD)Pr(DD)+Pr(Y=0|Dd)Pr(Dd)+Pr(Y=0|dd)Pr(dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= [1-Pr(Y=1|DD)]Pr(DD)+[1-Pr(Y=1|Dd)]Pr(Dd)+[1-Pr(Y=1|dd)]Pr(dd)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= (1-0.8)*0.16 + (1-0.4)*0.48 + (1-0.2)*0.36 = 0.608\)&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Note2 Regression for Count Data</title>
       <link>/post/note2-regression-for-count-data/</link>
       <pubDate>Fri, 28 Feb 2020 23:09:15 -0600</pubDate>
@@ -166,8 +363,8 @@
 &lt;div id=&#34;question-1&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 1&lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;Following is a sample of 1,000 gametes produced by a trihybrid individual. Please answer the following questions. Label each gamete (or haplotype) as non-recombinant, single recombinant or double recombinant. (Score 15)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;q1.PNG&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Recombinant probability &lt;span class=&#34;math inline&#34;&gt;\(\theta\)&lt;/span&gt; has to be &lt;span class=&#34;math inline&#34;&gt;\(\leq 0.5\)&lt;/span&gt; and non-recombinat probability has to be &lt;span class=&#34;math inline&#34;&gt;\(\geq 0.5\)&lt;/span&gt;. There are 1000 gametes and the total number of the two non-recombinant haplotypes shoule be greater or equal than 500 and only if we assume Btr|bTR as the individual’s diplotype, the assum . Below is my infer,&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;hw6q1.PNG&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Recombinant probability &lt;span class=&#34;math inline&#34;&gt;\(\theta\)&lt;/span&gt; has to be &lt;span class=&#34;math inline&#34;&gt;\(\leq 0.5\)&lt;/span&gt; and non-recombinat probability has to be &lt;span class=&#34;math inline&#34;&gt;\(\geq 0.5\)&lt;/span&gt;. There are 1000 gametes and the total number of the two non-recombinant haplotypes shoule be greater or equal than 500, hence Btr|bTR should be the individual’s diplotype. Below is my infer,&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr class=&#34;header&#34;&gt;
@@ -178,11 +375,11 @@
 &lt;tbody&gt;
 &lt;tr class=&#34;odd&#34;&gt;
 &lt;td&gt;BTR&lt;/td&gt;
-&lt;td&gt;double recombinant&lt;/td&gt;
+&lt;td&gt;single recombinant&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;even&#34;&gt;
 &lt;td&gt;btr&lt;/td&gt;
-&lt;td&gt;double recombinant&lt;/td&gt;
+&lt;td&gt;single recombinant&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;odd&#34;&gt;
 &lt;td&gt;Btr&lt;/td&gt;
@@ -202,11 +399,11 @@
 &lt;/tr&gt;
 &lt;tr class=&#34;odd&#34;&gt;
 &lt;td&gt;BTr&lt;/td&gt;
-&lt;td&gt;single recombinant&lt;/td&gt;
+&lt;td&gt;double recombinant&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;even&#34;&gt;
 &lt;td&gt;btR&lt;/td&gt;
-&lt;td&gt;single recombinant&lt;/td&gt;
+&lt;td&gt;double recombinant&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -214,7 +411,7 @@
 &lt;div id=&#34;question-2&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 2&lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;What is the probability of following pedigree genotype? If f(D)=0.1 and genotypes for subject 1, 2, 3, 4, and 5 are G1 = DD, G2 = DD, G3 = G4 = G5 = Dd? (Score 15)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;q2.PNG&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;hw6q2.PNG&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(D) = 0.1 =&amp;gt; Pr(d) = 0.9\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(DD) = 0.01, Pr(Dd) = 0.18, Pr(dd) = 0.81\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(G1, G2, G3, G4, G5)\)&lt;/span&gt;&lt;/p&gt;
@@ -226,7 +423,7 @@
 &lt;div id=&#34;question-3&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 3&lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;Suppose an autosome locus has alleles of D and d with f(D)=0.1 and penetrance, Pr(Y = 1|G1 = DD) = 0.8, Pr(Y = 1|G1 = Dd) = 0.4, and Pr(Y = 1|G1 = dd) = 0.2. We collected a sample as following and all individuals have genotypes of Dd. What is the sample’s joint probability Pr(Y1, Y2, Y3, Y4, Y5, G1, G2, G3, G4, G5)? (Score 15)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;q3.PNG&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;hw6q3.PNG&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(D) = 0.1 =&amp;gt; Pr(d) = 0.9\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(DD) = 0.01, Pr(Dd) = 0.18, Pr(dd) = 0.81\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y=1 | G1 = DD = 0.8) =&amp;gt; Pr(Y=0 | G1 = DD = 0.2)\)&lt;/span&gt;&lt;/p&gt;
@@ -243,7 +440,7 @@
 &lt;div id=&#34;question-4&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 4&lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;Suppose an autosome locus has alleles of D and d with f(D)=0.1 and penetrance, Pr(Y = 1|G1 = DD) = 0.8, Pr(Y = 1|G1 = Dd) = 0.4, and Pr(Y = 1|G1 = dd) = 0.2. We collected a sample as following and we do not have their genotypes. What is the sample’s joint probability Pr(Y1, Y2, Y3, Y4, Y5, G1, G2, G3, G4, G5)? (Score 15)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;q4.PNG&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;hw6q4.PNG&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(D) = 0.1 =&amp;gt; Pr(d) = 0.9\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(DD) = 0.01, Pr(Dd) = 0.18, Pr(dd) = 0.81\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y=1 | G1 = DD = 0.8) =&amp;gt; Pr(Y=0 | G1 = DD = 0.2)\)&lt;/span&gt;&lt;/p&gt;
@@ -269,12 +466,33 @@
 &lt;div id=&#34;question-5&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 5&lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;Suppose an autosome locus has alleles of D and d with f(D)=0.1 and penetrance, Pr(Y = 1|G1 = DD) = 0.8, Pr(Y = 1|G1 = Dd) = 0.4, and Pr(Y = 1|G1 = dd) = 0.2. We collected a sample as following and all individuals have genotypes of Dd. What is the sample’s joint probability Pr(Y1, Y2, Y3, Y4, Y5, G1, G2, G3, G4, G5)? (Score 20)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;q5.PNG&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;hw6q5.PNG&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(D) = 0.1 =&amp;gt; Pr(d) = 0.9\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(DD) = 0.01, Pr(Dd) = 0.18, Pr(dd) = 0.81\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y=1 | G1 = DD = 0.8) =&amp;gt; Pr(Y=0 | G1 = DD = 0.2)\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y=1 | G1 = Dd = 0.4) =&amp;gt; Pr(Y=0 | G1 = Dd = 0.6)\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y=1 | G1 = dd = 0.2) =&amp;gt;Pr(Y=0 | G1 = DD = 0.8)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y1, Y2, Y3, Y4, Y5, G1, G2, G3, G4, G5)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(Y1|G1)*Pr(Y2|G2)*Pr(Y3|G3)*Pr(Y4|G4)*Pr(Y5|G5)*Pr(G1,G2,G3,G4,G5)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(Y1|G1)*Pr(Y2|G2)*Pr(Y3|G3)*Pr(Y4|G4)*Pr(Y5|G5)*Pr(G1)*Pr(G2)*Pr(G3|G1,G2)*Pr(G4)*Pr(G5)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(Y=0|G1=Dd)^2*Pr(Y=1|G1=Dd)^3*Pr(Dd)^4*0.5\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= 0.6^2 * 0.4^3 * 0.18^4 * 0.5 = 0.00001209323\)&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;question-6&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 6&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;Suppose an autosome locus has alleles of D and d with f(D)=0.1 and penetrances, Pr(Y = 1|G1 = DD) = 0, Pr(Y = 1|G1 = Dd) = 0, and Pr(Y = 1|G1 = dd) = 1. We collected a sample as following and we do not have their genotypes. What is the sample’s joint probability Pr(Y1, Y2, Y3, Y4, Y5, G1, G2, G3, G4, G5)? (score 20)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;hw6q6.PNG&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(D) = 0.1 =&amp;gt; Pr(d) = 0.9\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(DD) = 0.01, Pr(Dd) = 0.18, Pr(dd) = 0.81\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y=1 | G1 = DD = 0) =&amp;gt; Pr(Y=0 | G1 = DD = 1)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y=1 | G1 = Dd = 0) =&amp;gt; Pr(Y=0 | G1 = Dd = 1)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y=1 | G1 = dd = 1) =&amp;gt;Pr(Y=0 | G1 = DD = 0)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Based on the penetrances, we can conclude that people who has been affected have only one possiable genotype: dd. So, individual 2, individual 3 and individual 5 have genotype dd.&lt;/p&gt;
+&lt;p&gt;Because invidual 3’s genotype(dd) is inherited from individual 2(dd) and individual 1(?). And for people who are not affected there are two possiable genotypes: DD and Dd, and individual 1’s genotype can only be Dd.&lt;/p&gt;
+&lt;p&gt;So till now, there is only one individual’s genotype is unknown - individual 4. Due to 4 has not been affected, we will consider two genotypes for him(DD and Dd) when calculating the joint probability.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y1, Y2, Y3, Y4, Y5, G1, G2, G3, G4, G5)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(Y1|G1)*Pr(Y2|G2)*Pr(Y3|G3)*Pr(Y4|G4)*Pr(Y5|G5)*Pr(G1,G2,G3,G4,G5)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= Pr(Y1|G1)*Pr(Y2|G2)*Pr(Y3|G3)*Pr(Y4|G4)*Pr(Y5|G5)*Pr(G1)*Pr(G2)*Pr(G3|G1,G2)*Pr(G4)*Pr(G5)\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y1|G1) = Pr(Y=0|Dd) = 1\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y2|G2) = Pr(Y=1|dd) = 1\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(Y3|G3) = Pr(Y=1|dd) = 1\)&lt;/span&gt;&lt;/p&gt;
@@ -283,7 +501,6 @@
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(G1) = Pr(Dd) = 0.18\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(G2) = Pr(G3) = Pr(G5) = Pr(dd) = 0.81\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Pr(G3|G1,G2) = Pr(dd|Dd,dd) = 0.5\)&lt;/span&gt;&lt;/p&gt;
-&lt;hr /&gt;
 &lt;p&gt;Ans = &lt;span class=&#34;math inline&#34;&gt;\(1*1*1*1*1*0.18*0.81^3*0.5 = 0.04782969\)&lt;/span&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
@@ -967,13 +1184,13 @@ $$&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;
-One 
+One
 &lt;/span&gt;
 &lt;span class=&#34;fragment &#34; &gt;
-&lt;strong&gt;Two&lt;/strong&gt; 
+&lt;strong&gt;Two&lt;/strong&gt;
 &lt;/span&gt;
 &lt;span class=&#34;fragment &#34; &gt;
-Three 
+Three
 &lt;/span&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;A fragment can accept two optional parameters:&lt;/p&gt;
