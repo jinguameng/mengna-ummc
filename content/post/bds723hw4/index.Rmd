@@ -1,0 +1,156 @@
+---
+# Documentation: https://sourcethemes.com/academic/docs/managing-content/
+
+title: "Homework 4"
+subtitle: ""
+summary: ""
+authors: []
+tags: ["bds751","bds751hw"]
+categories: []
+date: 2020-03-15T15:02:32-05:00
+lastmod: 2020-03-15T15:02:32-05:00
+featured: false
+draft: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+image:
+  caption: ""
+  focal_point: ""
+  preview_only: false
+
+# Projects (optional).
+#   Associate this post with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
+#   Otherwise, set `projects = []`.
+projects: []
+---
+
+## <span style="color:red">Question 1</span>
+<span style = "color:orange">For a cell in meiosis interphase, how many chromosomes and chromatids are there in G1? and how many in G2? (Score: 5)</span>
+
+G1: 46 chromosomes, 0 chromatids.    
+
+G2: 46 chromosomes, 92 chromatids.  
+
+
+
+## <span style="color:red">Question 2</span>
+<span style = "color:orange">How many daughter cells will be for a cell after meiosis I? and how many chromosomes and chromatids are there for each daughter cell? (Score: 5)</span>
+
+2 daughter cells after meiosis I.  
+
+23 chromosomes and 46 chromotids.
+
+
+
+
+## <span style="color:red">Question 3</span>
+<span style = "color:orange">How many daughter cells will be for a cell after meiosis II? And how many chromosomes and chromatids are there for each daughter cell? (Score: 5)</span>
+
+Four daughter cells.  
+
+23 chromosomes and 0 chromotids.
+
+
+
+
+## <span style="color:red">Question 4</span>
+<span style = "color:orange">Recombination can be seen as chiasmata between homologous chromosomes at what stage of cell division? (Score: 5)</span>
+
+Metaphase I at Meiosis I.
+
+
+
+
+
+## <span style="color:red">Question 5</span>
+<span style = "color:orange">Is it possible for meiosis to occur in a haploid cell? (Score: 5)  Extra credit: Is mitosis possible? (Score: 5)</span>
+
+No. Meiosis requires even number of chromosomes. And Mitosis could happen in a haploid cell.  
+
+
+## <span style="color:red">Question 6</span>
+<span style = "color:orange">For two loci with genotypes of Aa and Bb, which one of the following could happen: segregation without independent assortment; or independent assortment without segregation? (Score: 5)</span>
+
+Segregation without independent assortment could happen.  
+
+
+
+
+## <span style="color:red">Question 7</span>
+<span style = "color:orange">If an individual has alleles of A and a in a locus, what types of gamete can be made? and what is the probability for each type of gamete?  (Score: 5) </span>
+
+Two possiable gametes: A and a.  
+
+Pr(A) = 0.5 and Pr(a) = 0.5
+
+
+
+
+
+
+## <span style="color:red">Question 8</span>
+<span style = "color:orange">If an individual has alleles of A and a at a locus of chr 1, but only allele B at a locus of chr 2, what types of gamete can be made? and what is the probability for each type of gamete? (Score: 5)</span>
+
+Two possiable gametes: AB and aB.  
+
+Pr(AB) = 0.5 and Pr(aB) = 0.5
+
+
+
+## <span style="color:red">Question 9</span>
+<span style = "color:orange">If an individual has alleles of A and a at a locus of chr 1, and alleles of B and b at a locus of chr 2, what types of gamete can be made? and what is the probability for each type of gamete? (Score: 5) </span>
+
+Four possiable gametes: AB, aB, Ab, ab.  
+
+Pr(AB) = Pr(aB) = Pr(Ab) = Pr(ab) = 0.25
+
+
+
+
+## <span style="color:red">Question 10</span>
+<span style = "color:orange">How many different kinds of gametes can be produced by an individual who carries heterozygotic alleles at three loci of different chromosomes (e.g. Aa of locus 1 at chr 1, Bb of locus 2 at chr 2 and Cc of locus 3 at chr 3)? (Score: 5) </span>
+
+$2^3 = 8$
+
+
+
+## <span style="color:red">Question 11</span>
+<span style = "color:orange">If an individual has heterozygous genotypes at each of 6 loci, how many types of gametes can be produced under assumption of independent assortment? (Score: 5) </span>
+
+$2^6 = 64$
+
+
+
+
+## <span style="color:red">Question 12</span>
+<span style = "color:orange">If both parents have genotypes of Aa, what genotypes can be observed for their kid and what their probabilities are? (Score: 5)</span>
+
+Genotypes: AA. Aa, aa  
+
+Pr(AA) = Pr(aa) = 0.25 and Pr(Aa) = 0.5
+
+
+
+
+## <span style="color:red">Question 13</span>
+<span style = "color:orange">Father has genotype of AaBB and mother has genotype of Aabb. With independent assortment for all loci, what genotypes can be observed for their kid and what their probabilities? (Score: 5) </span>
+
+
+
+
+
+## <span style="color:red">Question 14</span>
+<span style = "color:orange"></span>
+## <span style="color:red">Question 15</span>
+<span style = "color:orange"></span>
+## <span style="color:red">Question 16</span>
+<span style = "color:orange"></span>
+## <span style="color:red">Question 17</span>
+<span style = "color:orange"></span>
+## <span style="color:red">Question 18</span>
+<span style = "color:orange"></span>
+

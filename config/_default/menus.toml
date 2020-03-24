@@ -19,6 +19,17 @@
   url = "#bds751"
   weight = 20
 
+[[main]]
+  name = "BDS722"
+  url = "#bds722"
+  weight = 10
+
+
+[[main]]
+  name = "BDS723"
+  url = "#bds723"
+  weight = 30
+
 #[[main]]
 #  name = "Publications"
 #  url = "#featured"

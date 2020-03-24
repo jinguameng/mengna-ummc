@@ -100,7 +100,7 @@ Pr(dm) = Pr(DM) = $\frac{\theta}{2}$
 ![](q3.PNG)
 
 <span style = "color:orange">a. What are recombinant haplotypes?</span>  
-Dm  
+Dm and dM  
 
 
 <span style = "color:orange">b. What are non-recombinant haplotypes?</span>  

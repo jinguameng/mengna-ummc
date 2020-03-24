@@ -5,12 +5,24 @@
     <link>/tags/bds722/</link>
       <atom:link href="/tags/bds722/index.xml" rel="self" type="application/rss+xml" />
     <description>bds722</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 28 Feb 2020 23:09:15 -0600</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 09 Mar 2020 13:58:30 -0500</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>bds722</title>
       <link>/tags/bds722/</link>
     </image>
+    
+    <item>
+      <title>Note13 Kernel</title>
+      <link>/post/note13-kernel/</link>
+      <pubDate>Mon, 09 Mar 2020 13:58:30 -0500</pubDate>
+      <guid>/post/note13-kernel/</guid>
+      <description>
+
+
+
+</description>
+    </item>
     
     <item>
       <title>Note2 Regression for Count Data</title>

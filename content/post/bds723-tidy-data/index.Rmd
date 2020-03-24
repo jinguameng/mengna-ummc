@@ -1,0 +1,98 @@
+---
+# Documentation: https://sourcethemes.com/academic/docs/managing-content/
+
+title: "Bds723 Tidy Data"
+subtitle: ""
+summary: ""
+authors: []
+tags: ["bds723"]
+categories: []
+date: 2020-03-10T23:19:54-05:00
+lastmod: 2020-03-10T23:19:54-05:00
+featured: false
+draft: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+image:
+  caption: ""
+  focal_point: ""
+  preview_only: false
+
+# Projects (optional).
+#   Associate this post with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
+#   Otherwise, set `projects = []`.
+projects: []
+---
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(tidyr)
+```
+
+# Dataset: WHO
+
+```{r}
+mydata <- who
+mydata
+glimpse(mydata)
+colnames(mydata)
+```
+
+```{r}
+# combine all the TB cases columns
+mydata<-mydata %>%
+  pivot_longer(cols = new_sp_m014:newrel_f65,names_to = "cases",values_to = "value")
+mydata
+```
+
+```{r}
+# change "newrel" to "new_rel" to match the pattern
+mydata <- mydata %>%
+  mutate(cases = str_replace(cases, pattern = "newr", replacement = "new_r")) %>%
+  separate(col = cases, into=c("new","diagnosis","gender"), sep="_")
+mydata
+```
+
+```{r}
+mydata<-mydata %>%
+  separate(col=gender,into= c("gender","age"),sep = 1)
+mydata
+```
+
+```{r}
+# change age to factor var
+mydata$age %>% unique()
+mydata<-mydata %>%
+  mutate(
+    age = recode_factor(
+      age,
+      "014" = "0-14",
+      "1524" = "15-24",
+      "2534" = "25-34",
+      "3544" = "35-44",
+      "4554" = "45-54",
+      "5564" = "55-64",
+      "65" = "65 and above"
+    )
+  )
+mydata
+```
+
+```{r}
+# remove new
+mydata<-mydata %>% select(-new)
+```
+
+```{r}
+# factor variable
+mydata <- mydata %>%
+  mutate(gender = parse_factor(gender, levels = c("f","m")),
+         diagnosis = parse_factor(diagnosis)) %>%
+  rename(cases = value)
+mydata
+```
