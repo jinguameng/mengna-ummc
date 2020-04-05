@@ -31,7 +31,7 @@
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\lambda (t|X_{1i}, X_{2i}, ..., X_{ki}) = \lambda _0 (t)exp(\beta_1X_{1i} + \beta_2X_{2i} + ... +\beta_kX_{ki})\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(log(\frac{\lambda (t|X_{1i}, X_{2i}, ..., X_{ki})}{\lambda _0 (t)}) = exp(\beta_1X_{1i} + \beta_2X_{2i} + ... +\beta_kX_{ki})\)&lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(\lambda (t|X_{1i}, X_{2i}, ..., X_{ki}):\)&lt;/span&gt;&lt;/span&gt; this is the the hazard function for the ith person at time t,i=1,2,⋯,n. &lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(\lambda (t|X_{1i}, X_{2i}, ..., X_{ki}):\)&lt;/span&gt;&lt;/span&gt; this is the the hazard function for the ith person at time t,i=1,2,⋯,n.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(\lambda _0 (t):\)&lt;/span&gt;&lt;/span&gt; this is the baseline hazard function at time t, which is analogous to the intercept term in a multiple regression or logistic regression model. And it is unknown.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;&lt;span class=&#34;math inline&#34;&gt;\(log(\frac{\lambda (t|X_{1i}, X_{2i}, ..., X_{ki})}{\lambda _0 (t)}):\)&lt;/span&gt;&lt;/span&gt; this is the log of hazard ratio. The ratio of hazard functions can be considered a ratio of risk functions.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;There is no particular probability model selected to represent the survival times.&lt;/p&gt;&lt;/li&gt;

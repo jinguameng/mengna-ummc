@@ -5,12 +5,93 @@
     <link>/tags/bds751/</link>
       <atom:link href="/tags/bds751/index.xml" rel="self" type="application/rss+xml" />
     <description>bds751</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 15 Mar 2020 15:02:32 -0500</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 04 Apr 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>bds751</title>
       <link>/tags/bds751/</link>
     </image>
+    
+    <item>
+      <title>Homework 8</title>
+      <link>/post/bds751hw8/</link>
+      <pubDate>Sat, 04 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>/post/bds751hw8/</guid>
+      <description>
+
+
+&lt;div id=&#34;question-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 1&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;
+Five students independently collected their own samples and conducted a test of SNP association with hypertension. The test p-values are 0.02, 0.01, 0.03, 0.08, and 0.1. Conduct a meta-analysis and show if this SNP is significantly associated with hypertension (Score: 25) (Hints: combined p-value method)
+&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Method: Fisher’s combined probability test.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(p_1 = 0.02\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(p_2 = 0.01\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(p_3 = 0.03\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(p_4 = 0.08\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(p_5 = 0.1\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt;: All of the separate null hypothesis(SNP is significantly with hypertension) is true.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(H_a\)&lt;/span&gt;: At least one of the separate alternative hypothesis(SNP is not significantly associated with hypertension) is true.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(S_F = -2\sum_{i=1}^{k}ln(p_i)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= -2(ln(p_1) + ln(p_2) + ln(p_3) + ln(p_4) + ln(p_5))\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= -2(ln(0.02) + ln(0.01) + ln(0.03) + ln(0.08) + ln(0.1))\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= -2 * (-16.852)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= 33.704\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(S_F \sim X^2_{2k}, k = 5\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(S_F\)&lt;/span&gt; follows chi-squared distribution with 10 degree of freedom, and the p-value is 0.000207 which is less than 0.05, so, we reject the null hypothesis and conclude that at least one of the test shows that SNP is not significantly associated with hypertension.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;question-2&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 2&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;
+A locus of alleles A and a has frequency, f (A) = 0.3. If our sample contains 100 alleles, (Score: 45)
+&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;
+a. What is the distribution of the number of allele A (NA) in the sample? and write down the probability mass function (Score: 15)
+&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The number of allele A is following binomial distribution.&lt;/p&gt;
+&lt;p&gt;Let X = the number of allele A&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(f(X = x | p = 0.3, n = 100) = \left(\begin{matrix}100\\x\end{matrix}\right)0.3^x0.7^{100-x}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;
+b. What is the expected number of NA? (Score: 15)
+&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(E(NA) = n(1-p) = 100 *0.7 = 70\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The expected number of NA is 70.&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;
+c. What is the variance of NA? (Score: 15)
+&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Var(NA) = np(1-p) = 100 * 0.3 * 0.7 = 21\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The variance of NA is 21.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;question-3&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 3&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;
+If a random variable X follows uniform distribution, X~U(-1,1), and Y=X^2, what is the covariance of X and Y? are X and Y independent? (Score: 10)
+&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Cov(X,Y) = E(XY) - E(X)E(Y)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= E(X^3) - E(X)E(X)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Because X follows uniform distribution,&lt;/p&gt;
+&lt;p&gt;=&amp;gt; &lt;span class=&#34;math inline&#34;&gt;\(E(X) = \frac{-1+1}{2} = 0\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;=&amp;gt; &lt;span class=&#34;math inline&#34;&gt;\(E(X)E(Y) = 0\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(E(X^3) = \int_{-1}^{1}x^3dx = \frac{1}{4}x^4|_{-1}^{1} = \frac{1}{4} - \frac{1}{4} = 0\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;So, &lt;span class=&#34;math inline&#34;&gt;\(Cov(X,Y) = 0 - 0 = 0\)&lt;/span&gt;, the covariance of X and Y is 0, but X and Y are not independent, since &lt;span class=&#34;math inline&#34;&gt;\(Y = X^2\)&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;question-4&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 4&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;
+For multinomial distribution below, show that cov(xi , xj) = −npipj. (Score 20)
+&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(f\left(x_1,x_2,\ldots x_n;n,p_1,p_2,\ldots,p_n\right)=\left(\begin{matrix}n\\x_1,x_2,\ldots x_n\\\end{matrix}\right)p_1^{x1}p_2^{x2}\ldots p_n^{xn}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Based on theorem, we know that &lt;span class=&#34;math inline&#34;&gt;\(x_i\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(x_j\)&lt;/span&gt; are following Binomial distribution:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(x_i \sim Binomial(n,p_i)\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(x_j \sim Binomial(n,p_j)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(E(x_i) = np_i\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(Var(x_i) = np_i(1-p_i)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(E(x_j) = np_j\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(Var(x_j) = np_j(1-p_j)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;And &lt;span class=&#34;math inline&#34;&gt;\((x_i+x_j)\)&lt;/span&gt; also following binomial distribution.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\((x_i + x_j) \sim Binomial(n, p_i + p_j)\)&lt;/span&gt;,&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(E(x_i+x_j) = n(p_i+p_j)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Var(x_i+x_j) = n(p_i+p_j)(1-p_i-p_j)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Cov(x_i,x_j) = \frac{1}{2}[Var(x_i + x_j)-Var(x_i)-Var(x_j)]\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= \frac{1}{2}[n(p_i+p_j)(1-p_i-p_j) -np_i(1-p_i) - np_j(1-p_j)]\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= \frac{1}{2}(-2np_ip_j)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(= -np_ip_j\)&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Homework 4</title>
@@ -22,63 +103,86 @@
 
 &lt;div id=&#34;question-1&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 1&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;span style = &#34;color:orange&#34;&gt;1. For a cell in meiosis interphase, how many chromosomes and chromatids are there in G1? and how many in G2? (Score: 5)&lt;span&gt;&lt;/p&gt;
-&lt;p&gt;G1: 46 chromosomes, 0 chromatids&lt;/p&gt;
-&lt;p&gt;G2: 46 chromosomes, 92 chromatids&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;For a cell in meiosis interphase, how many chromosomes and chromatids are there in G1? and how many in G2? (Score: 5)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;G1: 46 chromosomes, 0 chromatids.&lt;/p&gt;
+&lt;p&gt;G2: 46 chromosomes, 92 chromatids.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;question-2&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 2&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;span style = &#34;color:orange&#34;&gt;2. How many daughter cells will be for a cell after meiosis I? and how many chromosomes and chromatids are there for each daughter cell? (Score: 5)&lt;span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;How many daughter cells will be for a cell after meiosis I? and how many chromosomes and chromatids are there for each daughter cell? (Score: 5)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;2 daughter cells after meiosis I.&lt;/p&gt;
+&lt;p&gt;23 chromosomes and 46 chromotids.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;question-3&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 3&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;span style = &#34;color:orange&#34;&gt;&lt;span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;How many daughter cells will be for a cell after meiosis II? And how many chromosomes and chromatids are there for each daughter cell? (Score: 5)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Four daughter cells.&lt;/p&gt;
+&lt;p&gt;23 chromosomes and 0 chromotids.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;question-4&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 4&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;span style = &#34;color:orange&#34;&gt;&lt;span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;Recombination can be seen as chiasmata between homologous chromosomes at what stage of cell division? (Score: 5)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Metaphase I at Meiosis I.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;question-5&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 5&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;span style = &#34;color:orange&#34;&gt;&lt;span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;Is it possible for meiosis to occur in a haploid cell? (Score: 5) Extra credit: Is mitosis possible? (Score: 5)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;No. Meiosis requires even number of chromosomes. And Mitosis could happen in a haploid cell.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;question-6&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 6&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;span style = &#34;color:orange&#34;&gt;&lt;span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;For two loci with genotypes of Aa and Bb, which one of the following could happen: segregation without independent assortment; or independent assortment without segregation? (Score: 5)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Segregation without independent assortment could happen.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;question-7&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 7&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;span style = &#34;color:orange&#34;&gt;&lt;span&gt;
-## &lt;span style=&#34;color:red&#34;&gt;Question 8&lt;/span&gt;
-&lt;span style = &#34;color:orange&#34;&gt;&lt;span&gt;
-## &lt;span style=&#34;color:red&#34;&gt;Question 9&lt;/span&gt;
-&lt;span style = &#34;color:orange&#34;&gt;&lt;span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;If an individual has alleles of A and a in a locus, what types of gamete can be made? and what is the probability for each type of gamete? (Score: 5) &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Two possiable gametes: A and a.&lt;/p&gt;
+&lt;p&gt;Pr(A) = 0.5 and Pr(a) = 0.5&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;question-8&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 8&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;If an individual has alleles of A and a at a locus of chr 1, but only allele B at a locus of chr 2, what types of gamete can be made? and what is the probability for each type of gamete? (Score: 5)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Two possiable gametes: AB and aB.&lt;/p&gt;
+&lt;p&gt;Pr(AB) = 0.5 and Pr(aB) = 0.5&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;question-9&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 9&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;If an individual has alleles of A and a at a locus of chr 1, and alleles of B and b at a locus of chr 2, what types of gamete can be made? and what is the probability for each type of gamete? (Score: 5) &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Four possiable gametes: AB, aB, Ab, ab.&lt;/p&gt;
+&lt;p&gt;Pr(AB) = Pr(aB) = Pr(Ab) = Pr(ab) = 0.25&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;question-10&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 10&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;span style = &#34;color:orange&#34;&gt;&lt;span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;How many different kinds of gametes can be produced by an individual who carries heterozygotic alleles at three loci of different chromosomes (e.g. Aa of locus 1 at chr 1, Bb of locus 2 at chr 2 and Cc of locus 3 at chr 3)? (Score: 5) &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(2^3 = 8\)&lt;/span&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;question-11&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 11&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;span style = &#34;color:orange&#34;&gt;&lt;span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;If an individual has heterozygous genotypes at each of 6 loci, how many types of gametes can be produced under assumption of independent assortment? (Score: 5) &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(2^6 = 64\)&lt;/span&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;question-12&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 12&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;span style = &#34;color:orange&#34;&gt;&lt;span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;If both parents have genotypes of Aa, what genotypes can be observed for their kid and what their probabilities are? (Score: 5)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Genotypes: AA. Aa, aa&lt;/p&gt;
+&lt;p&gt;Pr(AA) = Pr(aa) = 0.25 and Pr(Aa) = 0.5&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;question-13&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 13&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;span style = &#34;color:orange&#34;&gt;&lt;span&gt;
-## &lt;span style=&#34;color:red&#34;&gt;Question 14&lt;/span&gt;
-&lt;span style = &#34;color:orange&#34;&gt;&lt;span&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;Father has genotype of AaBB and mother has genotype of Aabb. With independent assortment for all loci, what genotypes can be observed for their kid and what their probabilities? (Score: 5) &lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;question-14&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 14&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;&lt;/span&gt;
 ## &lt;span style=&#34;color:red&#34;&gt;Question 15&lt;/span&gt;
-&lt;span style = &#34;color:orange&#34;&gt;&lt;span&gt;
+&lt;span style=&#34;color:orange&#34;&gt;&lt;/span&gt;
 ## &lt;span style=&#34;color:red&#34;&gt;Question 16&lt;/span&gt;
-&lt;span style = &#34;color:orange&#34;&gt;&lt;span&gt;
+&lt;span style=&#34;color:orange&#34;&gt;&lt;/span&gt;
 ## &lt;span style=&#34;color:red&#34;&gt;Question 17&lt;/span&gt;
-&lt;span style = &#34;color:orange&#34;&gt;&lt;span&gt;
+&lt;span style=&#34;color:orange&#34;&gt;&lt;/span&gt;
 ## &lt;span style=&#34;color:red&#34;&gt;Question 18&lt;/span&gt;
-&lt;span style = &#34;color:orange&#34;&gt;&lt;span&gt;&lt;/p&gt;
+&lt;span style=&#34;color:orange&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>

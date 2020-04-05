@@ -24,9 +24,9 @@
 &lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt; Understanding K-M Curve &lt;/span&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;the K-M survival curve is defined as the probability of surviving in a given length of time while considering time in many small intervals.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;interval: the horizontal line in K-M graph.&lt;br /&gt;
+&lt;li&gt;interval: the horizontal line in K-M graph.&lt;br /&gt;
 serial time duration contains two types of duration:&lt;br /&gt;
-&lt;/p&gt;&lt;/li&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
 &lt;li&gt;known survival(event occured)&lt;br /&gt;

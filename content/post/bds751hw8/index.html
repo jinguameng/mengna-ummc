@@ -1,0 +1,91 @@
+---
+title: Homework 8
+author: ''
+date: '2020-04-04'
+slug: bds751hw8
+categories: []
+tags: ['bds751','bds751hw']
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-04-04T20:28:07-05:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+
+<div id="question-1" class="section level2">
+<h2><span style="color:red">Question 1</span></h2>
+<p><span style="color:orange">
+Five students independently collected their own samples and conducted a test of SNP association with hypertension. The test p-values are 0.02, 0.01, 0.03, 0.08, and 0.1. Conduct a meta-analysis and show if this SNP is significantly associated with hypertension (Score: 25) (Hints: combined p-value method)
+</span></p>
+<p>Method: Fisher’s combined probability test.</p>
+<p><span class="math inline">\(p_1 = 0.02\)</span>, <span class="math inline">\(p_2 = 0.01\)</span>, <span class="math inline">\(p_3 = 0.03\)</span>, <span class="math inline">\(p_4 = 0.08\)</span>, <span class="math inline">\(p_5 = 0.1\)</span></p>
+<p><span class="math inline">\(H_0\)</span>: All of the separate null hypothesis(SNP is significantly with hypertension) is true.</p>
+<p><span class="math inline">\(H_a\)</span>: At least one of the separate alternative hypothesis(SNP is not significantly associated with hypertension) is true.</p>
+<p><span class="math inline">\(S_F = -2\sum_{i=1}^{k}ln(p_i)\)</span></p>
+<p><span class="math inline">\(= -2(ln(p_1) + ln(p_2) + ln(p_3) + ln(p_4) + ln(p_5))\)</span></p>
+<p><span class="math inline">\(= -2(ln(0.02) + ln(0.01) + ln(0.03) + ln(0.08) + ln(0.1))\)</span></p>
+<p><span class="math inline">\(= -2 * (-16.852)\)</span></p>
+<p><span class="math inline">\(= 33.704\)</span></p>
+<p><span class="math inline">\(S_F \sim X^2_{2k}, k = 5\)</span>, <span class="math inline">\(S_F\)</span> follows chi-squared distribution with 10 degree of freedom, and the p-value is 0.000207 which is less than 0.05, so, we reject the null hypothesis and conclude that at least one of the test shows that SNP is not significantly associated with hypertension.</p>
+</div>
+<div id="question-2" class="section level2">
+<h2><span style="color:red">Question 2</span></h2>
+<p><span style="color:orange">
+A locus of alleles A and a has frequency, f (A) = 0.3. If our sample contains 100 alleles, (Score: 45)
+</span></p>
+<p><span style="color:orange">
+a. What is the distribution of the number of allele A (NA) in the sample? and write down the probability mass function (Score: 15)
+</span></p>
+<p>The number of allele A is following binomial distribution.</p>
+<p>Let X = the number of allele A</p>
+<p><span class="math inline">\(f(X = x | p = 0.3, n = 100) = \left(\begin{matrix}100\\x\end{matrix}\right)0.3^x0.7^{100-x}\)</span></p>
+<p><span style="color:orange">
+b. What is the expected number of NA? (Score: 15)
+</span></p>
+<p><span class="math inline">\(E(NA) = n(1-p) = 100 *0.7 = 70\)</span></p>
+<p>The expected number of NA is 70.</p>
+<p><span style="color:orange">
+c. What is the variance of NA? (Score: 15)
+</span></p>
+<p><span class="math inline">\(Var(NA) = np(1-p) = 100 * 0.3 * 0.7 = 21\)</span></p>
+<p>The variance of NA is 21.</p>
+</div>
+<div id="question-3" class="section level2">
+<h2><span style="color:red">Question 3</span></h2>
+<p><span style="color:orange">
+If a random variable X follows uniform distribution, X~U(-1,1), and Y=X^2, what is the covariance of X and Y? are X and Y independent? (Score: 10)
+</span></p>
+<p><span class="math inline">\(Cov(X,Y) = E(XY) - E(X)E(Y)\)</span></p>
+<p><span class="math inline">\(= E(X^3) - E(X)E(X)\)</span></p>
+<p>Because X follows uniform distribution,</p>
+<p>=&gt; <span class="math inline">\(E(X) = \frac{-1+1}{2} = 0\)</span>.</p>
+<p>=&gt; <span class="math inline">\(E(X)E(Y) = 0\)</span></p>
+<p><span class="math inline">\(E(X^3) = \int_{-1}^{1}x^3dx = \frac{1}{4}x^4|_{-1}^{1} = \frac{1}{4} - \frac{1}{4} = 0\)</span></p>
+<p>So, <span class="math inline">\(Cov(X,Y) = 0 - 0 = 0\)</span>, the covariance of X and Y is 0, but X and Y are not independent, since <span class="math inline">\(Y = X^2\)</span></p>
+</div>
+<div id="question-4" class="section level2">
+<h2><span style="color:red">Question 4</span></h2>
+<p><span style="color:orange">
+For multinomial distribution below, show that cov(xi , xj) = −npipj. (Score 20)
+</span></p>
+<p><span class="math inline">\(f\left(x_1,x_2,\ldots x_n;n,p_1,p_2,\ldots,p_n\right)=\left(\begin{matrix}n\\x_1,x_2,\ldots x_n\\\end{matrix}\right)p_1^{x1}p_2^{x2}\ldots p_n^{xn}\)</span></p>
+<p>Based on theorem, we know that <span class="math inline">\(x_i\)</span> and <span class="math inline">\(x_j\)</span> are following Binomial distribution:</p>
+<p><span class="math inline">\(x_i \sim Binomial(n,p_i)\)</span>, <span class="math inline">\(x_j \sim Binomial(n,p_j)\)</span>.</p>
+<p><span class="math inline">\(E(x_i) = np_i\)</span>, <span class="math inline">\(Var(x_i) = np_i(1-p_i)\)</span></p>
+<p><span class="math inline">\(E(x_j) = np_j\)</span>, <span class="math inline">\(Var(x_j) = np_j(1-p_j)\)</span></p>
+<p>And <span class="math inline">\((x_i+x_j)\)</span> also following binomial distribution.</p>
+<p><span class="math inline">\((x_i + x_j) \sim Binomial(n, p_i + p_j)\)</span>,</p>
+<p><span class="math inline">\(E(x_i+x_j) = n(p_i+p_j)\)</span></p>
+<p><span class="math inline">\(Var(x_i+x_j) = n(p_i+p_j)(1-p_i-p_j)\)</span></p>
+<p><span class="math inline">\(Cov(x_i,x_j) = \frac{1}{2}[Var(x_i + x_j)-Var(x_i)-Var(x_j)]\)</span></p>
+<p><span class="math inline">\(= \frac{1}{2}[n(p_i+p_j)(1-p_i-p_j) -np_i(1-p_i) - np_j(1-p_j)]\)</span></p>
+<p><span class="math inline">\(= \frac{1}{2}(-2np_ip_j)\)</span></p>
+<p><span class="math inline">\(= -np_ip_j\)</span></p>
+</div>

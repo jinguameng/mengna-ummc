@@ -72,7 +72,7 @@ violated。&lt;/p&gt;&lt;/li&gt;
 &lt;h3&gt;&lt;span style=&#34;color:green&#34;&gt;Martingale Residuals&lt;a href=&#34;#fn4&#34; class=&#34;footnote-ref&#34; id=&#34;fnref4&#34;&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;/span&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\hat{m}_{i} = d_i - \hat{\Lambda}_i(t_i)\)&lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Martingale residuals can be used to assess the true functional form of a particular covariate (Thernau et al. (1990)).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Martingale residuals can be used to assess the true functional form of a particular covariate (Thernau et al. (1990)).&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Positive values mean that the patient died sooner than expected (according to the model); negative values mean that the patient lived longer than expected (or were censored).&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Martingale residuals are very useful and can be used for many of the usual purposes that we use residuals for in other models (identifying outliers, choosing a functional form for the covariate, etc.)&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;However, the primary drawback to the martingale residual is its clear asymmetry (its upper bound is 1, but it has no lowerbound)&lt;/p&gt;&lt;/li&gt;
