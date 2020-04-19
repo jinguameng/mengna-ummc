@@ -77,6 +77,114 @@
     </item>
     
     <item>
+      <title>Homework 10</title>
+      <link>/post/bds751hw10/</link>
+      <pubDate>Fri, 17 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>/post/bds751hw10/</guid>
+      <description>
+
+
+&lt;div id=&#34;question-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 1&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;q1.png&#34; /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\sigma_{Y_1} = \sqrt{36} = 6, \  \sigma_{Y_2} = \sqrt{64} = 8\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\rho = \frac{Cov(Y_1, Y_2)}{\sigma_{Y_1}\sigma_{Y_2}} = \frac{24}{6*8} = 0.5\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\mu_{Y_1} = \mu_{Y_2} = 0\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Y_1 = \sigma_{Y_1}Z_1 + \mu{Y_1} = 6Z_1\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Y_2 = \sigma_{Y_2}(\rho Z_1 + \sqrt{1-\rho ^2}Z_2) + \mu_{Y_2} = 8(\frac{1}{2}Z_1 + \frac{\sqrt{3}}{2}Z_2) = 4Z_1 + 4\sqrt{3}Z_2\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;So the 3 simulated observations for Y are:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\begin{bmatrix} -3 \\ 6\sqrt{3}-2\end{bmatrix}\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\begin{bmatrix} 12 \\ 8 - \frac{16\sqrt{3}}{5}\end{bmatrix}\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\begin{bmatrix} 6 \\ 4-4\sqrt{3}\end{bmatrix}\)&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;question-2&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span style=&#34;color:red&#34;&gt;Question 2&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;q2.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;(1) Show how to transform Y into standard normal distribution Z~N(0,Ι_4×4), based on cholesky decomposition. (Ι_4×4 is an identity matrix) (Score 20)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;First of all, we use Cholesky Decomposition to find the lower triangular matrix L of &lt;span class=&#34;math inline&#34;&gt;\(\Sigma\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(LL^T = \Sigma\)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Then, we generate matrix Z = &lt;span class=&#34;math inline&#34;&gt;\([Z_1,Z_2,Z_3,Z_4]^T\)&lt;/span&gt;where Cov(&lt;span class=&#34;math inline&#34;&gt;\(Z_i,Z_j\)&lt;/span&gt;) = 0 for &lt;span class=&#34;math inline&#34;&gt;\(i\neq j\)&lt;/span&gt; and 1 for &lt;span class=&#34;math inline&#34;&gt;\(i = j\)&lt;/span&gt;, so, Cov(Z) = &lt;span class=&#34;math inline&#34;&gt;\(I_{4 \times 4}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;And let Y = LZ&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(E(LZ) = LE(Z) = L*0 = 0\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Cov(LZ) = LCov(Z)L^T = LL^T = \Sigma\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;So Y = LZ ~ N(0, &lt;span class=&#34;math inline&#34;&gt;\(\Sigma\)&lt;/span&gt;)&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Transform Y ~ N(0, &lt;span class=&#34;math inline&#34;&gt;\(\Sigma\)&lt;/span&gt;) to Y ~ N(0,1)&lt;/p&gt;
+&lt;p&gt;Let &lt;span class=&#34;math inline&#34;&gt;\(Y = L^{-1}LZ\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(E(L^{-1}LZ) = L^{-1}E(LZ) = 0\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Cov(L^{-1}LZ) = ICov(Z)I^T = I_{4\times 4}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;So &lt;span class=&#34;math inline&#34;&gt;\(Y = L^{-1}LZ \sim N(0, I_{4\times 4})\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;(2) What are the eigenvectors and eigenvalues of Sigma? (Score 20)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Sigma = as.matrix(t(data.frame(c(4,3,4,9),c(3,9,6,6),c(4,6,16,4),c(9,6,4,25))))
+ev &amp;lt;- eigen(Sigma)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The eigenvalues are:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ev$values&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 33.1672449 15.5090883  5.0315730  0.2920938&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\lambda_1 = 33.1672449\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\lambda_2 = 15.5090883\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\lambda_3 = 5.0315730\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\lambda_4 = 0.2920938\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The eigenvectors are:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ev$vectors[,1]&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] -0.3321330 -0.3332248 -0.3794714 -0.7966495&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ev$vectors[,2]&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1]  0.02963558 -0.28389298 -0.81958885  0.49679032&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ev$vectors[,3]&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] -0.1197872  0.8990730 -0.3984055 -0.1363518&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ev$vectors[,4]&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1]  0.935125880  0.005812957 -0.159839316 -0.316160072&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\mu_1 = \begin{bmatrix}-0.3321330\\ -0.3332248\\ -0.3794714\\ -0.7966495 \end{bmatrix}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\mu_2 = \begin{bmatrix}0.02963558\\ -0.28389298\\ -0.81958885\\ 0.49679032\end{bmatrix}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\mu_3 = \begin{bmatrix}-0.1197872 \\0.8990730 \\-0.3984055\\-0.1363518\end{bmatrix}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\mu_4 = \begin{bmatrix}0.935125880\\0.005812957\\-0.159839316\\-0.316160072\end{bmatrix}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;(3) Please show the steps to generate a new transformed random variable W that will completely represent Y using method of principal component analysis (PCA). What is the total variance of W? (i.e. sum of variance of each W’s scalar variable). (Score 20)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Bssed on Spectral Decompostion &lt;span class=&#34;math inline&#34;&gt;\(\Sigma = Q\Lambda Q^T\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Q and &lt;span class=&#34;math inline&#34;&gt;\(Q^T\)&lt;/span&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Q
+Q &amp;lt;- ev$vectors
+Q&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##            [,1]        [,2]       [,3]         [,4]
+## [1,] -0.3321330  0.02963558 -0.1197872  0.935125880
+## [2,] -0.3332248 -0.28389298  0.8990730  0.005812957
+## [3,] -0.3794714 -0.81958885 -0.3984055 -0.159839316
+## [4,] -0.7966495  0.49679032 -0.1363518 -0.316160072&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# t(Q)
+Q_T &amp;lt;- t(Q)
+Q_T&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##             [,1]         [,2]       [,3]       [,4]
+## [1,] -0.33213302 -0.333224756 -0.3794714 -0.7966495
+## [2,]  0.02963558 -0.283892977 -0.8195889  0.4967903
+## [3,] -0.11978722  0.899072994 -0.3984055 -0.1363518
+## [4,]  0.93512588  0.005812957 -0.1598393 -0.3161601&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then &lt;span class=&#34;math inline&#34;&gt;\(W = Q^T Y = \begin{bmatrix}\mu_1^TY\\\mu_2^TY\\\mu_3^TY\\\mu_4^TY \end{bmatrix}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(Var(W) = Var(Q^T Y) = Q^TVar(Y)Q = Q^T(Q\Lambda Q^T)Q = \Lambda\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Total Variance of W = &lt;span class=&#34;math inline&#34;&gt;\(\lambda_1 + \lambda_2 + \lambda_3 + \lambda_4\)&lt;/span&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sum(ev$values)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 54&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The total variance of W is 54&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:orange&#34;&gt;(4) The original Y is a 4 by 1 dimension of vector. Please show the steps to generate a new transformed random variable V with reduced dimension that can explain at least 80% of total variance of Y using method of principal component analysis (PCA). (Score 20)&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\Sigma = Q\Lambda Q^T\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Then &lt;span class=&#34;math inline&#34;&gt;\(V_i = \mu_iY\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The eigenvalues are:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ev$values&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 33.1672449 15.5090883  5.0315730  0.2920938&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\lambda_1 = 33.1672449\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\lambda_2 = 15.5090883\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\lambda_3 = 5.0315730\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\lambda_4 = 0.2920938\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\frac{\lambda_1 + \lambda_2}{\lambda_1 + \lambda_2 + \lambda_3 + \lambda_4} = 0.90\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;So we select the first 2 number of &lt;span class=&#34;math inline&#34;&gt;\(V_i\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Then &lt;span class=&#34;math inline&#34;&gt;\(V = \begin{bmatrix}\mu_1Y\\ \mu_2Y\end{bmatrix}\)&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Homework 9</title>
       <link>/post/bds751hw9/</link>
       <pubDate>Fri, 10 Apr 2020 00:00:00 +0000</pubDate>
@@ -572,12 +680,12 @@ For multinomial distribution below, show that cov(xi , xj) = −npipj. (Score 20
 
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## ── Attaching packages ──── tidyverse 1.3.0 ──&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## ── Attaching packages ───────────────────────────────── tidyverse 1.3.0 ──&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## ✓ ggplot2 3.2.1     ✓ purrr   0.3.3
 ## ✓ tibble  2.1.3     ✓ dplyr   0.8.3
 ## ✓ tidyr   1.0.2     ✓ stringr 1.4.0
 ## ✓ readr   1.3.1     ✓ forcats 0.4.0&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## ── Conflicts ─────── tidyverse_conflicts() ──
+&lt;pre&gt;&lt;code&gt;## ── Conflicts ──────────────────────────────────── tidyverse_conflicts() ──
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyr)&lt;/code&gt;&lt;/pre&gt;

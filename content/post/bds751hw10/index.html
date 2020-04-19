@@ -1,0 +1,118 @@
+---
+title: Homework 10
+author: ''
+date: '2020-04-17'
+slug: bds751hw10
+categories: []
+tags: ['bds751','bds751hw']
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-04-17T15:48:49-05:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+
+<div id="question-1" class="section level2">
+<h2><span style="color:red">Question 1</span></h2>
+<p><img src="q1.png" /></p>
+<hr />
+<p><span class="math inline">\(\sigma_{Y_1} = \sqrt{36} = 6, \  \sigma_{Y_2} = \sqrt{64} = 8\)</span></p>
+<p><span class="math inline">\(\rho = \frac{Cov(Y_1, Y_2)}{\sigma_{Y_1}\sigma_{Y_2}} = \frac{24}{6*8} = 0.5\)</span></p>
+<p><span class="math inline">\(\mu_{Y_1} = \mu_{Y_2} = 0\)</span></p>
+<p><span class="math inline">\(Y_1 = \sigma_{Y_1}Z_1 + \mu{Y_1} = 6Z_1\)</span></p>
+<p><span class="math inline">\(Y_2 = \sigma_{Y_2}(\rho Z_1 + \sqrt{1-\rho ^2}Z_2) + \mu_{Y_2} = 8(\frac{1}{2}Z_1 + \frac{\sqrt{3}}{2}Z_2) = 4Z_1 + 4\sqrt{3}Z_2\)</span></p>
+<p>So the 3 simulated observations for Y are:</p>
+<p><span class="math inline">\(\begin{bmatrix} -3 \\ 6\sqrt{3}-2\end{bmatrix}\)</span>, <span class="math inline">\(\begin{bmatrix} 12 \\ 8 - \frac{16\sqrt{3}}{5}\end{bmatrix}\)</span>, <span class="math inline">\(\begin{bmatrix} 6 \\ 4-4\sqrt{3}\end{bmatrix}\)</span></p>
+</div>
+<div id="question-2" class="section level2">
+<h2><span style="color:red">Question 2</span></h2>
+<p><img src="q2.png" /></p>
+<p><span style="color:orange">(1) Show how to transform Y into standard normal distribution Z~N(0,Ι_4×4), based on cholesky decomposition. (Ι_4×4 is an identity matrix) (Score 20)</span></p>
+<hr />
+<p>First of all, we use Cholesky Decomposition to find the lower triangular matrix L of <span class="math inline">\(\Sigma\)</span></p>
+<p><span class="math inline">\(LL^T = \Sigma\)</span></p>
+<hr />
+<p>Then, we generate matrix Z = <span class="math inline">\([Z_1,Z_2,Z_3,Z_4]^T\)</span>where Cov(<span class="math inline">\(Z_i,Z_j\)</span>) = 0 for <span class="math inline">\(i\neq j\)</span> and 1 for <span class="math inline">\(i = j\)</span>, so, Cov(Z) = <span class="math inline">\(I_{4 \times 4}\)</span></p>
+<p>And let Y = LZ</p>
+<hr />
+<p><span class="math inline">\(E(LZ) = LE(Z) = L*0 = 0\)</span></p>
+<p><span class="math inline">\(Cov(LZ) = LCov(Z)L^T = LL^T = \Sigma\)</span></p>
+<p>So Y = LZ ~ N(0, <span class="math inline">\(\Sigma\)</span>)</p>
+<hr />
+<p>Transform Y ~ N(0, <span class="math inline">\(\Sigma\)</span>) to Y ~ N(0,1)</p>
+<p>Let <span class="math inline">\(Y = L^{-1}LZ\)</span></p>
+<p><span class="math inline">\(E(L^{-1}LZ) = L^{-1}E(LZ) = 0\)</span></p>
+<p><span class="math inline">\(Cov(L^{-1}LZ) = ICov(Z)I^T = I_{4\times 4}\)</span></p>
+<p>So <span class="math inline">\(Y = L^{-1}LZ \sim N(0, I_{4\times 4})\)</span></p>
+<p><span style="color:orange">(2) What are the eigenvectors and eigenvalues of Sigma? (Score 20)</span></p>
+<hr />
+<pre class="r"><code>Sigma = as.matrix(t(data.frame(c(4,3,4,9),c(3,9,6,6),c(4,6,16,4),c(9,6,4,25))))
+ev &lt;- eigen(Sigma)</code></pre>
+<p>The eigenvalues are:</p>
+<pre class="r"><code>ev$values</code></pre>
+<pre><code>## [1] 33.1672449 15.5090883  5.0315730  0.2920938</code></pre>
+<p><span class="math inline">\(\lambda_1 = 33.1672449\)</span></p>
+<p><span class="math inline">\(\lambda_2 = 15.5090883\)</span></p>
+<p><span class="math inline">\(\lambda_3 = 5.0315730\)</span></p>
+<p><span class="math inline">\(\lambda_4 = 0.2920938\)</span></p>
+<p>The eigenvectors are:</p>
+<pre class="r"><code>ev$vectors[,1]</code></pre>
+<pre><code>## [1] -0.3321330 -0.3332248 -0.3794714 -0.7966495</code></pre>
+<pre class="r"><code>ev$vectors[,2]</code></pre>
+<pre><code>## [1]  0.02963558 -0.28389298 -0.81958885  0.49679032</code></pre>
+<pre class="r"><code>ev$vectors[,3]</code></pre>
+<pre><code>## [1] -0.1197872  0.8990730 -0.3984055 -0.1363518</code></pre>
+<pre class="r"><code>ev$vectors[,4]</code></pre>
+<pre><code>## [1]  0.935125880  0.005812957 -0.159839316 -0.316160072</code></pre>
+<p><span class="math inline">\(\mu_1 = \begin{bmatrix}-0.3321330\\ -0.3332248\\ -0.3794714\\ -0.7966495 \end{bmatrix}\)</span></p>
+<p><span class="math inline">\(\mu_2 = \begin{bmatrix}0.02963558\\ -0.28389298\\ -0.81958885\\ 0.49679032\end{bmatrix}\)</span></p>
+<p><span class="math inline">\(\mu_3 = \begin{bmatrix}-0.1197872 \\0.8990730 \\-0.3984055\\-0.1363518\end{bmatrix}\)</span></p>
+<p><span class="math inline">\(\mu_4 = \begin{bmatrix}0.935125880\\0.005812957\\-0.159839316\\-0.316160072\end{bmatrix}\)</span></p>
+<p><span style="color:orange">(3) Please show the steps to generate a new transformed random variable W that will completely represent Y using method of principal component analysis (PCA). What is the total variance of W? (i.e. sum of variance of each W’s scalar variable). (Score 20)</span></p>
+<hr />
+<p>Bssed on Spectral Decompostion <span class="math inline">\(\Sigma = Q\Lambda Q^T\)</span></p>
+<p>Q and <span class="math inline">\(Q^T\)</span>:</p>
+<pre class="r"><code># Q
+Q &lt;- ev$vectors
+Q</code></pre>
+<pre><code>##            [,1]        [,2]       [,3]         [,4]
+## [1,] -0.3321330  0.02963558 -0.1197872  0.935125880
+## [2,] -0.3332248 -0.28389298  0.8990730  0.005812957
+## [3,] -0.3794714 -0.81958885 -0.3984055 -0.159839316
+## [4,] -0.7966495  0.49679032 -0.1363518 -0.316160072</code></pre>
+<pre class="r"><code># t(Q)
+Q_T &lt;- t(Q)
+Q_T</code></pre>
+<pre><code>##             [,1]         [,2]       [,3]       [,4]
+## [1,] -0.33213302 -0.333224756 -0.3794714 -0.7966495
+## [2,]  0.02963558 -0.283892977 -0.8195889  0.4967903
+## [3,] -0.11978722  0.899072994 -0.3984055 -0.1363518
+## [4,]  0.93512588  0.005812957 -0.1598393 -0.3161601</code></pre>
+<p>Then <span class="math inline">\(W = Q^T Y = \begin{bmatrix}\mu_1^TY\\\mu_2^TY\\\mu_3^TY\\\mu_4^TY \end{bmatrix}\)</span></p>
+<p><span class="math inline">\(Var(W) = Var(Q^T Y) = Q^TVar(Y)Q = Q^T(Q\Lambda Q^T)Q = \Lambda\)</span></p>
+<p>Total Variance of W = <span class="math inline">\(\lambda_1 + \lambda_2 + \lambda_3 + \lambda_4\)</span></p>
+<pre class="r"><code>sum(ev$values)</code></pre>
+<pre><code>## [1] 54</code></pre>
+<p>The total variance of W is 54</p>
+<p><span style="color:orange">(4) The original Y is a 4 by 1 dimension of vector. Please show the steps to generate a new transformed random variable V with reduced dimension that can explain at least 80% of total variance of Y using method of principal component analysis (PCA). (Score 20)</span></p>
+<hr />
+<p><span class="math inline">\(\Sigma = Q\Lambda Q^T\)</span></p>
+<p>Then <span class="math inline">\(V_i = \mu_iY\)</span></p>
+<p>The eigenvalues are:</p>
+<pre class="r"><code>ev$values</code></pre>
+<pre><code>## [1] 33.1672449 15.5090883  5.0315730  0.2920938</code></pre>
+<p><span class="math inline">\(\lambda_1 = 33.1672449\)</span></p>
+<p><span class="math inline">\(\lambda_2 = 15.5090883\)</span></p>
+<p><span class="math inline">\(\lambda_3 = 5.0315730\)</span></p>
+<p><span class="math inline">\(\lambda_4 = 0.2920938\)</span></p>
+<p><span class="math inline">\(\frac{\lambda_1 + \lambda_2}{\lambda_1 + \lambda_2 + \lambda_3 + \lambda_4} = 0.90\)</span></p>
+<p>So we select the first 2 number of <span class="math inline">\(V_i\)</span>.</p>
+<p>Then <span class="math inline">\(V = \begin{bmatrix}\mu_1Y\\ \mu_2Y\end{bmatrix}\)</span></p>
+</div>
